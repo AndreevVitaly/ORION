@@ -1,0 +1,32 @@
+"""Ручной адаптер точек лица."""
+
+from .base import FacePointAdapter
+
+
+class ManualAdapter(FacePointAdapter):
+    """Временный адаптер с тестовыми координатами без внешних библиотек."""
+
+    def extract_points(self, image_path: str) -> dict:
+        """Вернуть тестовый словарь точек лица в формате [x, y]."""
+        # image_path пока не используется: позже здесь можно читать ручную
+        # разметку из файла или заменить источник на другую реализацию.
+        return {
+            "face_left": [120, 220],
+            "face_right": [360, 220],
+            "face_top": [240, 80],
+            "chin": [240, 420],
+            "left_eye_outer": [155, 195],
+            "left_eye_inner": [205, 195],
+            "right_eye_inner": [275, 195],
+            "right_eye_outer": [325, 195],
+            "nose_tip": [240, 270],
+            "nose_bridge": [240, 210],
+            "mouth_left": [190, 335],
+            "mouth_right": [290, 335],
+            "upper_lip": [240, 320],
+            "lower_lip": [240, 350],
+            "jaw_left": [155, 355],
+            "jaw_right": [325, 355],
+            "brow_left": [180, 165],
+            "brow_right": [300, 165],
+        }
