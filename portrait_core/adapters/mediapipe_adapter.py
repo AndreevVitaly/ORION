@@ -2,6 +2,9 @@
 
 from pathlib import Path
 
+import numpy as np
+from PIL import Image, ImageOps
+
 from portrait_core.landmarks import validate_landmarks
 
 from .base import FacePointAdapter
@@ -54,7 +57,7 @@ class MediaPipeAdapter(FacePointAdapter):
     def __init__(
         self,
         model_path: str,
-        min_detection_confidence: float = 0.5,
+        min_detection_confidence: float = 0.35,
         min_presence_confidence: float = 0.5,
         min_image_size: int = 256,
     ):
@@ -74,7 +77,14 @@ class MediaPipeAdapter(FacePointAdapter):
         return mp
 
     @classmethod
-    def convert_landmarks(cls, landmarks, width: int, height: int) -> dict:
+    def convert_landmarks(
+        cls,
+        landmarks,
+        width: int,
+        height: int,
+        offset_x: int = 0,
+        offset_y: int = 0,
+    ) -> dict:
         """Преобразовать нормализованные точки MediaPipe в пиксели."""
         if width <= 0 or height <= 0:
             raise ValueError("Размер изображения должен быть положительным")
@@ -88,12 +98,34 @@ class MediaPipeAdapter(FacePointAdapter):
                     f"MediaPipe не вернул точку с индексом {index}"
                 ) from error
             points[name] = [
-                float(landmark.x * width),
-                float(landmark.y * height),
+                float(landmark.x * width + offset_x),
+                float(landmark.y * height + offset_y),
             ]
 
         validate_landmarks(points)
         return points
+
+    @staticmethod
+    def _candidate_regions(width: int, height: int) -> list[tuple[int, int, int, int]]:
+        """Вернуть полный кадр и перекрывающиеся области для мелких лиц."""
+        regions = [(0, 0, width, height)]
+        crop_width = round(width * 0.68)
+        crop_height = round(height * 0.78)
+        x_positions = (0, (width - crop_width) // 2, width - crop_width)
+        y_positions = (0, (height - crop_height) // 2, height - crop_height)
+
+        for y in y_positions:
+            for x in x_positions:
+                region = (x, y, x + crop_width, y + crop_height)
+                if region not in regions:
+                    regions.append(region)
+        return regions
+
+    @staticmethod
+    def _to_mp_image(mp, image: Image.Image):
+        """Создать MediaPipe Image без передачи Unicode-пути нативному коду."""
+        rgb = np.ascontiguousarray(image.convert("RGB"))
+        return mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
 
     def extract_points(self, image_path: str) -> dict:
         """Найти одно лицо на фотографии и вернуть именованные точки."""
@@ -104,8 +136,10 @@ class MediaPipeAdapter(FacePointAdapter):
             raise FileNotFoundError(f"Модель MediaPipe не найдена: {self.model_path}")
 
         mp = self._load_mediapipe()
-        image = mp.Image.create_from_file(str(image_file))
-        if min(image.width, image.height) < self.min_image_size:
+        with Image.open(image_file) as source:
+            image = ImageOps.exif_transpose(source).convert("RGB")
+
+        if min(image.size) < self.min_image_size:
             raise ImageQualityError(
                 "Короткая сторона фотографии должна быть не меньше "
                 f"{self.min_image_size} пикселей"
@@ -122,18 +156,24 @@ class MediaPipeAdapter(FacePointAdapter):
         )
 
         with mp.tasks.vision.FaceLandmarker.create_from_options(options) as landmarker:
-            result = landmarker.detect(image)
+            for left, top, right, bottom in self._candidate_regions(*image.size):
+                crop = image.crop((left, top, right, bottom))
+                result = landmarker.detect(self._to_mp_image(mp, crop))
+                face_count = len(result.face_landmarks)
+                if face_count > 1:
+                    raise MultipleFacesError(
+                        "На фотографии найдено несколько лиц; требуется одно лицо"
+                    )
+                if face_count == 1:
+                    return self.convert_landmarks(
+                        result.face_landmarks[0],
+                        width=crop.width,
+                        height=crop.height,
+                        offset_x=left,
+                        offset_y=top,
+                    )
 
-        face_count = len(result.face_landmarks)
-        if face_count == 0:
-            raise FaceNotFoundError("На фотографии не найдено лицо")
-        if face_count > 1:
-            raise MultipleFacesError(
-                "На фотографии найдено несколько лиц; требуется одно лицо"
-            )
-
-        return self.convert_landmarks(
-            result.face_landmarks[0],
-            width=image.width,
-            height=image.height,
+        raise FaceNotFoundError(
+            "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас "
+            "и при более равномерном освещении."
         )

@@ -31,10 +31,10 @@ class LandmarkContractTestCase(unittest.TestCase):
         landmarks[1] = SimpleNamespace(x=0.25, y=0.75)
 
         points = MediaPipeAdapter.convert_landmarks(
-            landmarks, width=400, height=200
+            landmarks, width=400, height=200, offset_x=10, offset_y=20
         )
 
-        self.assertEqual(points["nose_tip"], [100.0, 150.0])
+        self.assertEqual(points["nose_tip"], [110.0, 170.0])
 
     def test_invalid_image_size_is_rejected(self):
         landmarks = [SimpleNamespace(x=0.0, y=0.0) for _ in range(478)]
@@ -45,9 +45,16 @@ class LandmarkContractTestCase(unittest.TestCase):
     def test_default_model_settings_are_explicit(self):
         adapter = MediaPipeAdapter("face_landmarker.task")
 
-        self.assertEqual(adapter.min_detection_confidence, 0.5)
+        self.assertEqual(adapter.min_detection_confidence, 0.35)
         self.assertEqual(adapter.min_presence_confidence, 0.5)
         self.assertEqual(adapter.min_image_size, 256)
+
+    def test_candidate_regions_include_full_frame_and_center(self):
+        regions = MediaPipeAdapter._candidate_regions(1000, 800)
+
+        self.assertEqual(regions[0], (0, 0, 1000, 800))
+        self.assertIn((160, 88, 840, 712), regions)
+        self.assertEqual(len(regions), 10)
 
     def test_model_can_be_read_from_unicode_path(self):
         with tempfile.TemporaryDirectory(prefix="модель_") as directory:
