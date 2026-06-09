@@ -1,6 +1,7 @@
 """Ручной адаптер точек лица."""
 
 from .base import FacePointAdapter
+from portrait_core.landmarks import validate_landmarks
 
 
 class ManualAdapter(FacePointAdapter):
@@ -10,7 +11,7 @@ class ManualAdapter(FacePointAdapter):
         """Вернуть тестовый словарь точек лица в формате [x, y]."""
         # image_path пока не используется: позже здесь можно читать ручную
         # разметку из файла или заменить источник на другую реализацию.
-        return {
+        points = {
             "face_left": [120, 220],
             "face_right": [360, 220],
             "face_top": [240, 80],
@@ -34,3 +35,5 @@ class ManualAdapter(FacePointAdapter):
             "right_brow_inner": [265, 160],
             "right_brow_outer": [320, 165],
         }
+        validate_landmarks(points)
+        return points

@@ -1,6 +1,7 @@
 """Единая точка запуска объективных измерений лица."""
 
 from portrait_core.classifiers.morphology import classify_morphology
+from portrait_core.landmarks import validate_landmarks
 from portrait_core.measurements.brows import measure_brows
 from portrait_core.measurements.eyes import measure_eyes
 from portrait_core.measurements.face import measure_face
@@ -12,6 +13,7 @@ from portrait_core.measurements.symmetry import measure_symmetry
 
 def analyze_points(points: dict) -> dict:
     """Выполнить измерения и вернуть объективный морфологический профиль."""
+    validate_landmarks(points)
     measurements = {
         "face": measure_face(points),
         "eyes": measure_eyes(points),
