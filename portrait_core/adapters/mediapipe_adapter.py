@@ -113,7 +113,7 @@ class MediaPipeAdapter(FacePointAdapter):
 
         options = mp.tasks.vision.FaceLandmarkerOptions(
             base_options=mp.tasks.BaseOptions(
-                model_asset_path=str(self.model_path)
+                model_asset_buffer=self.model_path.read_bytes()
             ),
             running_mode=mp.tasks.vision.RunningMode.IMAGE,
             num_faces=2,

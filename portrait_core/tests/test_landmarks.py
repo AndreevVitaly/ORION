@@ -1,6 +1,8 @@
 """Тесты контракта точек и преобразования MediaPipe."""
 
 import unittest
+import tempfile
+from pathlib import Path
 from types import SimpleNamespace
 
 from portrait_core.adapters.manual_adapter import ManualAdapter
@@ -46,6 +48,15 @@ class LandmarkContractTestCase(unittest.TestCase):
         self.assertEqual(adapter.min_detection_confidence, 0.5)
         self.assertEqual(adapter.min_presence_confidence, 0.5)
         self.assertEqual(adapter.min_image_size, 256)
+
+    def test_model_can_be_read_from_unicode_path(self):
+        with tempfile.TemporaryDirectory(prefix="модель_") as directory:
+            model = Path(directory) / "лицо.task"
+            model.write_bytes(b"model-data")
+
+            adapter = MediaPipeAdapter(str(model))
+
+            self.assertEqual(adapter.model_path.read_bytes(), b"model-data")
 
 
 if __name__ == "__main__":
