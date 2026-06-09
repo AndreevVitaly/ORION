@@ -42,3 +42,12 @@ adapter = MediaPipeAdapter(
 points = adapter.extract_points("photo.jpg")
 result = analyze_points(points)
 ```
+
+## Графический интерфейс
+
+```powershell
+python -m portrait_core.gui
+```
+
+В интерфейсе можно выбрать фотографию, выполнить анализ, проверить положение
+точек и сохранить JSON-отчет или размеченное изображение.
