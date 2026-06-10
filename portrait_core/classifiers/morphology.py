@@ -1,5 +1,7 @@
 """Классификация морфологических признаков."""
 
+from portrait_core.config import MORPHOLOGY_THRESHOLDS
+
 
 def _classify(value, low, high, labels):
     if value is None:
@@ -18,29 +20,19 @@ def classify_morphology(measurements: dict) -> dict:
     mouth = measurements.get("mouth", {})
     symmetry = measurements.get("symmetry", {})
 
-    return {
-        "face_proportion": _classify(
-            face.get("face_width_to_height_ratio"),
-            0.65,
-            0.80,
-            ("вытянутое", "среднее", "широкое"),
-        ),
-        "jaw_width": _classify(
-            jaw.get("jaw_width_ratio"),
-            0.60,
-            0.78,
-            ("узкая", "средняя", "широкая"),
-        ),
-        "mouth_width": _classify(
-            mouth.get("mouth_width_ratio"),
-            0.35,
-            0.48,
-            ("узкий", "средний", "широкий"),
-        ),
-        "symmetry": _classify(
-            symmetry.get("overall_score"),
-            0.90,
-            0.97,
-            ("выраженная асимметрия", "умеренная симметрия", "высокая симметрия"),
-        ),
+    values = {
+        "face_proportion": face.get("face_width_to_height_ratio"),
+        "jaw_width": jaw.get("jaw_width_ratio"),
+        "mouth_width": mouth.get("mouth_width_ratio"),
+        "symmetry": symmetry.get("overall_score"),
     }
+    result = {}
+    for name, value in values.items():
+        settings = MORPHOLOGY_THRESHOLDS[name]
+        result[name] = _classify(
+            value,
+            settings["low"],
+            settings["high"],
+            settings["labels"],
+        )
+    return result

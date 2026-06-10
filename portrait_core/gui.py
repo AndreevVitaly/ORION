@@ -24,9 +24,8 @@ from PyQt6.QtWidgets import (
     QWidget,
 )
 
-from portrait_core.adapters.mediapipe_adapter import MediaPipeAdapter
-from portrait_core.analyzer import analyze_points
-from portrait_core.reporting import build_report, report_to_json, save_report
+from portrait_core.pipeline import analyze_photo
+from portrait_core.reporting import report_to_json, save_report
 from portrait_core.visualization import draw_landmarks
 
 
@@ -60,10 +59,7 @@ class AnalysisWorker(QObject):
 
     def run(self):
         try:
-            adapter = MediaPipeAdapter(str(MODEL_PATH))
-            points = adapter.extract_points(self.image_path)
-            analysis = analyze_points(points)
-            report = build_report(self.image_path, points, analysis)
+            points, report = analyze_photo(self.image_path, str(MODEL_PATH))
             preview = draw_landmarks(self.image_path, points)
             self.completed.emit(report, preview)
         except Exception as error:
@@ -175,6 +171,21 @@ class PortraitWindow(QMainWindow):
         self.summary_table.setAlternatingRowColors(True)
         self.tabs.addTab(self.summary_table, "Сводка")
 
+        self.quality_table = QTableWidget(0, 2)
+        self.quality_table.setHorizontalHeaderLabels(["Проверка", "Результат"])
+        self.quality_table.horizontalHeader().setSectionResizeMode(
+            0, QHeaderView.ResizeMode.Stretch
+        )
+        self.quality_table.horizontalHeader().setSectionResizeMode(
+            1, QHeaderView.ResizeMode.ResizeToContents
+        )
+        self.quality_table.verticalHeader().setVisible(False)
+        self.quality_table.setEditTriggers(
+            QTableWidget.EditTrigger.NoEditTriggers
+        )
+        self.quality_table.setAlternatingRowColors(True)
+        self.tabs.addTab(self.quality_table, "Качество")
+
         self.json_view = QTextEdit()
         self.json_view.setReadOnly(True)
         self.json_view.setLineWrapMode(QTextEdit.LineWrapMode.NoWrap)
@@ -210,6 +221,7 @@ class PortraitWindow(QMainWindow):
         self.preview_pixmap = pixmap
         self._show_pixmap()
         self.summary_table.setRowCount(0)
+        self.quality_table.setRowCount(0)
         self.json_view.clear()
         self.analyze_action.setEnabled(True)
         self.save_report_action.setEnabled(False)
@@ -260,6 +272,7 @@ class PortraitWindow(QMainWindow):
         self.preview_pixmap = pil_to_pixmap(preview)
         self._show_pixmap()
         self._fill_summary(report)
+        self._fill_quality(report["quality"])
         self.json_view.setPlainText(report_to_json(report))
         self.save_report_action.setEnabled(True)
         self.save_preview_action.setEnabled(True)
@@ -272,7 +285,14 @@ class PortraitWindow(QMainWindow):
     def _fill_summary(self, report: dict):
         morphology = report["morphology"]
         symmetry = report["measurements"]["symmetry"]["overall_score"]
+        quality = report["quality"]
+        quality_text = (
+            "подходит"
+            if quality["status"] == "passed"
+            else "; ".join(quality["issues"])
+        )
         rows = [
+            ("Качество кадра", quality_text),
             ("Пропорция лица", morphology["face_proportion"]),
             ("Ширина челюсти", morphology["jaw_width"]),
             ("Ширина рта", morphology["mouth_width"]),
@@ -281,12 +301,39 @@ class PortraitWindow(QMainWindow):
                 "Индекс симметрии",
                 "нет данных" if symmetry is None else f"{symmetry:.3f}",
             ),
+            (
+                "Наклон головы",
+                f'{quality["metrics"]["roll_degrees"]:.1f}°',
+            ),
+            (
+                "Доля лица в кадре",
+                f'{quality["metrics"]["face_coverage"]:.1%}',
+            ),
         ]
 
         self.summary_table.setRowCount(len(rows))
         for row, (name, value) in enumerate(rows):
             self.summary_table.setItem(row, 0, QTableWidgetItem(name))
             self.summary_table.setItem(row, 1, QTableWidgetItem(str(value)))
+
+    def _fill_quality(self, quality: dict):
+        labels = {
+            "head_roll": "Наклон головы",
+            "head_yaw": "Поворот головы",
+            "sharpness": "Резкость",
+            "brightness": "Яркость",
+            "contrast": "Контраст",
+            "face_size": "Размер лица",
+            "neutral_expression": "Нейтральное выражение",
+        }
+        rows = [
+            (labels[name], "пройдено" if passed else "предупреждение")
+            for name, passed in quality["checks"].items()
+        ]
+        self.quality_table.setRowCount(len(rows))
+        for row, (name, value) in enumerate(rows):
+            self.quality_table.setItem(row, 0, QTableWidgetItem(name))
+            self.quality_table.setItem(row, 1, QTableWidgetItem(value))
 
     def save_json(self):
         if not self.report:

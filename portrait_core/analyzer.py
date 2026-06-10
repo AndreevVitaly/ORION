@@ -5,10 +5,12 @@ from portrait_core.landmarks import validate_landmarks
 from portrait_core.measurements.brows import measure_brows
 from portrait_core.measurements.eyes import measure_eyes
 from portrait_core.measurements.face import measure_face
+from portrait_core.measurements.forehead import measure_forehead
 from portrait_core.measurements.jaw import measure_jaw
 from portrait_core.measurements.mouth import measure_mouth
 from portrait_core.measurements.nose import measure_nose
 from portrait_core.measurements.symmetry import measure_symmetry
+from portrait_core.measurements.tension import measure_tension
 
 
 def analyze_points(points: dict) -> dict:
@@ -16,12 +18,14 @@ def analyze_points(points: dict) -> dict:
     validate_landmarks(points)
     measurements = {
         "face": measure_face(points),
+        "forehead": measure_forehead(points),
         "eyes": measure_eyes(points),
         "brows": measure_brows(points),
         "nose": measure_nose(points),
         "mouth": measure_mouth(points),
         "jaw": measure_jaw(points),
         "symmetry": measure_symmetry(points),
+        "tension": measure_tension(points),
     }
     return {
         "measurements": measurements,

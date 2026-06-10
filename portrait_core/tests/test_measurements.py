@@ -6,6 +6,8 @@ from portrait_core.adapters.manual_adapter import ManualAdapter
 from portrait_core.analyzer import analyze_points
 from portrait_core.measurements.mouth import measure_mouth
 from portrait_core.measurements.nose import measure_nose
+from portrait_core.measurements.forehead import measure_forehead
+from portrait_core.measurements.tension import measure_tension
 
 
 class MeasurementTestCase(unittest.TestCase):
@@ -28,6 +30,19 @@ class MeasurementTestCase(unittest.TestCase):
         self.assertEqual(result["nose_width"], 40.0)
         self.assertAlmostEqual(result["nose_width_to_length_ratio"], 2 / 3)
 
+    def test_forehead_measurements_are_normalized(self):
+        result = measure_forehead(self.points)
+
+        self.assertIsNotNone(result["forehead_height"])
+        self.assertGreater(result["forehead_height_ratio"], 0)
+        self.assertLess(result["forehead_height_ratio"], 1)
+
+    def test_tension_is_marked_as_geometric_only(self):
+        result = measure_tension(self.points)
+
+        self.assertAlmostEqual(result["mouth_opening_ratio"], 0.3)
+        self.assertIn("не оценка эмоций", result["interpretation"])
+
     def test_missing_points_produce_none_values(self):
         result = measure_nose({})
 
@@ -39,7 +54,17 @@ class MeasurementTestCase(unittest.TestCase):
 
         self.assertEqual(
             set(result["measurements"]),
-            {"face", "eyes", "brows", "nose", "mouth", "jaw", "symmetry"},
+            {
+                "face",
+                "forehead",
+                "eyes",
+                "brows",
+                "nose",
+                "mouth",
+                "jaw",
+                "symmetry",
+                "tension",
+            },
         )
         self.assertEqual(result["morphology"]["symmetry"], "высокая симметрия")
 
