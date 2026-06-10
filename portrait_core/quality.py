@@ -38,9 +38,24 @@ def assess_image_quality(image_path: str, points: dict) -> dict:
         else 1.0
     )
 
-    blur_score = float(cv2.Laplacian(gray, cv2.CV_64F).var())
-    brightness = float(gray.mean())
-    contrast = float(gray.std())
+    point_values = list(points.values())
+    min_x = max(0, round(min(point[0] for point in point_values)))
+    max_x = min(image.width, round(max(point[0] for point in point_values)))
+    min_y = max(0, round(min(point[1] for point in point_values)))
+    max_y = min(image.height, round(max(point[1] for point in point_values)))
+    padding_x = round((max_x - min_x) * 0.15)
+    padding_y = round((max_y - min_y) * 0.15)
+    left = max(0, min_x - padding_x)
+    right = min(image.width, max_x + padding_x)
+    top = max(0, min_y - padding_y)
+    bottom = min(image.height, max_y + padding_y)
+    face_gray = gray[top:bottom, left:right]
+    if face_gray.size == 0:
+        face_gray = gray
+
+    blur_score = float(cv2.Laplacian(face_gray, cv2.CV_64F).var())
+    brightness = float(face_gray.mean())
+    contrast = float(face_gray.std())
 
     face_height = abs(points["chin"][1] - points["face_top"][1])
     face_coverage = (
@@ -67,6 +82,7 @@ def assess_image_quality(image_path: str, points: dict) -> dict:
         "neutral_expression": (
             mouth_opening_ratio <= thresholds["max_mouth_opening_ratio"]
         ),
+        "resolution": min(image.size) >= thresholds["min_source_dimension"],
     }
     labels = {
         "head_roll": "сильный наклон головы",
@@ -76,6 +92,7 @@ def assess_image_quality(image_path: str, points: dict) -> dict:
         "contrast": "низкий контраст",
         "face_size": "лицо занимает слишком малую часть кадра",
         "neutral_expression": "рот заметно открыт; требуется нейтральное выражение",
+        "resolution": "низкое исходное разрешение фотографии",
     }
     issues = [labels[name] for name, passed in checks.items() if not passed]
     return {
@@ -90,5 +107,7 @@ def assess_image_quality(image_path: str, points: dict) -> dict:
             "contrast": contrast,
             "face_coverage": face_coverage,
             "mouth_opening_ratio": mouth_opening_ratio,
+            "source_width": image.width,
+            "source_height": image.height,
         },
     }

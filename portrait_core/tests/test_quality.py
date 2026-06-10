@@ -39,6 +39,7 @@ class QualityTestCase(unittest.TestCase):
                 "contrast",
                 "face_size",
                 "neutral_expression",
+                "resolution",
             },
         )
 
@@ -52,6 +53,18 @@ class QualityTestCase(unittest.TestCase):
 
         self.assertFalse(result["checks"]["head_roll"])
         self.assertIn("сильный наклон головы", result["issues"])
+
+    def test_small_source_is_reported_without_blocking_analysis(self):
+        with tempfile.TemporaryDirectory() as directory:
+            image = self._create_image(
+                directory, "small.png", size=(236, 300)
+            )
+            result = assess_image_quality(image, self.points)
+
+        self.assertFalse(result["checks"]["resolution"])
+        self.assertIn(
+            "низкое исходное разрешение фотографии", result["issues"]
+        )
 
 
 if __name__ == "__main__":

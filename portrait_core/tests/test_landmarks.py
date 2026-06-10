@@ -31,10 +31,15 @@ class LandmarkContractTestCase(unittest.TestCase):
         landmarks[1] = SimpleNamespace(x=0.25, y=0.75)
 
         points = MediaPipeAdapter.convert_landmarks(
-            landmarks, width=400, height=200, offset_x=10, offset_y=20
+            landmarks,
+            width=400,
+            height=200,
+            offset_x=10,
+            offset_y=20,
+            coordinate_scale=2,
         )
 
-        self.assertEqual(points["nose_tip"], [110.0, 170.0])
+        self.assertEqual(points["nose_tip"], [55.0, 85.0])
 
     def test_invalid_image_size_is_rejected(self):
         landmarks = [SimpleNamespace(x=0.0, y=0.0) for _ in range(478)]

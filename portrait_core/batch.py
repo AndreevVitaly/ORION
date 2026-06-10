@@ -2,6 +2,7 @@
 
 import argparse
 import csv
+import hashlib
 import json
 from pathlib import Path
 
@@ -25,11 +26,30 @@ def analyze_directory(
     destination.mkdir(parents=True, exist_ok=True)
 
     rows = []
+    seen_hashes = {}
     images = sorted(
         path for path in source.iterdir() if path.suffix.lower() in IMAGE_SUFFIXES
     )
     for image_path in images:
-        row = {"image": image_path.name, "status": "error", "issues": ""}
+        row = {
+            "image": image_path.name,
+            "status": "error",
+            "issues": "",
+            "duplicate_of": "",
+        }
+        digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
+        if digest in seen_hashes:
+            row.update(
+                {
+                    "status": "duplicate",
+                    "issues": "точная копия другого файла",
+                    "duplicate_of": seen_hashes[digest],
+                }
+            )
+            rows.append(row)
+            continue
+        seen_hashes[digest] = image_path.name
+
         try:
             _, report = analyze_photo(str(image_path), model_path)
             report_path = destination / f"{image_path.stem}_portrait.json"
@@ -56,6 +76,7 @@ def analyze_directory(
         "image",
         "status",
         "issues",
+        "duplicate_of",
         "face_proportion",
         "symmetry",
         "report",
@@ -89,7 +110,7 @@ def main():
         args.output_directory,
         args.model,
     )
-    successful = sum(row["status"] != "error" for row in rows)
+    successful = sum(bool(row.get("report")) for row in rows)
     print(f"Обработано: {len(rows)}; отчеты созданы: {successful}")
 
 

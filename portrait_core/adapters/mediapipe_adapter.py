@@ -84,10 +84,13 @@ class MediaPipeAdapter(FacePointAdapter):
         height: int,
         offset_x: int = 0,
         offset_y: int = 0,
+        coordinate_scale: float = 1.0,
     ) -> dict:
         """Преобразовать нормализованные точки MediaPipe в пиксели."""
         if width <= 0 or height <= 0:
             raise ValueError("Размер изображения должен быть положительным")
+        if coordinate_scale <= 0:
+            raise ValueError("Масштаб координат должен быть положительным")
 
         points = {}
         for name, index in cls.LANDMARK_INDEXES.items():
@@ -98,8 +101,8 @@ class MediaPipeAdapter(FacePointAdapter):
                     f"MediaPipe не вернул точку с индексом {index}"
                 ) from error
             points[name] = [
-                float(landmark.x * width + offset_x),
-                float(landmark.y * height + offset_y),
+                float((landmark.x * width + offset_x) / coordinate_scale),
+                float((landmark.y * height + offset_y) / coordinate_scale),
             ]
 
         validate_landmarks(points)
@@ -139,10 +142,19 @@ class MediaPipeAdapter(FacePointAdapter):
         with Image.open(image_file) as source:
             image = ImageOps.exif_transpose(source).convert("RGB")
 
-        if min(image.size) < self.min_image_size:
+        if min(image.size) < 64:
             raise ImageQualityError(
-                "Короткая сторона фотографии должна быть не меньше "
-                f"{self.min_image_size} пикселей"
+                "Короткая сторона фотографии должна быть не меньше 64 пикселей"
+            )
+        coordinate_scale = 1.0
+        if min(image.size) < self.min_image_size:
+            coordinate_scale = self.min_image_size / min(image.size)
+            image = image.resize(
+                (
+                    round(image.width * coordinate_scale),
+                    round(image.height * coordinate_scale),
+                ),
+                Image.Resampling.LANCZOS,
             )
 
         options = mp.tasks.vision.FaceLandmarkerOptions(
@@ -171,6 +183,7 @@ class MediaPipeAdapter(FacePointAdapter):
                         height=crop.height,
                         offset_x=left,
                         offset_y=top,
+                        coordinate_scale=coordinate_scale,
                     )
 
         raise FaceNotFoundError(

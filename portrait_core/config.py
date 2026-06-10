@@ -36,4 +36,5 @@ QUALITY_THRESHOLDS = {
     "min_contrast": 28.0,
     "min_face_coverage": 0.035,
     "max_mouth_opening_ratio": 0.22,
+    "min_source_dimension": 256,
 }

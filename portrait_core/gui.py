@@ -325,6 +325,7 @@ class PortraitWindow(QMainWindow):
             "contrast": "Контраст",
             "face_size": "Размер лица",
             "neutral_expression": "Нейтральное выражение",
+            "resolution": "Разрешение",
         }
         rows = [
             (labels[name], "пройдено" if passed else "предупреждение")

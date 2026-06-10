@@ -4,3 +4,5 @@ __pycache__/
 .venv/
 venv/
 portrait_core/models/*.task
+test_photos/
+test_reports/
