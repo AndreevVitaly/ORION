@@ -10,12 +10,16 @@ from portrait_core.adapters.mediapipe_adapter import (
     MediaPipeAdapter,
 )
 from portrait_core.landmarks import REQUIRED_LANDMARKS, validate_landmarks
+from portrait_core.mesh import project_semantic_points, validate_mesh
 
 
 class LandmarkContractTestCase(unittest.TestCase):
     def test_manual_adapter_satisfies_contract(self):
-        points = ManualAdapter().extract_points("test-image")
+        adapter = ManualAdapter()
+        mesh = adapter.extract_mesh("test-image")
+        points = adapter.extract_points("test-image")
 
+        validate_mesh(mesh)
         self.assertEqual(set(points), set(REQUIRED_LANDMARKS))
         validate_landmarks(points)
 
@@ -27,10 +31,13 @@ class LandmarkContractTestCase(unittest.TestCase):
             validate_landmarks(points)
 
     def test_mediapipe_landmarks_are_converted_to_pixels(self):
-        landmarks = [SimpleNamespace(x=0.0, y=0.0) for _ in range(478)]
-        landmarks[1] = SimpleNamespace(x=0.25, y=0.75)
+        landmarks = [
+            SimpleNamespace(x=0.0, y=0.0, z=0.0)
+            for _ in range(478)
+        ]
+        landmarks[1] = SimpleNamespace(x=0.25, y=0.75, z=-0.1)
 
-        points = MediaPipeAdapter.convert_landmarks(
+        mesh = MediaPipeAdapter.convert_mesh(
             landmarks,
             width=400,
             height=200,
@@ -38,8 +45,27 @@ class LandmarkContractTestCase(unittest.TestCase):
             offset_y=20,
             coordinate_scale=2,
         )
+        points = project_semantic_points(mesh)
 
+        self.assertEqual(mesh["schema"], "portrait-mesh")
+        self.assertEqual(len(mesh["vertices"]), 478)
+        self.assertEqual(mesh["source"]["topology"], "mediapipe-478")
         self.assertEqual(points["nose_tip"], [55.0, 85.0])
+        self.assertEqual(mesh["vertices"][1][2], -20.0)
+
+    def test_legacy_conversion_still_returns_named_points(self):
+        landmarks = [
+            SimpleNamespace(x=0.0, y=0.0, z=0.0)
+            for _ in range(478)
+        ]
+
+        points = MediaPipeAdapter.convert_landmarks(
+            landmarks,
+            width=400,
+            height=200,
+        )
+
+        self.assertEqual(set(points), set(REQUIRED_LANDMARKS))
 
     def test_invalid_image_size_is_rejected(self):
         landmarks = [SimpleNamespace(x=0.0, y=0.0) for _ in range(478)]

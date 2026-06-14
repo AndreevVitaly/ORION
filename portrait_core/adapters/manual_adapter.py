@@ -1,14 +1,14 @@
 """Ручной адаптер точек лица."""
 
 from .base import FacePointAdapter
-from portrait_core.landmarks import validate_landmarks
+from portrait_core.mesh import build_mesh
 
 
 class ManualAdapter(FacePointAdapter):
     """Временный адаптер с тестовыми координатами без внешних библиотек."""
 
-    def extract_points(self, image_path: str) -> dict:
-        """Вернуть тестовый словарь точек лица в формате [x, y]."""
+    def extract_mesh(self, image_path: str) -> dict:
+        """Вернуть тестовую сетку с семантическими вершинами."""
         # image_path пока не используется: позже здесь можно читать ручную
         # разметку из файла или заменить источник на другую реализацию.
         points = {
@@ -35,5 +35,14 @@ class ManualAdapter(FacePointAdapter):
             "right_brow_inner": [265, 160],
             "right_brow_outer": [320, 165],
         }
-        validate_landmarks(points)
-        return points
+        names = list(points)
+        vertices = [[*points[name], 0.0] for name in names]
+        return build_mesh(
+            vertices,
+            {name: index for index, name in enumerate(names)},
+            source="manual",
+            source_topology="portrait-semantic-22",
+            image_width=480,
+            image_height=500,
+            metadata={"synthetic": True},
+        )

@@ -15,12 +15,16 @@ class BaseAdapter:
 
 
 class FacePointAdapter:
-    """Базовый адаптер для получения точек лица из изображения."""
+    """Базовый адаптер сетки лица с совместимым API именованных точек."""
+
+    def extract_mesh(self, image_path: str) -> dict:
+        """Извлечь полную сетку в формате Portrait Mesh Schema."""
+        raise NotImplementedError(
+            "Метод extract_mesh должен быть реализован в наследнике"
+        )
 
     def extract_points(self, image_path: str) -> dict:
-        """Извлечь точки лица из изображения и вернуть их в едином формате."""
-        # Конкретный способ извлечения точек задают наследники:
-        # MediaPipe, ручная разметка или будущая собственная модель.
-        raise NotImplementedError(
-            "Метод extract_points должен быть реализован в наследнике"
-        )
+        """Спроецировать сетку в именованные точки старого контракта."""
+        from portrait_core.mesh import project_semantic_points
+
+        return project_semantic_points(self.extract_mesh(image_path))

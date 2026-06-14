@@ -6,3 +6,4 @@ venv/
 portrait_core/models/*.task
 test_photos/
 test_reports/
+.test-tmp/

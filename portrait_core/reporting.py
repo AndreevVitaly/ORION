@@ -4,12 +4,25 @@ import json
 from pathlib import Path
 
 
-def build_report(image_path: str, points: dict, analysis: dict) -> dict:
+def build_report(
+    image_path: str,
+    points: dict,
+    analysis: dict,
+    *,
+    mesh: dict | None = None,
+    canonical_mesh: dict | None = None,
+    zones: dict | None = None,
+    features: dict | None = None,
+) -> dict:
     """Собрать переносимый JSON-отчет."""
     return {
-        "schema_version": 1,
+        "schema_version": 3,
         "image": str(Path(image_path).resolve()),
         "points": points,
+        "mesh": mesh,
+        "canonical_mesh": canonical_mesh,
+        "zones": zones,
+        "features": features,
         **analysis,
     }
 

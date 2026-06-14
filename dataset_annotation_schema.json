@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portrait Landmark Annotation",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "subject_id",
+    "split",
+    "image",
+    "consent",
+    "vertices",
+    "review"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "subject_id": {"type": "string", "minLength": 1},
+    "split": {"enum": ["train", "validation", "test"]},
+    "image": {
+      "type": "object",
+      "required": ["path", "width", "height", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "width": {"type": "integer", "minimum": 64},
+        "height": {"type": "integer", "minimum": 64},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "consent": {
+      "type": "object",
+      "required": ["biometric_processing", "version"],
+      "properties": {
+        "biometric_processing": {"const": true},
+        "version": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "vertices": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["x", "y", "visible", "confidence"],
+        "properties": {
+          "x": {"type": "number", "minimum": 0, "maximum": 1},
+          "y": {"type": "number", "minimum": 0, "maximum": 1},
+          "z": {"type": ["number", "null"]},
+          "visible": {"type": "boolean"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": ["status", "annotator_id"],
+      "properties": {
+        "status": {"enum": ["draft", "reviewed", "rejected"]},
+        "annotator_id": {"type": "string"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": ["adapter", "topology"],
+      "properties": {
+        "adapter": {"type": "string"},
+        "topology": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

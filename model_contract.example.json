@@ -1,0 +1,38 @@
+{
+  "model_id": "portrait-landmarker",
+  "model_version": "0.1.0",
+  "topology_id": "portrait-mesh-478-v1",
+  "input_name": "image",
+  "input_size": [256, 256],
+  "vertex_count": 478,
+  "output_coordinates": "normalized-image",
+  "semantic_map": {
+    "face_left": 234,
+    "face_right": 454,
+    "face_top": 10,
+    "chin": 152,
+    "left_eye_outer": 33,
+    "left_eye_inner": 133,
+    "right_eye_inner": 362,
+    "right_eye_outer": 263,
+    "nose_tip": 1,
+    "nose_bridge": 168,
+    "nose_left": 98,
+    "nose_right": 327,
+    "mouth_left": 61,
+    "mouth_right": 291,
+    "upper_lip": 13,
+    "lower_lip": 14,
+    "jaw_left": 172,
+    "jaw_right": 397,
+    "left_brow_outer": 70,
+    "left_brow_inner": 107,
+    "right_brow_inner": 336,
+    "right_brow_outer": 300
+  },
+  "contours": {
+    "face_oval": [10, 338, 297, 332, 284, 251, 389, 356, 454, 323, 361, 288, 397, 365, 379, 378, 400, 377, 152, 148, 176, 149, 150, 136, 172, 58, 132, 93, 234, 127, 162, 21, 54, 103, 67, 109],
+    "lips_outer": [61, 185, 40, 39, 37, 0, 267, 269, 270, 409, 291, 375, 321, 405, 314, 17, 84, 181, 91, 146],
+    "mouth_opening": [78, 191, 80, 81, 82, 13, 312, 311, 310, 415, 308, 324, 318, 402, 317, 14, 87, 178, 88, 95]
+  }
+}

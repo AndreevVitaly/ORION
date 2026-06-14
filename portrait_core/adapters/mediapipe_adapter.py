@@ -2,10 +2,8 @@
 
 from pathlib import Path
 
-import numpy as np
-from PIL import Image, ImageOps
-
-from portrait_core.landmarks import validate_landmarks
+from portrait_core.mesh import build_mesh, project_semantic_points
+from portrait_core.topologies import MEDIAPIPE_478_CONTOURS
 
 from .base import FacePointAdapter
 
@@ -77,7 +75,7 @@ class MediaPipeAdapter(FacePointAdapter):
         return mp
 
     @classmethod
-    def convert_landmarks(
+    def convert_mesh(
         cls,
         landmarks,
         width: int,
@@ -86,27 +84,57 @@ class MediaPipeAdapter(FacePointAdapter):
         offset_y: int = 0,
         coordinate_scale: float = 1.0,
     ) -> dict:
-        """Преобразовать нормализованные точки MediaPipe в пиксели."""
+        """Преобразовать всю сетку детектора в Portrait Mesh Schema."""
         if width <= 0 or height <= 0:
             raise ValueError("Размер изображения должен быть положительным")
         if coordinate_scale <= 0:
             raise ValueError("Масштаб координат должен быть положительным")
 
-        points = {}
-        for name, index in cls.LANDMARK_INDEXES.items():
-            try:
-                landmark = landmarks[index]
-            except IndexError as error:
-                raise FaceAdapterError(
-                    f"MediaPipe не вернул точку с индексом {index}"
-                ) from error
-            points[name] = [
-                float((landmark.x * width + offset_x) / coordinate_scale),
-                float((landmark.y * height + offset_y) / coordinate_scale),
-            ]
+        if not landmarks:
+            raise FaceAdapterError("Детектор не вернул вершины лица")
 
-        validate_landmarks(points)
-        return points
+        vertices = []
+        for landmark in landmarks:
+            vertices.append(
+                [
+                    float((landmark.x * width + offset_x) / coordinate_scale),
+                    float((landmark.y * height + offset_y) / coordinate_scale),
+                    float(
+                        getattr(landmark, "z", 0.0)
+                        * width
+                        / coordinate_scale
+                    ),
+                ]
+            )
+
+        missing_indexes = [
+            index
+            for index in cls.LANDMARK_INDEXES.values()
+            if index >= len(vertices)
+        ]
+        if missing_indexes:
+            raise FaceAdapterError(
+                f"Детектор не вернул вершину с индексом {min(missing_indexes)}"
+            )
+
+        return build_mesh(
+            vertices,
+            cls.LANDMARK_INDEXES,
+            source="mediapipe-face-landmarker",
+            source_topology=f"mediapipe-{len(vertices)}",
+            image_width=round(width / coordinate_scale),
+            image_height=round(height / coordinate_scale),
+            metadata={
+                "coordinate_scale": coordinate_scale,
+                "crop_offset": [offset_x, offset_y],
+                "contours": MEDIAPIPE_478_CONTOURS,
+            },
+        )
+
+    @classmethod
+    def convert_landmarks(cls, *args, **kwargs) -> dict:
+        """Совместимый метод: вернуть 22 именованные точки из полной сетки."""
+        return project_semantic_points(cls.convert_mesh(*args, **kwargs))
 
     @staticmethod
     def _candidate_regions(width: int, height: int) -> list[tuple[int, int, int, int]]:
@@ -125,18 +153,22 @@ class MediaPipeAdapter(FacePointAdapter):
         return regions
 
     @staticmethod
-    def _to_mp_image(mp, image: Image.Image):
+    def _to_mp_image(mp, image):
         """Создать MediaPipe Image без передачи Unicode-пути нативному коду."""
+        import numpy as np
+
         rgb = np.ascontiguousarray(image.convert("RGB"))
         return mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
 
-    def extract_points(self, image_path: str) -> dict:
-        """Найти одно лицо на фотографии и вернуть именованные точки."""
+    def extract_mesh(self, image_path: str) -> dict:
+        """Найти одно лицо и вернуть полную сетку в проектном формате."""
         image_file = Path(image_path)
         if not image_file.is_file():
             raise FileNotFoundError(f"Фотография не найдена: {image_file}")
         if not self.model_path.is_file():
             raise FileNotFoundError(f"Модель MediaPipe не найдена: {self.model_path}")
+
+        from PIL import Image, ImageOps
 
         mp = self._load_mediapipe()
         with Image.open(image_file) as source:
@@ -177,7 +209,7 @@ class MediaPipeAdapter(FacePointAdapter):
                         "На фотографии найдено несколько лиц; требуется одно лицо"
                     )
                 if face_count == 1:
-                    return self.convert_landmarks(
+                    mesh = self.convert_mesh(
                         result.face_landmarks[0],
                         width=crop.width,
                         height=crop.height,
@@ -185,6 +217,11 @@ class MediaPipeAdapter(FacePointAdapter):
                         offset_y=top,
                         coordinate_scale=coordinate_scale,
                     )
+                    mesh["image_size"] = {
+                        "width": round(image.width / coordinate_scale),
+                        "height": round(image.height / coordinate_scale),
+                    }
+                    return mesh
 
         raise FaceNotFoundError(
             "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас "

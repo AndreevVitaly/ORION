@@ -19,12 +19,19 @@ class ReportingTestCase(unittest.TestCase):
         self.analysis = analyze_points(self.points)
 
     def test_report_is_serializable_and_contains_schema(self):
-        report = build_report("photo.jpg", self.points, self.analysis)
+        mesh = ManualAdapter().extract_mesh("test-image")
+        report = build_report(
+            "photo.jpg",
+            self.points,
+            self.analysis,
+            mesh=mesh,
+        )
         restored = json.loads(report_to_json(report))
 
-        self.assertEqual(restored["schema_version"], 1)
+        self.assertEqual(restored["schema_version"], 3)
         self.assertIn("measurements", restored)
         self.assertIn("points", restored)
+        self.assertEqual(restored["mesh"]["schema"], "portrait-mesh")
 
     def test_report_can_be_saved(self):
         report = build_report("photo.jpg", self.points, self.analysis)
@@ -34,7 +41,7 @@ class ReportingTestCase(unittest.TestCase):
 
             self.assertEqual(
                 json.loads(output.read_text(encoding="utf-8"))["schema_version"],
-                1,
+                3,
             )
 
     def test_landmarks_are_drawn_on_copy(self):
