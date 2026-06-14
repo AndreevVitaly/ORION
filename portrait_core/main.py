@@ -1,12 +1,23 @@
 """Запуск портретного анализа с ручными точками или фотографией."""
 
 import argparse
+import sys
+from pathlib import Path
 from pprint import pprint
+
+# Поддерживаем запуск как модуля и напрямую через кнопку Run в IDE.
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from portrait_core.adapters.factory import create_mesh_adapter
 from portrait_core.adapters.manual_adapter import ManualAdapter
 from portrait_core.analyzer import analyze_points
 from portrait_core.pipeline import analyze_photo_with_adapter
+
+
+DEFAULT_MODEL_PATH = (
+    Path(__file__).resolve().parent / "models" / "face_landmarker.task"
+)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -20,7 +31,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--model",
-        default="portrait_core/models/face_landmarker.task",
+        default=str(DEFAULT_MODEL_PATH),
         help="Путь к модели выбранного backend.",
     )
     parser.add_argument(
