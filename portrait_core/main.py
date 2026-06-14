@@ -27,7 +27,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "image",
         nargs="?",
-        help="Путь к фотографии. Без аргумента используются тестовые точки.",
+        help="Путь к фотографии. Без аргумента открывается GUI.",
+    )
+    parser.add_argument(
+        "--demo",
+        action="store_true",
+        help="Использовать встроенные тестовые точки без фотографии.",
     )
     parser.add_argument(
         "--model",
@@ -57,10 +62,14 @@ def main():
             args.topology,
         )
         _, result = analyze_photo_with_adapter(args.image, adapter)
-    else:
+    elif args.demo:
         adapter = ManualAdapter()
         points = adapter.extract_points("manual-test-image")
         result = analyze_points(points)
+    else:
+        from portrait_core.gui import main as run_gui
+
+        return run_gui()
     pprint(result, sort_dicts=False)
 
 

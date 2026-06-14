@@ -64,6 +64,18 @@ python -m portrait_core.main
 python -m portrait_core.main path\to\photo.jpg
 ```
 
+При запуске без аргументов открывается графический интерфейс:
+
+```powershell
+python portrait_core\main.py
+```
+
+Тестовые координаты доступны отдельно:
+
+```powershell
+python portrait_core\main.py --demo
+```
+
 Через собственную ONNX-модель:
 
 ```powershell

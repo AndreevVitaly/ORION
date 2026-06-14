@@ -25,6 +25,7 @@ class EntrypointTestCase(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0, result.stderr.decode(errors="replace"))
         self.assertIn(b"--backend", result.stdout)
+        self.assertIn(b"--demo", result.stdout)
 
 
 if __name__ == "__main__":
