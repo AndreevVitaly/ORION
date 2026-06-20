@@ -28,7 +28,29 @@ class CliReportingTestCase(unittest.TestCase):
 
         self.assertIn("ПОРТРЕТ: краткий отчет", summary)
         self.assertIn("Морфология:", summary)
+        self.assertIn("Интерпретация:", summary)
         self.assertNotIn("'vertices'", summary)
+
+    def test_pose_warning_limits_symmetry_interpretation(self):
+        points = ManualAdapter().extract_points("manual-test-image")
+        analysis = analyze_points(points)
+        analysis["morphology"]["symmetry"] = "выраженная асимметрия"
+        analysis["quality"] = {
+            "status": "warning",
+            "issues": ["лицо заметно повернуто"],
+            "checks": {"head_yaw": False, "head_roll": True},
+            "metrics": {},
+        }
+
+        report = build_report("manual-test-image", points, analysis)
+        summary = format_summary_report(report)
+
+        self.assertTrue(
+            report["interpretation"]["symmetry"]["limited_by_pose"]
+        )
+        self.assertIn("выраженная геометрическая асимметрия", summary)
+        self.assertIn("поворотом головы", summary)
+        self.assertIn("не с устойчивой анатомической особенностью", summary)
 
     def test_demo_mode_prints_summary_by_default(self):
         result = subprocess.run(
@@ -44,6 +66,7 @@ class CliReportingTestCase(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("ПОРТРЕТ: краткий отчет", result.stdout)
+        self.assertIn("Интерпретация:", result.stdout)
         self.assertNotIn("'measurements'", result.stdout)
 
     def test_demo_mode_can_print_full_json(self):
@@ -61,6 +84,7 @@ class CliReportingTestCase(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('"measurements"', result.stdout)
         self.assertIn('"schema_version"', result.stdout)
+        self.assertIn('"interpretation"', result.stdout)
 
 
 if __name__ == "__main__":

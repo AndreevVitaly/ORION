@@ -286,6 +286,10 @@ class PortraitWindow(QMainWindow):
         morphology = report["morphology"]
         symmetry = report["measurements"]["symmetry"]["overall_score"]
         quality = report["quality"]
+        interpretation = report.get("interpretation", {})
+        symmetry_text = interpretation.get("symmetry", {}).get(
+            "text", "нет данных"
+        )
         quality_text = (
             "подходит"
             if quality["status"] == "passed"
@@ -297,6 +301,7 @@ class PortraitWindow(QMainWindow):
             ("Ширина челюсти", morphology["jaw_width"]),
             ("Ширина рта", morphology["mouth_width"]),
             ("Симметрия", morphology["symmetry"]),
+            ("Описание симметрии", symmetry_text),
             (
                 "Индекс симметрии",
                 "нет данных" if symmetry is None else f"{symmetry:.3f}",
