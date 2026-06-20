@@ -1,9 +1,8 @@
-"""Запуск портретного анализа с ручными точками или фотографией."""
+﻿"""Запуск портретного анализа с ручными точками или фотографией."""
 
 import argparse
 import sys
 from pathlib import Path
-from pprint import pprint
 
 # Поддерживаем запуск как модуля и напрямую через кнопку Run в IDE.
 if __package__ in (None, ""):
@@ -13,6 +12,12 @@ from portrait_core.adapters.factory import create_mesh_adapter
 from portrait_core.adapters.manual_adapter import ManualAdapter
 from portrait_core.analyzer import analyze_points
 from portrait_core.pipeline import analyze_photo_with_adapter
+from portrait_core.reporting import (
+    build_report,
+    format_summary_report,
+    report_to_json,
+    save_report,
+)
 
 
 DEFAULT_MODEL_PATH = (
@@ -49,6 +54,15 @@ def build_parser() -> argparse.ArgumentParser:
         "--topology",
         help="Путь к JSON-sidecar собственной ONNX-модели.",
     )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Напечатать полный технический JSON вместо краткой сводки.",
+    )
+    parser.add_argument(
+        "--output",
+        help="Сохранить полный JSON-отчет в файл.",
+    )
     return parser
 
 
@@ -65,12 +79,22 @@ def main():
     elif args.demo:
         adapter = ManualAdapter()
         points = adapter.extract_points("manual-test-image")
-        result = analyze_points(points)
+        result = build_report(
+            "manual-test-image",
+            points,
+            analyze_points(points),
+        )
     else:
         from portrait_core.gui import main as run_gui
 
         return run_gui()
-    pprint(result, sort_dicts=False)
+
+    if args.output:
+        save_report(result, args.output)
+    if args.json:
+        print(report_to_json(result))
+    else:
+        print(format_summary_report(result))
 
 
 if __name__ == "__main__":

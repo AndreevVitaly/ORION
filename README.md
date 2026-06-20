@@ -63,6 +63,12 @@ python -m portrait_core.main
 ```powershell
 python -m portrait_core.main path\to\photo.jpg
 ```
+По умолчанию команда выводит короткую сводку. Полный технический отчет:
+
+```powershell
+python -m portrait_core.main path\to\photo.jpg --json
+python -m portrait_core.main path\to\photo.jpg --output report.json
+```
 
 При запуске без аргументов открывается графический интерфейс:
 
