@@ -36,7 +36,7 @@ from PyQt6.QtWidgets import (
 from portrait_core.dataset import build_draft_annotation
 from portrait_core.pipeline import analyze_photo
 from portrait_core.reporting import report_to_json, save_report
-from portrait_core.visualization import draw_landmarks, landmark_color
+from portrait_core.visualization import draw_landmarks, landmark_color, landmark_label
 
 
 MODEL_PATH = Path(__file__).parent / "models" / "face_landmarker.task"
@@ -62,6 +62,7 @@ class LandmarkEditor(QLabel):
         self.scale = 1.0
         self.offset_x = 0.0
         self.offset_y = 0.0
+        self.label_language = "ru"
 
     def set_image(self, pixmap: QPixmap, points: dict | None = None):
         self.base_pixmap = pixmap
@@ -71,6 +72,10 @@ class LandmarkEditor(QLabel):
         }
         self.selected_name = None
         self.dragging_name = None
+        self._render()
+
+    def set_label_language(self, language: str):
+        self.label_language = language
         self._render()
 
     def current_points(self) -> dict:
@@ -146,7 +151,7 @@ class LandmarkEditor(QLabel):
             painter.setBrush(QBrush(color))
             painter.drawEllipse(QPointF(x, y), radius, radius)
             painter.setPen(QColor("#ffffff"))
-            painter.drawText(round(x + radius + 3), round(y - radius), name)
+            painter.drawText(round(x + radius + 3), round(y - radius), landmark_label(name, self.label_language))
 
     def _image_to_widget(self, point):
         return (
@@ -250,6 +255,11 @@ class PortraitWindow(QMainWindow):
         self.analyze_action.setEnabled(False)
         self.analyze_action.triggered.connect(self.start_analysis)
         toolbar.addAction(self.analyze_action)
+
+        self.label_language_action = QAction("Точки: RU", self)
+        self.label_language_action.setToolTip("Переключить язык подписей точек")
+        self.label_language_action.triggered.connect(self.toggle_label_language)
+        toolbar.addAction(self.label_language_action)
 
         toolbar.addSeparator()
 
@@ -375,6 +385,11 @@ class PortraitWindow(QMainWindow):
         self.save_annotation_action.setEnabled(False)
         self.save_preview_action.setEnabled(False)
         self.statusBar().showMessage(Path(path).name)
+
+    def toggle_label_language(self):
+        language = "en" if self.preview_label.label_language == "ru" else "ru"
+        self.preview_label.set_label_language(language)
+        self.label_language_action.setText(f"Точки: {language.upper()}")
 
     def start_analysis(self):
         if not self.image_path:
@@ -553,7 +568,7 @@ class PortraitWindow(QMainWindow):
             "JPEG (*.jpg);;PNG (*.png)",
         )
         if path:
-            draw_landmarks(self.image_path, self.preview_label.current_points()).save(path)
+            draw_landmarks(self.image_path, self.preview_label.current_points(), label_language=self.preview_label.label_language).save(path)
             self.statusBar().showMessage(f"Изображение сохранено: {path}")
 
 

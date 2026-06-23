@@ -1,8 +1,10 @@
-"""Визуализация именованных точек на фотографии."""
+﻿"""Визуализация именованных точек на фотографии."""
 
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+
+from portrait_core.landmarks import LANDMARK_LABELS_RU
 
 
 ZONE_COLORS = {
@@ -25,11 +27,33 @@ def landmark_color(name: str) -> str:
     return "#FFFFFF"
 
 
-def draw_landmarks(image_path: str, points: dict) -> Image.Image:
+def landmark_label(name: str, language: str = "en") -> str:
+    """Вернуть подпись точки для выбранного языка интерфейса."""
+    if language == "ru":
+        return LANDMARK_LABELS_RU.get(name, name)
+    return name
+
+
+def _load_label_font(size: int):
+    for font_name in ("arial.ttf", "DejaVuSans.ttf"):
+        try:
+            return ImageFont.truetype(font_name, size=size)
+        except OSError:
+            continue
+    return ImageFont.load_default()
+
+
+def draw_landmarks(
+    image_path: str,
+    points: dict,
+    *,
+    label_language: str = "en",
+) -> Image.Image:
     """Вернуть копию изображения с точками и короткими подписями."""
     image = Image.open(Path(image_path)).convert("RGB")
     draw = ImageDraw.Draw(image)
-    font = ImageFont.load_default()
+    font_size = max(10, round(min(image.size) / 55))
+    font = _load_label_font(font_size)
     radius = max(3, round(min(image.size) / 180))
 
     for name, (x, y) in points.items():
@@ -44,7 +68,7 @@ def draw_landmarks(image_path: str, points: dict) -> Image.Image:
         )
         draw.text(
             (x + radius + 2, y - radius),
-            name,
+            landmark_label(name, label_language),
             fill="#FFFFFF",
             stroke_width=2,
             stroke_fill="#111111",

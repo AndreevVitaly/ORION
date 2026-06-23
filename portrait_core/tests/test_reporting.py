@@ -1,4 +1,4 @@
-"""Тесты отчета и визуализации."""
+﻿"""Тесты отчета и визуализации."""
 
 import json
 import tempfile
@@ -10,7 +10,7 @@ from PIL import Image
 from portrait_core.adapters.manual_adapter import ManualAdapter
 from portrait_core.analyzer import analyze_points
 from portrait_core.reporting import build_report, report_to_json, save_report
-from portrait_core.visualization import draw_landmarks, landmark_color
+from portrait_core.visualization import draw_landmarks, landmark_color, landmark_label
 
 
 class ReportingTestCase(unittest.TestCase):
@@ -57,6 +57,19 @@ class ReportingTestCase(unittest.TestCase):
     def test_zone_colors_are_stable(self):
         self.assertEqual(landmark_color("nose_tip"), "#E09F00")
         self.assertEqual(landmark_color("mouth_left"), "#E5484D")
+
+    def test_landmark_labels_can_be_localized(self):
+        self.assertEqual(landmark_label("nose_tip", "ru"), "кончик носа")
+        self.assertEqual(landmark_label("nose_tip", "en"), "nose_tip")
+
+    def test_landmarks_can_be_drawn_with_russian_labels(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "source.png"
+            Image.new("RGB", (500, 500), "black").save(source)
+
+            rendered = draw_landmarks(source, self.points, label_language="ru")
+
+            self.assertEqual(rendered.size, (500, 500))
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-"""Контракт именованных точек лица, используемых измерительным ядром."""
+﻿"""Контракт именованных точек лица, используемых измерительным ядром."""
 
 REQUIRED_LANDMARKS = frozenset(
     {
@@ -26,6 +26,31 @@ REQUIRED_LANDMARKS = frozenset(
         "right_brow_outer",
     }
 )
+
+LANDMARK_LABELS_RU = {
+    "face_left": "лицо слева",
+    "face_right": "лицо справа",
+    "face_top": "верх лица",
+    "chin": "подбородок",
+    "left_eye_outer": "левый глаз внеш.",
+    "left_eye_inner": "левый глаз внутр.",
+    "right_eye_inner": "правый глаз внутр.",
+    "right_eye_outer": "правый глаз внеш.",
+    "nose_tip": "кончик носа",
+    "nose_bridge": "переносица",
+    "nose_left": "нос слева",
+    "nose_right": "нос справа",
+    "mouth_left": "рот слева",
+    "mouth_right": "рот справа",
+    "upper_lip": "верхняя губа",
+    "lower_lip": "нижняя губа",
+    "jaw_left": "челюсть слева",
+    "jaw_right": "челюсть справа",
+    "left_brow_outer": "левая бровь внеш.",
+    "left_brow_inner": "левая бровь внутр.",
+    "right_brow_inner": "правая бровь внутр.",
+    "right_brow_outer": "правая бровь внеш.",
+}
 
 
 def validate_landmarks(points: dict) -> None:
