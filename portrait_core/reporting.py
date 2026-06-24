@@ -3,6 +3,8 @@
 import json
 from pathlib import Path
 
+from portrait_core.lic import calculate_lic_core
+
 
 POSE_LIMITATION_TEXT = (
     "Интерпретация ограничена: показатель может быть связан с поворотом "
@@ -34,6 +36,7 @@ def build_report(
         "canonical_mesh": canonical_mesh,
         "zones": zones,
         "features": features,
+        "lic_core": calculate_lic_core(points).to_dict(),
         **analysis,
     }
     report["interpretation"] = build_interpretation(report)
