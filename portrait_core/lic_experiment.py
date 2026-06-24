@@ -64,7 +64,7 @@ def analyze_lic_stability(report_directory: str) -> dict:
     ranking.sort(
         key=lambda row: (
             row["coefficient_of_variation"] is None,
-            row["coefficient_of_variation"] or float("inf"),
+            row["coefficient_of_variation"] if row["coefficient_of_variation"] is not None else float("inf"),
             row["name"],
         )
     )

@@ -162,6 +162,12 @@ python -m portrait_core.batch photos reports
 ```powershell
 python -m portrait_core.lic_experiment reports --output lic_stability.json
 ```
+
+Построить TOP-10 самых стабильных опорных точек лица:
+
+```powershell
+python -m portrait_core.lic_stability_report reports --output lic_points.json
+```
 ## Пакетная проверка
 
 ```powershell

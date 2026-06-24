@@ -7,6 +7,7 @@ from pathlib import Path
 
 from portrait_core.lic import calculate_lic_core, distance, safe_distance
 from portrait_core.lic_experiment import analyze_lic_stability
+from portrait_core.lic_stability_report import build_lic_stability_report
 
 
 class LICTestCase(unittest.TestCase):
@@ -64,18 +65,30 @@ class LICTestCase(unittest.TestCase):
     def test_lic_experiment_selects_lowest_cv_candidate(self):
         with tempfile.TemporaryDirectory() as directory:
             reports = [
-                {"lic_core": {"base_candidates": {
-                    "ipd": {"value": 100.0, "available": True},
-                    "face_width": {"value": 200.0, "available": True},
-                }}},
-                {"lic_core": {"base_candidates": {
-                    "ipd": {"value": 101.0, "available": True},
-                    "face_width": {"value": 240.0, "available": True},
-                }}},
-                {"lic_core": {"base_candidates": {
-                    "ipd": {"value": 99.0, "available": True},
-                    "face_width": {"value": 160.0, "available": True},
-                }}},
+                {
+                    "lic_core": {
+                        "base_candidates": {
+                            "ipd": {"value": 100.0, "available": True},
+                            "face_width": {"value": 200.0, "available": True},
+                        }
+                    }
+                },
+                {
+                    "lic_core": {
+                        "base_candidates": {
+                            "ipd": {"value": 101.0, "available": True},
+                            "face_width": {"value": 240.0, "available": True},
+                        }
+                    }
+                },
+                {
+                    "lic_core": {
+                        "base_candidates": {
+                            "ipd": {"value": 99.0, "available": True},
+                            "face_width": {"value": 160.0, "available": True},
+                        }
+                    }
+                },
             ]
             for index, report in enumerate(reports):
                 path = Path(directory) / f"report_{index}_portrait.json"
@@ -92,6 +105,76 @@ class LICTestCase(unittest.TestCase):
             result["ranking"][0]["coefficient_of_variation"],
             result["ranking"][1]["coefficient_of_variation"],
         )
+
+    def test_lic_stability_report_ranks_stable_points(self):
+        with tempfile.TemporaryDirectory() as directory:
+            reports = [
+                {
+                    "points": {
+                        "left_eye_inner": [100.0, 100.0],
+                        "right_eye_inner": [200.0, 100.0],
+                        "nose_tip": [150.0, 180.0],
+                        "mouth_left": [130.0, 240.0],
+                    },
+                    "lic_core": {
+                        "recommended_base": "ipd",
+                        "base_candidates": {
+                            "ipd": {"value": 100.0, "available": True},
+                            "face_width": {"value": 220.0, "available": True},
+                        },
+                    },
+                },
+                {
+                    "points": {
+                        "left_eye_inner": [102.0, 100.0],
+                        "right_eye_inner": [202.0, 100.0],
+                        "nose_tip": [152.0, 180.5],
+                        "mouth_left": [150.0, 260.0],
+                    },
+                    "lic_core": {
+                        "recommended_base": "ipd",
+                        "base_candidates": {
+                            "ipd": {"value": 100.0, "available": True},
+                            "face_width": {"value": 260.0, "available": True},
+                        },
+                    },
+                },
+                {
+                    "points": {
+                        "left_eye_inner": [99.0, 101.0],
+                        "right_eye_inner": [199.0, 101.0],
+                        "nose_tip": [149.0, 181.0],
+                    },
+                    "lic_core": {
+                        "recommended_base": "ipd",
+                        "base_candidates": {
+                            "ipd": {"value": 100.0, "available": True},
+                            "face_width": {"value": 180.0, "available": True},
+                        },
+                    },
+                },
+            ]
+            for index, report in enumerate(reports):
+                path = Path(directory) / f"report_{index}_portrait.json"
+                path.write_text(
+                    json.dumps(report, ensure_ascii=False),
+                    encoding="utf-8",
+                )
+
+            result = build_lic_stability_report(directory)
+
+        names = [row["name"] for row in result["top_10"]]
+        self.assertEqual(result["experiment"], "lic_point_stability")
+        self.assertEqual(result["normalization_base"], "ipd")
+        self.assertIn("nose_tip", names)
+        self.assertLess(
+            names.index("nose_tip"),
+            names.index("mouth_left"),
+        )
+        mouth_row = next(
+            row for row in result["ranking"] if row["name"] == "mouth_left"
+        )
+        self.assertAlmostEqual(mouth_row["detection_rate"], 2 / 3)
 
 
 if __name__ == "__main__":
