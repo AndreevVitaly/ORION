@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../passed"
+		},
+		{
+			"path": "../rejected"
+		},
+		{
+			"path": "../warning"
+		}
+	]
+}

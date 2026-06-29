@@ -1,0 +1,161 @@
+{
+  "status": "automatic_candidate_requires_human_confirmation",
+  "selected_count": 9,
+  "detected_faces_total": 158,
+  "images_with_detected_faces": 58,
+  "selection": [
+    {
+      "source_image": "IMG_8853.JPG",
+      "crop": "001_IMG_8853_JPG_man_auto.jpg",
+      "detected_face_crop": "IMG_8853_face_01.jpg",
+      "face_index": 1,
+      "distance_to_cluster": 0.2675468623638153,
+      "center": [
+        0.3442,
+        0.4627
+      ],
+      "box": [
+        1558,
+        1453,
+        2738,
+        2337
+      ]
+    },
+    {
+      "source_image": "IMG_8854.JPG",
+      "crop": "002_IMG_8854_JPG_man_auto.jpg",
+      "detected_face_crop": "IMG_8854_face_01.jpg",
+      "face_index": 1,
+      "distance_to_cluster": 0.3855346441268921,
+      "center": [
+        0.337,
+        0.4934
+      ],
+      "box": [
+        1508,
+        1577,
+        2698,
+        2468
+      ]
+    },
+    {
+      "source_image": "IMG_8855.JPG",
+      "crop": "003_IMG_8855_JPG_man_auto.jpg",
+      "detected_face_crop": "IMG_8855_face_01.jpg",
+      "face_index": 1,
+      "distance_to_cluster": 0.3700372576713562,
+      "center": [
+        0.3329,
+        0.4837
+      ],
+      "box": [
+        1572,
+        1608,
+        2583,
+        2366
+      ]
+    },
+    {
+      "source_image": "IMG_8856.JPG",
+      "crop": "004_IMG_8856_JPG_man_auto.jpg",
+      "detected_face_crop": "IMG_8856_face_01.jpg",
+      "face_index": 1,
+      "distance_to_cluster": 0.14677484333515167,
+      "center": [
+        0.3463,
+        0.5074
+      ],
+      "box": [
+        1686,
+        1731,
+        2636,
+        2443
+      ]
+    },
+    {
+      "source_image": "IMG_8857.JPG",
+      "crop": "005_IMG_8857_JPG_man_auto.jpg",
+      "detected_face_crop": "IMG_8857_face_01.jpg",
+      "face_index": 1,
+      "distance_to_cluster": 0.20406000316143036,
+      "center": [
+        0.2567,
+        0.4634
+      ],
+      "box": [
+        865,
+        1287,
+        2079,
+        2196
+      ]
+    },
+    {
+      "source_image": "IMG_8857.jpeg",
+      "crop": "006_IMG_8857_jpeg_man_auto.jpg",
+      "detected_face_crop": "IMG_8857_face_01.jpg",
+      "face_index": 1,
+      "distance_to_cluster": 0.20406000316143036,
+      "center": [
+        0.2641,
+        0.4695
+      ],
+      "box": [
+        943,
+        1350,
+        2135,
+        2242
+      ]
+    },
+    {
+      "source_image": "IMG_8877.JPG",
+      "crop": "007_IMG_8877_JPG_man_auto.jpg",
+      "detected_face_crop": "IMG_8877_face_01.jpg",
+      "face_index": 1,
+      "distance_to_cluster": 0.20887279510498047,
+      "center": [
+        0.3143,
+        0.4298
+      ],
+      "box": [
+        740,
+        813,
+        3182,
+        2642
+      ]
+    },
+    {
+      "source_image": "IMG_8878.JPG",
+      "crop": "008_IMG_8878_JPG_man_auto.jpg",
+      "detected_face_crop": "IMG_8878_face_01.jpg",
+      "face_index": 1,
+      "distance_to_cluster": 0.17187830805778503,
+      "center": [
+        0.3536,
+        0.4331
+      ],
+      "box": [
+        1017,
+        852,
+        3395,
+        2633
+      ]
+    },
+    {
+      "source_image": "IMG_8879.JPG",
+      "crop": "009_IMG_8879_JPG_man_auto.jpg",
+      "detected_face_crop": "IMG_8879_face_02.jpg",
+      "face_index": 2,
+      "distance_to_cluster": 0.22471657395362854,
+      "center": [
+        0.3412,
+        0.4448
+      ],
+      "box": [
+        926,
+        890,
+        3332,
+        2691
+      ]
+    }
+  ]
+}

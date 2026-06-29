@@ -1,0 +1,245 @@
+[
+  {
+    "image": "Без имени-1.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-1_portrait.json"
+  },
+  {
+    "image": "Без имени-10.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-10_portrait.json"
+  },
+  {
+    "image": "Без имени-11.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-11_portrait.json"
+  },
+  {
+    "image": "Без имени-12.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "Без имени-12_portrait.json"
+  },
+  {
+    "image": "Без имени-13.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "Без имени-13_portrait.json"
+  },
+  {
+    "image": "Без имени-14.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "Без имени-14_portrait.json"
+  },
+  {
+    "image": "Без имени-15.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "Без имени-15_portrait.json"
+  },
+  {
+    "image": "Без имени-16.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "Без имени-16_portrait.json"
+  },
+  {
+    "image": "Без имени-17.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-17_portrait.json"
+  },
+  {
+    "image": "Без имени-18.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-18_portrait.json"
+  },
+  {
+    "image": "Без имени-19.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-19_portrait.json"
+  },
+  {
+    "image": "Без имени-2.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-2_portrait.json"
+  },
+  {
+    "image": "Без имени-20.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-20_portrait.json"
+  },
+  {
+    "image": "Без имени-21.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-21_portrait.json"
+  },
+  {
+    "image": "Без имени-22.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-22_portrait.json"
+  },
+  {
+    "image": "Без имени-23.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-23_portrait.json"
+  },
+  {
+    "image": "Без имени-24.jpg",
+    "status": "warning",
+    "issues": "неподходящая яркость",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "Без имени-24_portrait.json"
+  },
+  {
+    "image": "Без имени-25.jpg",
+    "status": "warning",
+    "issues": "неподходящая яркость; низкий контраст",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-25_portrait.json"
+  },
+  {
+    "image": "Без имени-26.jpg",
+    "status": "warning",
+    "issues": "неподходящая яркость; низкий контраст",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-26_portrait.json"
+  },
+  {
+    "image": "Без имени-27.jpg",
+    "status": "warning",
+    "issues": "неподходящая яркость; низкое исходное разрешение фотографии",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-27_portrait.json"
+  },
+  {
+    "image": "Без имени-3.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-3_portrait.json"
+  },
+  {
+    "image": "Без имени-4.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-4_portrait.json"
+  },
+  {
+    "image": "Без имени-5.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-5_portrait.json"
+  },
+  {
+    "image": "Без имени-6.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-6_portrait.json"
+  },
+  {
+    "image": "Без имени-7.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-7_portrait.json"
+  },
+  {
+    "image": "Без имени-8.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "Без имени-8_portrait.json"
+  },
+  {
+    "image": "Без имени-9.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-9_portrait.json"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "portrait_core_available": false,
+  "warnings": [
+    "portrait_core недоступен, использована базовая OpenCV-оценка"
+  ],
+  "metadata": {
+    "frame_index": 86700,
+    "timestamp_seconds": 3468.0,
+    "source_frame_size": [
+      640,
+      360
+    ],
+    "box": [
+      268,
+      54,
+      121,
+      121
+    ]
+  },
+  "quality": 0.8822480380205822,
+  "opencv_metrics": {
+    "blur_score": 123.5147253228815,
+    "width": 181,
+    "height": 181
+  },
+  "dataset_builder": {
+    "status": "warning",
+    "warnings": [
+      "portrait_core недоступен, использована базовая OpenCV-оценка"
+    ],
+    "rejection_reasons": []
+  }
+}

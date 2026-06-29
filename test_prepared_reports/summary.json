@@ -1,0 +1,374 @@
+[
+  {
+    "image": "IMG_8895_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_8896_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_8897_prepared.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "IMG_8897_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_8898_prepared.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_8898_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_8899_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_8899_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_8900_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_8900_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_8901_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_8901_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_8902_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_8902_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_8903_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_8903_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_8904_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_8904_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_8905_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_8905_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_8906_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_8906_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_9064_prepared.jpg",
+    "status": "warning",
+    "issues": "лицо занимает слишком малую часть кадра",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "IMG_9064_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_9065_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9066_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9068_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9069_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9070_prepared.jpg",
+    "status": "warning",
+    "issues": "лицо занимает слишком малую часть кадра",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_9070_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_9071_prepared.jpg",
+    "status": "warning",
+    "issues": "лицо занимает слишком малую часть кадра",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_9071_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_9072_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9100_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9101_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9102_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9103_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9104_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9105_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9106_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9107_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9108_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9109_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии найдено несколько лиц; требуется одно лицо",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9110_prepared.jpg",
+    "status": "warning",
+    "issues": "лицо занимает слишком малую часть кадра",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "IMG_9110_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_9111_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9112_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9113_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9114_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9115_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "IMG_9116_prepared.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы; лицо заметно повернуто; лицо занимает слишком малую часть кадра",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "IMG_9116_prepared_portrait.json"
+  },
+  {
+    "image": "IMG_9117_prepared.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "Без имени-10_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "Без имени-10_prepared_portrait.json"
+  },
+  {
+    "image": "Без имени-11_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "Без имени-11_prepared_portrait.json"
+  },
+  {
+    "image": "Без имени-1_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-1_prepared_portrait.json"
+  },
+  {
+    "image": "Без имени-2_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-2_prepared_portrait.json"
+  },
+  {
+    "image": "Без имени-3_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-3_prepared_portrait.json"
+  },
+  {
+    "image": "Без имени-4_prepared.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-4_prepared_portrait.json"
+  },
+  {
+    "image": "Без имени-5_prepared.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-5_prepared_portrait.json"
+  },
+  {
+    "image": "Без имени-6_prepared.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-6_prepared_portrait.json"
+  },
+  {
+    "image": "Без имени-7_prepared.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-7_prepared_portrait.json"
+  },
+  {
+    "image": "Без имени-8_prepared.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "Без имени-8_prepared_portrait.json"
+  },
+  {
+    "image": "Без имени-9_prepared.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "Без имени-9_prepared_portrait.json"
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "experiment": "lic_core_stability",
+  "reports_count": 27,
+  "ranking": [
+    {
+      "name": "nose_to_mouth",
+      "count": 27,
+      "mean": 42.40546874020999,
+      "std": 22.483988348287262,
+      "coefficient_of_variation": 0.5302143571630267,
+      "min": 21.92016190090892,
+      "max": 119.52543012886792
+    },
+    {
+      "name": "nose_to_chin",
+      "count": 27,
+      "mean": 113.16167666004557,
+      "std": 62.40784991449851,
+      "coefficient_of_variation": 0.5514928000049074,
+      "min": 67.44545115140025,
+      "max": 322.83306115577597
+    },
+    {
+      "name": "mouth_to_chin",
+      "count": 27,
+      "mean": 71.123196718594,
+      "std": 40.508093218576654,
+      "coefficient_of_variation": 0.5695482639630352,
+      "min": 40.08422359516112,
+      "max": 205.25495633282978
+    },
+    {
+      "name": "inner_eye_distance",
+      "count": 27,
+      "mean": 45.51569092457822,
+      "std": 26.153760977637546,
+      "coefficient_of_variation": 0.5746097762412448,
+      "min": 26.64132868839737,
+      "max": 133.41899588135357
+    },
+    {
+      "name": "face_width",
+      "count": 27,
+      "mean": 213.80327605683246,
+      "std": 125.47577274604274,
+      "coefficient_of_variation": 0.5868748835854564,
+      "min": 124.37977037721056,
+      "max": 636.4365661162351
+    },
+    {
+      "name": "ipd",
+      "count": 27,
+      "mean": 85.46746330240215,
+      "std": 50.564582930156746,
+      "coefficient_of_variation": 0.5916237709226077,
+      "min": 50.51577835210484,
+      "max": 255.19277548994563
+    },
+    {
+      "name": "outer_eye_distance",
+      "count": 27,
+      "mean": 125.42006428699158,
+      "std": 74.99049328008834,
+      "coefficient_of_variation": 0.597914645526667,
+      "min": 73.05708006441549,
+      "max": 376.967944930192
+    },
+    {
+      "name": "eye_midpoint_to_nose",
+      "count": 27,
+      "mean": 60.15677564941128,
+      "std": 38.249068620006135,
+      "coefficient_of_variation": 0.6358231172980172,
+      "min": 33.22243258163799,
+      "max": 189.9487410593262
+    }
+  ],
+  "best_candidate": "nose_to_mouth"
+}

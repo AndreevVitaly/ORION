@@ -1,0 +1,10 @@
+﻿image,status,issues,duplicate_of,face_proportion,symmetry,report
+001_IMG_8853_JPG_man_auto.jpg,warning,сильный наклон головы,,широкое,выраженная асимметрия,001_IMG_8853_JPG_man_auto_portrait.json
+002_IMG_8854_JPG_man_auto.jpg,warning,сильный наклон головы,,широкое,выраженная асимметрия,002_IMG_8854_JPG_man_auto_portrait.json
+003_IMG_8855_JPG_man_auto.jpg,warning,сильный наклон головы; рот заметно открыт; требуется нейтральное выражение,,широкое,выраженная асимметрия,003_IMG_8855_JPG_man_auto_portrait.json
+004_IMG_8856_JPG_man_auto.jpg,warning,сильный наклон головы,,широкое,выраженная асимметрия,004_IMG_8856_JPG_man_auto_portrait.json
+005_IMG_8857_JPG_man_auto.jpg,warning,сильный наклон головы,,широкое,выраженная асимметрия,005_IMG_8857_JPG_man_auto_portrait.json
+006_IMG_8857_jpeg_man_auto.jpg,duplicate,точная копия другого файла,005_IMG_8857_JPG_man_auto.jpg,,,
+007_IMG_8877_JPG_man_auto.jpg,warning,сильный наклон головы,,широкое,умеренная симметрия,007_IMG_8877_JPG_man_auto_portrait.json
+008_IMG_8878_JPG_man_auto.jpg,warning,сильный наклон головы,,широкое,высокая симметрия,008_IMG_8878_JPG_man_auto_portrait.json
+009_IMG_8879_JPG_man_auto.jpg,warning,сильный наклон головы,,широкое,высокая симметрия,009_IMG_8879_JPG_man_auto_portrait.json
