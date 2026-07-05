@@ -1,0 +1,13 @@
+﻿[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "profile-research-platform"
+version = "0.1.0"
+description = "Profile research platform: portrait_core Scientific Engine and applications"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+include = ["portrait_core*", "apps*"]

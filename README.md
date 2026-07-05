@@ -1,8 +1,40 @@
-# ПОРТРЕТ
+﻿# ПОРТРЕТ
 
-Ранний прототип объективного морфологического анализа лица. Текущий этап
-измеряет геометрические пропорции и не формирует психологических выводов.
+Profile — исследовательская платформа для изучения геометрии лица, landmark, устойчивости измерений, LIC и воспроизводимых экспериментов.
 
+Проект не формирует психологических, HR, криминалистических или биометрических выводов о человеке и не предназначен для оценки личности, характера, интеллекта, профессиональной пригодности или надежности.
+
+## Архитектура Profile
+
+Profile больше не рассматривается как отдельная библиотека анализа лица. Это единая научная платформа:
+
+```text
+portrait_core
+↓
+Scientific Engine
+↓
+Applications
+↓
+Research
+```
+
+- `portrait_core/` — Scientific Engine и единственный источник истины. Только этот слой анализирует лицо, вычисляет landmark, Mesh, morphology, measurements, LIC, Report Pack и создает `portrait.json`.
+- `apps/` — приложения платформы. Они получают данные и передают изображения в `portrait_core`, не повторяя геометрию лица.
+- `apps/dataset_builder/` — официальный Dataset Builder платформы Profile.
+- `research/` — научная память проекта: гипотезы, методология, эксперименты, LIC, Dataset Builder и knowledge registry. В этом разделе не должно быть исполняемого кода.
+- `docs/` — архитектурные и технические документы платформы.
+
+Официальный API Scientific Engine:
+
+```python
+import portrait_core
+
+report = portrait_core.analyze("photo.jpg")
+report = portrait_core.process_face("face_crop.jpg")
+report = portrait_core.create_portrait_report("photo.jpg")
+```
+
+Подробнее: `docs/architecture.md`.
 ## Архитектура сетки
 
 Внутренний контракт проекта не привязан к индексам MediaPipe. Любой детектор
@@ -119,6 +151,21 @@ from portrait_core.pipeline import analyze_photo_with_adapter
 points, report = analyze_photo_with_adapter("photo.jpg", adapter)
 ```
 
+## Dataset Builder
+
+Dataset Builder является официальным приложением Profile:
+
+```powershell
+python -m apps.dataset_builder input_images output_dataset
+```
+
+Для видео:
+
+```powershell
+python -m apps.dataset_builder video.mp4 output_dataset --frame-step 24
+```
+
+Приложение не вычисляет собственные landmark, morphology, measurements, LIC или Report Pack. Оно подготавливает входные изображения и вызывает официальный API `portrait_core.create_portrait_report()`.
 ## Графический интерфейс
 
 ```powershell
@@ -168,6 +215,14 @@ python -m portrait_core.lic_experiment reports --output lic_stability.json
 ```powershell
 python -m portrait_core.lic_stability_report reports --output lic_points.json
 ```
+
+Упаковать серию отчетов в один компактный исследовательский файл для передачи в ChatGPT или дальнейшего анализа:
+
+```powershell
+python -m portrait_core.report_pack reports `
+  --output report_pack.json `
+  --markdown report_pack.md
+```
 ## Пакетная проверка
 
 ```powershell
@@ -208,3 +263,5 @@ python -m portrait_core.series reports `
 `portrait_core/config.py`. Индикатор визуального напряжения является только
 геометрическим описанием положения губ и бровей, а не оценкой эмоций или
 психологического состояния.
+
+
