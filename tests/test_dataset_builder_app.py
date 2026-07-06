@@ -39,6 +39,34 @@ class DatasetBuilderAppTestCase(unittest.TestCase):
             report_mock.assert_called_once()
             self.assertEqual(report_mock.call_args.kwargs["model_path"], "model.task")
 
+    @patch("apps.dataset_builder.builder.create_portrait_report")
+    def test_dataset_builder_emits_log_and_progress_callbacks(self, report_mock):
+        report_mock.return_value = {
+            "schema_version": 3,
+            "quality": {
+                "status": "warning",
+                "issues": ["test warning"],
+            },
+        }
+        logs = []
+        progress = []
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "frame001.jpg").write_bytes(b"one")
+            (root / "frame002.jpg").write_bytes(b"two")
+            output = root / "dataset"
+
+            summary = build_dataset(
+                str(root),
+                str(output),
+                log=logs.append,
+                progress=lambda current, total: progress.append((current, total)),
+            )
+
+        self.assertEqual(summary["created_reports"], 2)
+        self.assertEqual(progress[-1], (2, 2))
+        self.assertTrue(any("portrait_core" in message for message in logs))
+
 
 if __name__ == "__main__":
     unittest.main()

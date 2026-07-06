@@ -1,0 +1,328 @@
+﻿"""GUI Dataset Builder для платформы Profile."""
+
+from __future__ import annotations
+
+import os
+import sys
+from pathlib import Path
+
+from PyQt6.QtCore import QObject, QThread, pyqtSignal, pyqtSlot
+from PyQt6.QtWidgets import (
+    QApplication,
+    QCheckBox,
+    QFileDialog,
+    QFormLayout,
+    QGridLayout,
+    QGroupBox,
+    QHBoxLayout,
+    QLabel,
+    QLineEdit,
+    QMainWindow,
+    QMessageBox,
+    QPushButton,
+    QProgressBar,
+    QRadioButton,
+    QSpinBox,
+    QTextEdit,
+    QVBoxLayout,
+    QWidget,
+)
+
+from apps.dataset_builder.builder import StopRequested, build_dataset
+
+
+class BuildWorker(QObject):
+    log = pyqtSignal(str)
+    progress = pyqtSignal(int)
+    finished = pyqtSignal(object)
+    failed = pyqtSignal(str)
+
+    def __init__(
+        self,
+        *,
+        input_path: str,
+        output_dir: str,
+        backend: str,
+        model_path: str | None,
+        topology_path: str | None,
+        frame_step: int,
+        copy_images: bool,
+    ) -> None:
+        super().__init__()
+        self.input_path = input_path
+        self.output_dir = output_dir
+        self.backend = backend
+        self.model_path = model_path
+        self.topology_path = topology_path
+        self.frame_step = frame_step
+        self.copy_images = copy_images
+        self._stop = False
+
+    @pyqtSlot()
+    def run(self) -> None:
+        try:
+            summary = build_dataset(
+                self.input_path,
+                self.output_dir,
+                backend=self.backend,
+                model_path=self.model_path,
+                topology_path=self.topology_path,
+                frame_step=self.frame_step,
+                copy_images=self.copy_images,
+                log=self.log.emit,
+                progress=self._emit_progress,
+                should_stop=lambda: self._stop,
+            )
+            self.finished.emit(summary)
+        except StopRequested as error:
+            self.failed.emit(str(error))
+        except Exception as error:  # noqa: BLE001 - ошибка должна попасть в GUI.
+            self.failed.emit(str(error))
+
+    def stop(self) -> None:
+        self._stop = True
+
+    def _emit_progress(self, current: int, total: int) -> None:
+        self.progress.emit(int(current / max(total, 1) * 100))
+
+
+class MainWindow(QMainWindow):
+    def __init__(self) -> None:
+        super().__init__()
+        self.setWindowTitle("Profile Dataset Builder")
+        self.resize(920, 680)
+        self.thread: QThread | None = None
+        self.worker: BuildWorker | None = None
+        self._build_ui()
+
+    def _build_ui(self) -> None:
+        root = QWidget()
+        layout = QVBoxLayout(root)
+
+        source_box = QGroupBox("Источник")
+        source_layout = QGridLayout(source_box)
+        self.file_radio = QRadioButton("Файл / видео")
+        self.folder_radio = QRadioButton("Папка изображений")
+        self.folder_radio.setChecked(True)
+        self.input_path = QLineEdit()
+        self.input_path.setPlaceholderText("Папка изображений, файл изображения или видео")
+        browse_file = QPushButton("Файл...")
+        browse_folder = QPushButton("Папка...")
+        browse_file.clicked.connect(self._choose_file)
+        browse_folder.clicked.connect(self._choose_folder)
+        source_layout.addWidget(self.folder_radio, 0, 0)
+        source_layout.addWidget(self.file_radio, 0, 1)
+        source_layout.addWidget(self.input_path, 1, 0, 1, 2)
+        source_layout.addWidget(browse_file, 1, 2)
+        source_layout.addWidget(browse_folder, 1, 3)
+        layout.addWidget(source_box)
+
+        output_box = QGroupBox("Результат")
+        output_layout = QGridLayout(output_box)
+        self.output_path = QLineEdit("dataset")
+        output_browse = QPushButton("Выбрать...")
+        output_browse.clicked.connect(self._choose_output)
+        output_layout.addWidget(QLabel("Папка результата"), 0, 0)
+        output_layout.addWidget(self.output_path, 0, 1)
+        output_layout.addWidget(output_browse, 0, 2)
+        layout.addWidget(output_box)
+
+        settings_box = QGroupBox("Настройки")
+        settings_layout = QFormLayout(settings_box)
+        self.frame_step = QSpinBox()
+        self.frame_step.setRange(1, 100000)
+        self.frame_step.setValue(24)
+        self.copy_images = QCheckBox("копировать изображения в passed / warning")
+        self.copy_images.setChecked(True)
+        self.backend_mediapipe = QRadioButton("MediaPipe")
+        self.backend_onnx = QRadioButton("ONNX")
+        self.backend_mediapipe.setChecked(True)
+        backend_row = QHBoxLayout()
+        backend_row.addWidget(self.backend_mediapipe)
+        backend_row.addWidget(self.backend_onnx)
+        backend_row.addStretch(1)
+        self.model_path = QLineEdit()
+        self.model_path.setPlaceholderText("Необязательно: путь к модели")
+        model_browse = QPushButton("Модель...")
+        model_browse.clicked.connect(self._choose_model)
+        model_row = QHBoxLayout()
+        model_row.addWidget(self.model_path)
+        model_row.addWidget(model_browse)
+        self.topology_path = QLineEdit()
+        self.topology_path.setPlaceholderText("Для ONNX: путь к topology/sidecar JSON")
+        topology_browse = QPushButton("Topology...")
+        topology_browse.clicked.connect(self._choose_topology)
+        topology_row = QHBoxLayout()
+        topology_row.addWidget(self.topology_path)
+        topology_row.addWidget(topology_browse)
+        settings_layout.addRow("Backend", backend_row)
+        settings_layout.addRow("Шаг кадров для видео", self.frame_step)
+        settings_layout.addRow("", self.copy_images)
+        settings_layout.addRow("Модель", model_row)
+        settings_layout.addRow("Topology", topology_row)
+        layout.addWidget(settings_box)
+
+        buttons = QHBoxLayout()
+        self.start_button = QPushButton("START")
+        self.stop_button = QPushButton("STOP")
+        self.open_button = QPushButton("Открыть папку результата")
+        self.stop_button.setEnabled(False)
+        self.start_button.clicked.connect(self._start)
+        self.stop_button.clicked.connect(self._stop)
+        self.open_button.clicked.connect(self._open_result)
+        buttons.addWidget(self.start_button)
+        buttons.addWidget(self.stop_button)
+        buttons.addWidget(self.open_button)
+        layout.addLayout(buttons)
+
+        counters = QHBoxLayout()
+        self.total_label = QLabel("Всего: 0")
+        self.passed_label = QLabel("Passed: 0")
+        self.warning_label = QLabel("Warning: 0")
+        self.rejected_label = QLabel("Rejected: 0")
+        counters.addWidget(self.total_label)
+        counters.addWidget(self.passed_label)
+        counters.addWidget(self.warning_label)
+        counters.addWidget(self.rejected_label)
+        counters.addStretch(1)
+        layout.addLayout(counters)
+
+        self.progress = QProgressBar()
+        self.log = QTextEdit()
+        self.log.setReadOnly(True)
+        layout.addWidget(self.progress)
+        layout.addWidget(self.log, 1)
+
+        self.setCentralWidget(root)
+
+    def _choose_file(self) -> None:
+        path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Выбрать файл",
+            "",
+            "Media (*.jpg *.jpeg *.png *.bmp *.webp *.mp4 *.avi *.mov *.mkv *.webm);;All files (*.*)",
+        )
+        if path:
+            self.input_path.setText(path)
+            self.file_radio.setChecked(True)
+
+    def _choose_folder(self) -> None:
+        path = QFileDialog.getExistingDirectory(self, "Выбрать папку изображений")
+        if path:
+            self.input_path.setText(path)
+            self.folder_radio.setChecked(True)
+
+    def _choose_output(self) -> None:
+        path = QFileDialog.getExistingDirectory(self, "Выбрать папку результата")
+        if path:
+            self.output_path.setText(path)
+
+    def _choose_model(self) -> None:
+        path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Выбрать модель",
+            "",
+            "Model (*.task *.onnx);;All files (*.*)",
+        )
+        if path:
+            self.model_path.setText(path)
+
+    def _choose_topology(self) -> None:
+        path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Выбрать topology JSON",
+            "",
+            "JSON (*.json);;All files (*.*)",
+        )
+        if path:
+            self.topology_path.setText(path)
+
+    def _start(self) -> None:
+        input_path = self.input_path.text().strip()
+        output_dir = self.output_path.text().strip()
+        if not input_path:
+            QMessageBox.warning(self, "Dataset Builder", "Источник не указан.")
+            return
+        if not output_dir:
+            QMessageBox.warning(self, "Dataset Builder", "Папка результата не указана.")
+            return
+        if not Path(input_path).exists():
+            QMessageBox.warning(self, "Dataset Builder", "Источник не найден.")
+            return
+
+        self.progress.setValue(0)
+        self.log.clear()
+        self._update_counters(None)
+        self.thread = QThread(self)
+        self.worker = BuildWorker(
+            input_path=input_path,
+            output_dir=output_dir,
+            backend="onnx" if self.backend_onnx.isChecked() else "mediapipe",
+            model_path=self.model_path.text().strip() or None,
+            topology_path=self.topology_path.text().strip() or None,
+            frame_step=self.frame_step.value(),
+            copy_images=self.copy_images.isChecked(),
+        )
+        self.worker.moveToThread(self.thread)
+        self.thread.started.connect(self.worker.run)
+        self.worker.log.connect(self._append_log)
+        self.worker.progress.connect(self.progress.setValue)
+        self.worker.finished.connect(self._finished)
+        self.worker.failed.connect(self._failed)
+        self.worker.finished.connect(self.thread.quit)
+        self.worker.failed.connect(self.thread.quit)
+        self.thread.finished.connect(self.thread.deleteLater)
+        self.start_button.setEnabled(False)
+        self.stop_button.setEnabled(True)
+        self.thread.start()
+
+    def _stop(self) -> None:
+        if self.worker:
+            self.worker.stop()
+            self._append_log("Остановка запрошена...")
+
+    def _finished(self, summary: dict) -> None:
+        self.progress.setValue(100)
+        self.start_button.setEnabled(True)
+        self.stop_button.setEnabled(False)
+        self._update_counters(summary)
+        self._append_log(f"Готово: {summary.get('output_dir')}")
+
+    def _failed(self, message: str) -> None:
+        self.start_button.setEnabled(True)
+        self.stop_button.setEnabled(False)
+        self._append_log(message)
+        QMessageBox.warning(self, "Dataset Builder", message)
+
+    def _append_log(self, message: str) -> None:
+        self.log.append(message)
+
+    def _update_counters(self, summary: dict | None) -> None:
+        if not summary:
+            self.total_label.setText("Всего: 0")
+            self.passed_label.setText("Passed: 0")
+            self.warning_label.setText("Warning: 0")
+            self.rejected_label.setText("Rejected: 0")
+            return
+        statuses = summary.get("statuses", {})
+        self.total_label.setText(f"Всего: {summary.get('total_images', 0)}")
+        self.passed_label.setText(f"Passed: {statuses.get('passed', 0)}")
+        self.warning_label.setText(f"Warning: {statuses.get('warning', 0)}")
+        self.rejected_label.setText(f"Rejected: {statuses.get('rejected', 0)}")
+
+    def _open_result(self) -> None:
+        path = Path(self.output_path.text().strip() or "dataset").resolve()
+        path.mkdir(parents=True, exist_ok=True)
+        os.startfile(path)
+
+
+
+def main() -> int:
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    return app.exec()
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

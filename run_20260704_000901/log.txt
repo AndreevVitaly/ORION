@@ -1,0 +1,690 @@
+Output directory: dataset\run_20260704_000901
+Скачивание YouTube-видео
+Скачивание видео: 0.0%
+Скачивание видео: 0.0%
+Скачивание видео: 0.0%
+Скачивание видео: 0.0%
+Скачивание видео: 0.0%
+Скачивание видео: 0.1%
+Скачивание видео: 0.2%
+Скачивание видео: 0.3%
+Скачивание видео: 0.6%
+Скачивание видео: 1.3%
+Скачивание видео: 2.5%
+Скачивание видео: 5.0%
+Скачивание видео: 10.0%
+Скачивание видео: 12.0%
+Скачивание видео: 12.0%
+Скачивание видео: 12.0%
+Скачивание видео: 12.0%
+Скачивание видео: 12.0%
+Скачивание видео: 12.1%
+Скачивание видео: 12.1%
+Скачивание видео: 12.1%
+Скачивание видео: 12.1%
+Скачивание видео: 12.2%
+Скачивание видео: 12.2%
+Скачивание видео: 12.2%
+Скачивание видео: 12.2%
+Скачивание видео: 12.3%
+Скачивание видео: 12.3%
+Скачивание видео: 12.3%
+Скачивание видео: 12.4%
+Скачивание видео: 12.4%
+Скачивание видео: 12.4%
+Скачивание видео: 12.5%
+Скачивание видео: 12.5%
+Скачивание видео: 12.5%
+Скачивание видео: 12.5%
+Скачивание видео: 12.6%
+Скачивание видео: 12.6%
+Скачивание видео: 12.6%
+Скачивание видео: 12.7%
+Скачивание видео: 12.7%
+Скачивание видео: 12.8%
+Скачивание видео: 12.8%
+Скачивание видео: 12.9%
+Скачивание видео: 12.9%
+Скачивание видео: 12.9%
+Скачивание видео: 13.0%
+Скачивание видео: 13.0%
+Скачивание видео: 13.0%
+Скачивание видео: 13.0%
+Скачивание видео: 13.1%
+Скачивание видео: 13.1%
+Скачивание видео: 13.1%
+Скачивание видео: 13.1%
+Скачивание видео: 13.2%
+Скачивание видео: 13.2%
+Скачивание видео: 13.2%
+Скачивание видео: 13.2%
+Скачивание видео: 13.3%
+Скачивание видео: 13.3%
+Скачивание видео: 13.3%
+Скачивание видео: 13.3%
+Скачивание видео: 13.4%
+Скачивание видео: 13.4%
+Скачивание видео: 13.4%
+Скачивание видео: 13.5%
+Скачивание видео: 13.5%
+Скачивание видео: 13.5%
+Скачивание видео: 13.5%
+Скачивание видео: 13.6%
+Скачивание видео: 13.6%
+Скачивание видео: 13.6%
+Скачивание видео: 13.6%
+Скачивание видео: 13.7%
+Скачивание видео: 13.7%
+Скачивание видео: 13.7%
+Скачивание видео: 13.8%
+Скачивание видео: 13.8%
+Скачивание видео: 13.8%
+Скачивание видео: 13.8%
+Скачивание видео: 13.8%
+Скачивание видео: 13.8%
+Скачивание видео: 13.8%
+Скачивание видео: 13.9%
+Скачивание видео: 13.9%
+Скачивание видео: 13.9%
+Скачивание видео: 13.9%
+Скачивание видео: 14.0%
+Скачивание видео: 14.0%
+Скачивание видео: 14.0%
+Скачивание видео: 14.0%
+Скачивание видео: 14.1%
+Скачивание видео: 14.1%
+Скачивание видео: 14.1%
+Скачивание видео: 14.2%
+Скачивание видео: 14.2%
+Скачивание видео: 14.2%
+Скачивание видео: 14.3%
+Скачивание видео: 14.3%
+Скачивание видео: 14.3%
+Скачивание видео: 14.3%
+Скачивание видео: 14.4%
+Скачивание видео: 14.4%
+Скачивание видео: 14.4%
+Скачивание видео: 14.4%
+Скачивание видео: 14.5%
+Скачивание видео: 14.5%
+Скачивание видео: 14.5%
+Скачивание видео: 14.5%
+Скачивание видео: 14.6%
+Скачивание видео: 14.6%
+Скачивание видео: 14.6%
+Скачивание видео: 14.7%
+Скачивание видео: 14.7%
+Скачивание видео: 14.7%
+Скачивание видео: 14.7%
+Скачивание видео: 14.8%
+Скачивание видео: 14.8%
+Скачивание видео: 14.8%
+Скачивание видео: 14.9%
+Скачивание видео: 14.9%
+Скачивание видео: 14.9%
+Скачивание видео: 14.9%
+Скачивание видео: 15.0%
+Скачивание видео: 15.0%
+Скачивание видео: 15.0%
+Скачивание видео: 15.0%
+Скачивание видео: 15.1%
+Скачивание видео: 15.1%
+Скачивание видео: 15.1%
+Скачивание видео: 15.1%
+Скачивание видео: 15.2%
+Скачивание видео: 15.2%
+Скачивание видео: 15.2%
+Скачивание видео: 15.2%
+Скачивание видео: 15.3%
+Скачивание видео: 15.3%
+Скачивание видео: 15.3%
+Скачивание видео: 15.4%
+Скачивание видео: 15.4%
+Скачивание видео: 15.4%
+Скачивание видео: 15.4%
+Скачивание видео: 15.5%
+Скачивание видео: 15.5%
+Скачивание видео: 15.5%
+Скачивание видео: 15.6%
+Скачивание видео: 15.6%
+Скачивание видео: 15.6%
+Скачивание видео: 15.6%
+Скачивание видео: 15.6%
+Скачивание видео: 15.7%
+Скачивание видео: 15.7%
+Скачивание видео: 15.7%
+Скачивание видео: 15.7%
+Скачивание видео: 15.7%
+Скачивание видео: 15.7%
+Скачивание видео: 15.8%
+Скачивание видео: 15.8%
+Скачивание видео: 15.8%
+Скачивание видео: 15.8%
+Скачивание видео: 15.9%
+Скачивание видео: 15.9%
+Скачивание видео: 15.9%
+Скачивание видео: 15.9%
+Скачивание видео: 16.0%
+Скачивание видео: 16.0%
+Скачивание видео: 16.0%
+Скачивание видео: 16.1%
+Скачивание видео: 16.1%
+Скачивание видео: 16.1%
+Скачивание видео: 16.1%
+Скачивание видео: 16.2%
+Скачивание видео: 16.3%
+Скачивание видео: 16.3%
+Скачивание видео: 16.3%
+Скачивание видео: 16.3%
+Скачивание видео: 16.4%
+Скачивание видео: 16.4%
+Скачивание видео: 16.4%
+Скачивание видео: 16.5%
+Скачивание видео: 16.5%
+Скачивание видео: 16.6%
+Скачивание видео: 16.6%
+Скачивание видео: 16.6%
+Скачивание видео: 16.7%
+Скачивание видео: 16.7%
+Скачивание видео: 16.7%
+Скачивание видео: 16.7%
+Скачивание видео: 16.7%
+Скачивание видео: 16.7%
+Скачивание видео: 16.8%
+Скачивание видео: 16.8%
+Скачивание видео: 16.9%
+Скачивание видео: 16.9%
+Скачивание видео: 16.9%
+Скачивание видео: 16.9%
+Скачивание видео: 17.0%
+Скачивание видео: 17.0%
+Скачивание видео: 17.0%
+Скачивание видео: 17.0%
+Скачивание видео: 17.0%
+Скачивание видео: 17.0%
+Скачивание видео: 17.1%
+Скачивание видео: 17.1%
+Скачивание видео: 17.1%
+Скачивание видео: 17.1%
+Скачивание видео: 17.1%
+Скачивание видео: 17.2%
+Скачивание видео: 17.2%
+Скачивание видео: 17.2%
+Скачивание видео: 17.2%
+Скачивание видео: 17.2%
+Скачивание видео: 17.2%
+Скачивание видео: 17.2%
+Скачивание видео: 17.3%
+Скачивание видео: 17.5%
+Скачивание видео: 17.8%
+Скачивание видео: 18.4%
+Скачивание видео: 19.7%
+Скачивание видео: 22.2%
+Скачивание видео: 27.2%
+Скачивание видео: 29.7%
+Скачивание видео: 29.7%
+Скачивание видео: 29.7%
+Скачивание видео: 29.7%
+Скачивание видео: 29.7%
+Скачивание видео: 29.7%
+Скачивание видео: 29.8%
+Скачивание видео: 29.9%
+Скачивание видео: 30.0%
+Скачивание видео: 30.3%
+Скачивание видео: 31.0%
+Скачивание видео: 32.2%
+Скачивание видео: 34.7%
+Скачивание видео: 39.4%
+Скачивание видео: 42.1%
+Скачивание видео: 42.1%
+Скачивание видео: 42.1%
+Скачивание видео: 42.1%
+Скачивание видео: 42.1%
+Скачивание видео: 42.1%
+Скачивание видео: 42.2%
+Скачивание видео: 42.2%
+Скачивание видео: 42.4%
+Скачивание видео: 42.7%
+Скачивание видео: 43.3%
+Скачивание видео: 44.6%
+Скачивание видео: 47.1%
+Скачивание видео: 52.1%
+Скачивание видео: 54.3%
+Скачивание видео: 54.3%
+Скачивание видео: 54.3%
+Скачивание видео: 54.4%
+Скачивание видео: 54.4%
+Скачивание видео: 54.4%
+Скачивание видео: 54.4%
+Скачивание видео: 54.5%
+Скачивание видео: 54.7%
+Скачивание видео: 55.0%
+Скачивание видео: 55.6%
+Скачивание видео: 56.9%
+Скачивание видео: 59.4%
+Скачивание видео: 64.4%
+Скачивание видео: 66.4%
+Скачивание видео: 66.4%
+Скачивание видео: 66.4%
+Скачивание видео: 66.4%
+Скачивание видео: 66.5%
+Скачивание видео: 66.5%
+Скачивание видео: 66.5%
+Скачивание видео: 66.6%
+Скачивание видео: 66.7%
+Скачивание видео: 67.1%
+Скачивание видео: 67.7%
+Скачивание видео: 68.9%
+Скачивание видео: 71.5%
+Скачивание видео: 76.5%
+Скачивание видео: 78.5%
+Скачивание видео: 78.5%
+Скачивание видео: 78.5%
+Скачивание видео: 78.5%
+Скачивание видео: 78.5%
+Скачивание видео: 78.6%
+Скачивание видео: 78.6%
+Скачивание видео: 78.7%
+Скачивание видео: 78.8%
+Скачивание видео: 79.1%
+Скачивание видео: 79.8%
+Скачивание видео: 81.0%
+Скачивание видео: 83.3%
+Скачивание видео: 87.3%
+Скачивание видео: 90.7%
+Скачивание видео: 90.7%
+Скачивание видео: 90.7%
+Скачивание видео: 90.7%
+Скачивание видео: 90.7%
+Скачивание видео: 90.7%
+Скачивание видео: 90.8%
+Скачивание видео: 90.9%
+Скачивание видео: 91.0%
+Скачивание видео: 91.3%
+Скачивание видео: 92.0%
+Скачивание видео: 93.2%
+Скачивание видео: 95.7%
+Скачивание видео: 100.0%
+Видео скачано: 100.0%
+К анализу кадров: 2118
+duplicates: frame000048.jpg
+duplicates: frame000120.jpg
+duplicates: frame000144.jpg
+duplicates: frame000168.jpg
+duplicates: frame000240.jpg
+duplicates: frame000264.jpg
+duplicates: frame000288.jpg
+duplicates: frame000312.jpg
+duplicates: frame000336.jpg
+duplicates: frame000360.jpg
+duplicates: frame000408.jpg
+duplicates: frame000456.jpg
+duplicates: frame000504.jpg
+duplicates: frame000528.jpg
+duplicates: frame000552.jpg
+duplicates: frame000576.jpg
+duplicates: frame000624.jpg
+duplicates: frame000648.jpg
+duplicates: frame000672.jpg
+duplicates: frame000696.jpg
+duplicates: frame000720.jpg
+duplicates: frame000744.jpg
+duplicates: frame000792.jpg
+duplicates: frame000816.jpg
+duplicates: frame000840.jpg
+duplicates: frame002808.jpg
+duplicates: frame002832.jpg
+duplicates: frame002856.jpg
+duplicates: frame002880.jpg
+duplicates: frame002904.jpg
+duplicates: frame002976.jpg
+duplicates: frame007704.jpg
+duplicates: frame007728.jpg
+duplicates: frame007752.jpg
+duplicates: frame007776.jpg
+duplicates: frame007800.jpg
+duplicates: frame007824.jpg
+duplicates: frame007848.jpg
+duplicates: frame007872.jpg
+duplicates: frame007920.jpg
+duplicates: frame008688.jpg
+duplicates: frame008736.jpg
+duplicates: frame008760.jpg
+duplicates: frame008784.jpg
+duplicates: frame008808.jpg
+duplicates: frame008856.jpg
+duplicates: frame008880.jpg
+duplicates: frame008904.jpg
+duplicates: frame008928.jpg
+duplicates: frame008976.jpg
+duplicates: frame009048.jpg
+duplicates: frame009072.jpg
+duplicates: frame009120.jpg
+duplicates: frame009192.jpg
+duplicates: frame010104.jpg
+duplicates: frame010128.jpg
+duplicates: frame010152.jpg
+duplicates: frame010176.jpg
+duplicates: frame010248.jpg
+duplicates: frame010272.jpg
+duplicates: frame010344.jpg
+duplicates: frame010368.jpg
+duplicates: frame010392.jpg
+duplicates: frame010416.jpg
+duplicates: frame010440.jpg
+duplicates: frame010464.jpg
+duplicates: frame010512.jpg
+duplicates: frame010560.jpg
+duplicates: frame010584.jpg
+duplicates: frame020760.jpg
+duplicates: frame020808.jpg
+duplicates: frame020832.jpg
+duplicates: frame020880.jpg
+duplicates: frame020904.jpg
+duplicates: frame021000.jpg
+duplicates: frame021072.jpg
+duplicates: frame021096.jpg
+duplicates: frame021120.jpg
+duplicates: frame021192.jpg
+duplicates: frame021216.jpg
+duplicates: frame021312.jpg
+duplicates: frame021336.jpg
+duplicates: frame021360.jpg
+duplicates: frame021384.jpg
+duplicates: frame021408.jpg
+duplicates: frame021432.jpg
+duplicates: frame021480.jpg
+duplicates: frame021504.jpg
+duplicates: frame021528.jpg
+duplicates: frame021552.jpg
+duplicates: frame021576.jpg
+duplicates: frame021600.jpg
+duplicates: frame021624.jpg
+duplicates: frame021648.jpg
+duplicates: frame021672.jpg
+duplicates: frame021696.jpg
+duplicates: frame021720.jpg
+duplicates: frame021744.jpg
+duplicates: frame021768.jpg
+duplicates: frame021792.jpg
+duplicates: frame021816.jpg
+duplicates: frame021840.jpg
+duplicates: frame021864.jpg
+duplicates: frame023328.jpg
+duplicates: frame023352.jpg
+duplicates: frame023376.jpg
+duplicates: frame023400.jpg
+duplicates: frame023424.jpg
+duplicates: frame023448.jpg
+duplicates: frame023472.jpg
+duplicates: frame023496.jpg
+duplicates: frame023544.jpg
+duplicates: frame023568.jpg
+duplicates: frame023640.jpg
+duplicates: frame023664.jpg
+duplicates: frame023688.jpg
+duplicates: frame023712.jpg
+duplicates: frame023736.jpg
+duplicates: frame023760.jpg
+duplicates: frame023784.jpg
+duplicates: frame023808.jpg
+duplicates: frame023832.jpg
+duplicates: frame023904.jpg
+duplicates: frame023928.jpg
+duplicates: frame023952.jpg
+duplicates: frame023976.jpg
+duplicates: frame024000.jpg
+duplicates: frame024048.jpg
+duplicates: frame024072.jpg
+duplicates: frame024096.jpg
+duplicates: frame025776.jpg
+duplicates: frame025824.jpg
+duplicates: frame025848.jpg
+duplicates: frame025872.jpg
+duplicates: frame025896.jpg
+duplicates: frame025920.jpg
+duplicates: frame025968.jpg
+duplicates: frame025992.jpg
+duplicates: frame026040.jpg
+duplicates: frame026088.jpg
+duplicates: frame027192.jpg
+duplicates: frame027216.jpg
+duplicates: frame027240.jpg
+duplicates: frame027264.jpg
+duplicates: frame027288.jpg
+duplicates: frame027336.jpg
+duplicates: frame027360.jpg
+duplicates: frame027384.jpg
+duplicates: frame027408.jpg
+duplicates: frame027432.jpg
+duplicates: frame027456.jpg
+duplicates: frame027480.jpg
+duplicates: frame027552.jpg
+duplicates: frame027600.jpg
+duplicates: frame028416.jpg
+duplicates: frame028440.jpg
+duplicates: frame028464.jpg
+duplicates: frame028488.jpg
+duplicates: frame028512.jpg
+duplicates: frame028536.jpg
+duplicates: frame028560.jpg
+duplicates: frame028608.jpg
+duplicates: frame028632.jpg
+duplicates: frame028656.jpg
+duplicates: frame029952.jpg
+duplicates: frame029976.jpg
+duplicates: frame030024.jpg
+duplicates: frame030072.jpg
+duplicates: frame030096.jpg
+duplicates: frame030120.jpg
+duplicates: frame030144.jpg
+duplicates: frame030192.jpg
+duplicates: frame030216.jpg
+duplicates: frame033312.jpg
+duplicates: frame033336.jpg
+duplicates: frame033384.jpg
+duplicates: frame033408.jpg
+duplicates: frame033432.jpg
+duplicates: frame033504.jpg
+duplicates: frame033528.jpg
+duplicates: frame033552.jpg
+duplicates: frame033576.jpg
+duplicates: frame033624.jpg
+duplicates: frame033648.jpg
+duplicates: frame033696.jpg
+duplicates: frame033720.jpg
+duplicates: frame039000.jpg
+duplicates: frame039048.jpg
+duplicates: frame039096.jpg
+duplicates: frame039120.jpg
+duplicates: frame039144.jpg
+duplicates: frame039168.jpg
+duplicates: frame039192.jpg
+duplicates: frame039216.jpg
+duplicates: frame039240.jpg
+duplicates: frame039288.jpg
+duplicates: frame039312.jpg
+duplicates: frame039336.jpg
+duplicates: frame039360.jpg
+duplicates: frame039384.jpg
+duplicates: frame039408.jpg
+duplicates: frame040032.jpg
+duplicates: frame040056.jpg
+duplicates: frame040080.jpg
+duplicates: frame040104.jpg
+duplicates: frame040128.jpg
+duplicates: frame040152.jpg
+duplicates: frame040176.jpg
+duplicates: frame040200.jpg
+duplicates: frame040224.jpg
+duplicates: frame040272.jpg
+duplicates: frame040296.jpg
+duplicates: frame040800.jpg
+duplicates: frame040824.jpg
+duplicates: frame040872.jpg
+duplicates: frame042768.jpg
+duplicates: frame042792.jpg
+duplicates: frame042816.jpg
+duplicates: frame042864.jpg
+duplicates: frame042888.jpg
+duplicates: frame042912.jpg
+duplicates: frame042936.jpg
+duplicates: frame042960.jpg
+duplicates: frame042984.jpg
+duplicates: frame043008.jpg
+duplicates: frame043056.jpg
+duplicates: frame043080.jpg
+duplicates: frame043104.jpg
+duplicates: frame043176.jpg
+duplicates: frame043200.jpg
+duplicates: frame043248.jpg
+duplicates: frame043296.jpg
+duplicates: frame043320.jpg
+duplicates: frame043344.jpg
+duplicates: frame044904.jpg
+duplicates: frame045144.jpg
+duplicates: frame045168.jpg
+duplicates: frame045192.jpg
+duplicates: frame045216.jpg
+duplicates: frame045240.jpg
+duplicates: frame045264.jpg
+duplicates: frame045288.jpg
+duplicates: frame045312.jpg
+duplicates: frame045336.jpg
+duplicates: frame045360.jpg
+duplicates: frame045384.jpg
+duplicates: frame045408.jpg
+duplicates: frame045432.jpg
+duplicates: frame045456.jpg
+duplicates: frame045480.jpg
+duplicates: frame045624.jpg
+duplicates: frame045648.jpg
+duplicates: frame045672.jpg
+duplicates: frame045696.jpg
+duplicates: frame045864.jpg
+duplicates: frame045888.jpg
+duplicates: frame045912.jpg
+duplicates: frame045936.jpg
+duplicates: frame045960.jpg
+duplicates: frame046128.jpg
+duplicates: frame046152.jpg
+duplicates: frame046176.jpg
+duplicates: frame046200.jpg
+duplicates: frame046224.jpg
+duplicates: frame046248.jpg
+duplicates: frame046272.jpg
+duplicates: frame050136.jpg
+duplicates: frame050160.jpg
+duplicates: frame050184.jpg
+duplicates: frame050208.jpg
+duplicates: frame050256.jpg
+duplicates: frame050280.jpg
+duplicates: frame050304.jpg
+duplicates: frame050352.jpg
+duplicates: frame050376.jpg
+duplicates: frame050400.jpg
+duplicates: frame050424.jpg
+duplicates: frame050448.jpg
+duplicates: frame050472.jpg
+duplicates: frame050496.jpg
+duplicates: frame050520.jpg
+duplicates: frame050568.jpg
+Auto-select: selected 96 of 96 suitable frames
+warning: frame000000.jpg
+warning: frame000024.jpg
+warning: frame000072.jpg
+warning: frame000096.jpg
+warning: frame000192.jpg
+warning: frame000216.jpg
+warning: frame000384.jpg
+warning: frame000432.jpg
+warning: frame000480.jpg
+warning: frame000600.jpg
+warning: frame000768.jpg
+warning: frame001176.jpg
+warning: frame001200.jpg
+warning: frame001224.jpg
+warning: frame002784.jpg
+warning: frame002928.jpg
+warning: frame002952.jpg
+warning: frame003000.jpg
+warning: frame003024.jpg
+warning: frame007896.jpg
+warning: frame007944.jpg
+warning: frame007968.jpg
+warning: frame007992.jpg
+warning: frame008712.jpg
+warning: frame008832.jpg
+warning: frame008952.jpg
+warning: frame009000.jpg
+warning: frame009024.jpg
+warning: frame009096.jpg
+warning: frame009144.jpg
+warning: frame009168.jpg
+warning: frame009216.jpg
+warning: frame009240.jpg
+warning: frame010080.jpg
+warning: frame010200.jpg
+warning: frame010224.jpg
+warning: frame010296.jpg
+warning: frame010320.jpg
+warning: frame010488.jpg
+warning: frame010536.jpg
+warning: frame020784.jpg
+warning: frame020856.jpg
+warning: frame020928.jpg
+warning: frame020952.jpg
+warning: frame020976.jpg
+warning: frame021024.jpg
+warning: frame021048.jpg
+warning: frame021144.jpg
+warning: frame021168.jpg
+warning: frame021240.jpg
+warning: frame021264.jpg
+warning: frame021288.jpg
+warning: frame021456.jpg
+warning: frame023520.jpg
+warning: frame023592.jpg
+warning: frame023616.jpg
+warning: frame023856.jpg
+warning: frame023880.jpg
+warning: frame024024.jpg
+warning: frame025800.jpg
+warning: frame025944.jpg
+warning: frame026016.jpg
+warning: frame026064.jpg
+warning: frame027312.jpg
+warning: frame027504.jpg
+warning: frame027528.jpg
+warning: frame027576.jpg
+warning: frame028584.jpg
+warning: frame030000.jpg
+warning: frame030048.jpg
+warning: frame030168.jpg
+warning: frame032592.jpg
+warning: frame033288.jpg
+warning: frame033360.jpg
+warning: frame033456.jpg
+warning: frame033480.jpg
+warning: frame033600.jpg
+warning: frame033672.jpg
+warning: frame039024.jpg
+warning: frame039072.jpg
+warning: frame039264.jpg
+warning: frame040248.jpg
+warning: frame040776.jpg
+warning: frame040848.jpg
+warning: frame040896.jpg
+warning: frame040920.jpg
+warning: frame042840.jpg
+warning: frame043032.jpg
+warning: frame043128.jpg
+warning: frame043152.jpg
+warning: frame043224.jpg
+warning: frame043272.jpg
+warning: frame044880.jpg
+warning: frame050232.jpg
+warning: frame050328.jpg
+warning: frame050544.jpg
+Анализ завершен
+Временное видео удалено

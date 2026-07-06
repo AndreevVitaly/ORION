@@ -8,7 +8,23 @@ Dataset Builder — официальное приложение платформ
 portrait_core.create_portrait_report(image_path)
 ```
 
-## Запуск
+## GUI
+
+```powershell
+python -m apps.dataset_builder.gui
+```
+
+GUI поддерживает:
+
+- выбор папки изображений, файла изображения или видео;
+- выбор папки результата;
+- настройку шага кадров для видео;
+- выбор backend MediaPipe/ONNX;
+- START/STOP;
+- прогресс, лог и счетчики `passed`, `warning`, `rejected`;
+- открытие папки результата.
+
+## CLI
 
 ```powershell
 python -m apps.dataset_builder input_images output_dataset

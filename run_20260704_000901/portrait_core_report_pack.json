@@ -1,0 +1,5582 @@
+{
+  "schema": "portrait-report-pack/1",
+  "source_directory": "run_20260704_000901\\portrait_core_reports",
+  "reports_count": 94,
+  "quality": {
+    "statuses": {
+      "error": 2,
+      "passed": 57,
+      "warning": 37
+    },
+    "reports_count": 94,
+    "summary_rows_count": 96,
+    "common_issues": [
+      {
+        "issue": "лицо заметно повернуто",
+        "count": 31
+      },
+      {
+        "issue": "сильный наклон головы",
+        "count": 6
+      },
+      {
+        "issue": "фотография размыта",
+        "count": 2
+      },
+      {
+        "issue": "рот заметно открыт",
+        "count": 2
+      },
+      {
+        "issue": "требуется нейтральное выражение",
+        "count": 2
+      },
+      {
+        "issue": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+        "count": 2
+      }
+    ]
+  },
+  "lic_stability": {
+    "experiment": "lic_core_stability",
+    "reports_count": 94,
+    "ranking": [
+      {
+        "name": "ipd",
+        "count": 94,
+        "mean": 53.43109790161421,
+        "std": 2.3708190239407103,
+        "coefficient_of_variation": 0.04437151990225313,
+        "min": 47.78286869311499,
+        "max": 61.51057198606841
+      },
+      {
+        "name": "outer_eye_distance",
+        "count": 94,
+        "mean": 77.76560633296272,
+        "std": 3.5303947904354955,
+        "coefficient_of_variation": 0.0453978944794655,
+        "min": 70.09711657361179,
+        "max": 90.67389221908762
+      },
+      {
+        "name": "face_width",
+        "count": 94,
+        "mean": 125.72425413719841,
+        "std": 5.821581995336814,
+        "coefficient_of_variation": 0.04630436692814998,
+        "min": 111.73117834109833,
+        "max": 140.9921089345881
+      },
+      {
+        "name": "inner_eye_distance",
+        "count": 94,
+        "mean": 29.099528434193697,
+        "std": 1.4523124966247007,
+        "coefficient_of_variation": 0.04990845469915403,
+        "min": 25.025300806203962,
+        "max": 33.065077187031434
+      },
+      {
+        "name": "nose_to_chin",
+        "count": 94,
+        "mean": 64.4104444422506,
+        "std": 3.731549499353058,
+        "coefficient_of_variation": 0.0579339194390858,
+        "min": 55.51190617547461,
+        "max": 75.9644256673262
+      },
+      {
+        "name": "mouth_to_chin",
+        "count": 94,
+        "mean": 41.5000735667939,
+        "std": 2.699060410617274,
+        "coefficient_of_variation": 0.06503748496428968,
+        "min": 36.21152045901493,
+        "max": 51.453921080852076
+      },
+      {
+        "name": "eye_midpoint_to_nose",
+        "count": 94,
+        "mean": 38.221457771228636,
+        "std": 3.867095396931791,
+        "coefficient_of_variation": 0.10117603101582283,
+        "min": 26.288098518328898,
+        "max": 47.61042562686522
+      },
+      {
+        "name": "nose_to_mouth",
+        "count": 94,
+        "mean": 23.498526956378864,
+        "std": 3.5571317008871697,
+        "coefficient_of_variation": 0.15137679512806898,
+        "min": 15.81537228211689,
+        "max": 34.48829698939243
+      }
+    ],
+    "best_candidate": "ipd"
+  },
+  "point_stability": {
+    "experiment": "lic_point_stability",
+    "reports_count": 94,
+    "normalization_base": "ipd",
+    "top_10": [
+      {
+        "name": "left_eye_inner",
+        "count": 94,
+        "detection_rate": 1.0,
+        "mean_position": {
+          "x": -0.27156539468990426,
+          "y": 0.004641829077119628
+        },
+        "mean_displacement": 0.017153520598946648,
+        "position_std": 0.011343345761423141,
+        "std_x": 0.006440523040400118,
+        "std_y": 0.019530346258265843
+      },
+      {
+        "name": "right_eye_inner",
+        "count": 94,
+        "detection_rate": 1.0,
+        "mean_position": {
+          "x": 0.27156539468990426,
+          "y": -0.004641829077119628
+        },
+        "mean_displacement": 0.017153520598946648,
+        "position_std": 0.011343345761423141,
+        "std_x": 0.006440523040400118,
+        "std_y": 0.019530346258265843
+      },
+      {
+        "name": "nose_bridge",
+        "count": 94,
+        "detection_rate": 1.0,
+        "mean_position": {
+          "x": 0.026244933146654548,
+          "y": -0.06024686252496603
+        },
+        "mean_displacement": 0.050514902230106504,
+        "position_std": 0.025781539372884014,
+        "std_x": 0.04927586362959867,
+        "std_y": 0.0280772574036351
+      },
+      {
+        "name": "left_eye_outer",
+        "count": 94,
+        "detection_rate": 1.0,
+        "mean_position": {
+          "x": -0.7344810012946642,
+          "y": 0.015793375861465318
+        },
+        "mean_displacement": 0.05185826785699187,
+        "position_std": 0.028258425970666745,
+        "std_x": 0.027930240818657543,
+        "std_y": 0.052035759159245146
+      },
+      {
+        "name": "nose_left",
+        "count": 94,
+        "detection_rate": 1.0,
+        "mean_position": {
+          "x": -0.237044567850777,
+          "y": 0.7256952728353779
+        },
+        "mean_displacement": 0.051891865704292606,
+        "position_std": 0.031760273580956656,
+        "std_x": 0.04427325834292528,
+        "std_y": 0.04172959740891529
+      },
+      {
+        "name": "nose_right",
+        "count": 94,
+        "detection_rate": 1.0,
+        "mean_position": {
+          "x": 0.3104262713387455,
+          "y": 0.7069364966925611
+        },
+        "mean_displacement": 0.05445746504740301,
+        "position_std": 0.03639102428757436,
+        "std_x": 0.046422080035119835,
+        "std_y": 0.04620511479588463
+      },
+      {
+        "name": "right_eye_outer",
+        "count": 94,
+        "detection_rate": 1.0,
+        "mean_position": {
+          "x": 0.7166113773340377,
+          "y": -0.027977491200008732
+        },
+        "mean_displacement": 0.055423125528431406,
+        "position_std": 0.03340902896869873,
+        "std_x": 0.022953878009009773,
+        "std_y": 0.060506243845731444
+      },
+      {
+        "name": "left_brow_outer",
+        "count": 94,
+        "detection_rate": 1.0,
+        "mean_position": {
+          "x": -0.9884591024876206,
+          "y": -0.24905367360947675
+        },
+        "mean_displacement": 0.07004824911355997,
+        "position_std": 0.04074220126448429,
+        "std_x": 0.03954967112842584,
+        "std_y": 0.07072840788102373
+      },
+      {
+        "name": "left_brow_inner",
+        "count": 94,
+        "detection_rate": 1.0,
+        "mean_position": {
+          "x": -0.22423953693704377,
+          "y": -0.3429743139275161
+        },
+        "mean_displacement": 0.07643955797201764,
+        "position_std": 0.037630068157733426,
+        "std_x": 0.07266617674050177,
+        "std_y": 0.044482072910682416
+      },
+      {
+        "name": "right_brow_inner",
+        "count": 94,
+        "detection_rate": 1.0,
+        "mean_position": {
+          "x": 0.2739315688001589,
+          "y": -0.3526285755870147
+        },
+        "mean_displacement": 0.07733569775833898,
+        "position_std": 0.039610308301144495,
+        "std_x": 0.07259857721367133,
+        "std_y": 0.0477413160483818
+      }
+    ]
+  },
+  "morphology": {
+    "face_proportion": {
+      "широкое": 83,
+      "среднее": 11
+    },
+    "jaw_width": {
+      "широкая": 61,
+      "средняя": 33
+    },
+    "mouth_width": {
+      "узкий": 73,
+      "средний": 21
+    },
+    "symmetry": {
+      "выраженная асимметрия": 57,
+      "умеренная симметрия": 19,
+      "высокая симметрия": 18
+    }
+  },
+  "measurements": {
+    "face_width_to_height_ratio": {
+      "count": 94,
+      "mean": 0.8328341684256447,
+      "std": 0.027616591038938185,
+      "min": 0.770979868054424,
+      "max": 0.9303903634866048
+    },
+    "lower_face_height_ratio": {
+      "count": 94,
+      "mean": 0.4268064320532392,
+      "std": 0.0231662947843988,
+      "min": 0.38191491481893847,
+      "max": 0.4926344010973428
+    },
+    "eye_distance_ratio": {
+      "count": 94,
+      "mean": 0.23148920240226903,
+      "std": 0.005923823863090083,
+      "min": 0.2199751096429564,
+      "max": 0.24819656695242895
+    },
+    "nose_width_to_length_ratio": {
+      "count": 94,
+      "mean": 0.717185784307782,
+      "std": 0.04976569034475018,
+      "min": 0.6016668473396297,
+      "max": 0.8838433697675727
+    },
+    "mouth_width_ratio": {
+      "count": 94,
+      "mean": 0.33281431553640956,
+      "std": 0.02129780126236848,
+      "min": 0.2859424480065631,
+      "max": 0.40393194222675227
+    },
+    "jaw_width_ratio": {
+      "count": 94,
+      "mean": 0.7842565391071089,
+      "std": 0.01337046627383807,
+      "min": 0.7435636103259656,
+      "max": 0.8125999450028437
+    },
+    "symmetry_overall_score": {
+      "count": 94,
+      "mean": 0.8425145066598455,
+      "std": 0.12905793546853003,
+      "min": 0.4739525094181834,
+      "max": 0.9977922404780303
+    }
+  },
+  "limitations": [
+    "Пакет является геометрической исследовательской сводкой и не делает выводов о личности, характере, интеллекте, профессиональной пригодности или надежности человека.",
+    "Сырые points и mesh.vertices намеренно исключены из кадровой части, чтобы файл оставался компактным."
+  ],
+  "frames": [
+    {
+      "report": "frame000000_portrait.json",
+      "image": "frame000000.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.188916671881884,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.30182910611014,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 78.07697218642835,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 27.411406368634477,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.94727365279129,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 70.35859938308406,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 33.50600446073891,
+          "available": true
+        },
+        "face_width": {
+          "value": 130.39181153825797,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame000024_portrait.json",
+      "image": "frame000024.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.48459300604153,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.04961942426511,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.9306504993631,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 28.156798810816742,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.08890546865647,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 68.88756756247585,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 35.28331311389188,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.01482259123325,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame000072_portrait.json",
+      "image": "frame000072.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.76941746858796,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.410622883106786,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 78.133461304348,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 30.377284922997628,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.02433719169088,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 72.36143499401564,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 31.950131361122512,
+          "available": true
+        },
+        "face_width": {
+          "value": 130.85748933875254,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame000096_portrait.json",
+      "image": "frame000096.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.64152293916919,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.588112456383623,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.69884608884809,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 29.892894201577885,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.09642188596252,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 70.94328103034121,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 33.372118481781584,
+          "available": true
+        },
+        "face_width": {
+          "value": 127.96162252228325,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame000192_portrait.json",
+      "image": "frame000192.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.83665752261625,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 31.169257350657205,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 78.50405796219385,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 27.070932281608577,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.06853930494254,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 67.74625222032766,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 36.603849850233985,
+          "available": true
+        },
+        "face_width": {
+          "value": 125.58295118010766,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame000216_portrait.json",
+      "image": "frame000216.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.30104167974598,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.723024035222117,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.87976654296898,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 26.086779004132662,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 39.41966708341876,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 65.4729610866434,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 34.63651484294711,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.62482572123317,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame000384_portrait.json",
+      "image": "frame000384.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 51.94977664184434,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.372879226362194,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.52724578065418,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 25.144900299503835,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.865263679581034,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 67.51758754282332,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.81020503988187,
+          "available": true
+        },
+        "face_width": {
+          "value": 124.071755974052,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame000432_portrait.json",
+      "image": "frame000432.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.50629866879919,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.20343571742362,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.81132982025142,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 28.57530345818516,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 39.14921708772571,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 66.8542390209278,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 36.08391433921658,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.34474893209213,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame000480_portrait.json",
+      "image": "frame000480.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.717854154665076,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.3553755356965,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.08463598944824,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 30.84995479034321,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 39.906525622122594,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 70.75029477686405,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 32.4486474455595,
+          "available": true
+        },
+        "face_width": {
+          "value": 130.6993335016554,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame000600_portrait.json",
+      "image": "frame000600.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.48525762894319,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.832920832630524,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.14286797781786,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 26.272025218687457,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 38.611847690047796,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 64.8218494303427,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 34.57267885000346,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.02069668806703,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame000768_portrait.json",
+      "image": "frame000768.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 55.74815042988806,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.94193896418129,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 82.55726661917315,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 25.94418660196392,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.555469788798874,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 66.83849826346203,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 35.774524393809614,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.37957244661305,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame001176_portrait.json",
+      "image": "frame001176.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.82004030978279,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.178017836292717,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.46991960923357,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.77864300586517,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.77937624999562,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 64.25540652114537,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.918127809242456,
+          "available": true
+        },
+        "face_width": {
+          "value": 127.25221713938497,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame001200_portrait.json",
+      "image": "frame001200.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто",
+        "фотография размыта"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.52054603586739,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.005648310225602,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 78.03620739790517,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.6759475038574,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 39.69755514615645,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 61.50560245159572,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 41.85454282221612,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.59194015540186,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame001224_portrait.json",
+      "image": "frame001224.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.66538260541605,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.492898338884263,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.84014090854524,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 20.773134582022895,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.11352075888785,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 61.875438505311685,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 40.63013593557547,
+          "available": true
+        },
+        "face_width": {
+          "value": 130.6299502967496,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame002784_portrait.json",
+      "image": "frame002784.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 51.16863129168524,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.0709934178504,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.26676984244207,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.955617040959545,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 36.21152045901493,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 58.306708286497106,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 38.28166142211552,
+          "available": true
+        },
+        "face_width": {
+          "value": 115.3519463471056,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame002928_portrait.json",
+      "image": "frame002928.jpg",
+      "status": "warning",
+      "issues": [
+        "сильный наклон головы",
+        "лицо заметно повернуто",
+        "рот заметно открыт",
+        "требуется нейтральное выражение"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 51.368518049197064,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.546889143046197,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.19060412501824,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 25.247056297289152,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 47.158673753896764,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 70.21709569201255,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 38.77857156513392,
+          "available": true
+        },
+        "face_width": {
+          "value": 121.39357364133562,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame002952_portrait.json",
+      "image": "frame002952.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.94217028759376,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.108439514917023,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.77608157681611,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 18.410760580544306,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 46.88261273356577,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 64.03317631430521,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 41.36261335963881,
+          "available": true
+        },
+        "face_width": {
+          "value": 127.31568620073269,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame003000_portrait.json",
+      "image": "frame003000.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "средний",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.713568021642985,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.356014048355615,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.07314546148359,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.391330541438826,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.94332582996602,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 62.132380512521834,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.583883887412355,
+          "available": true
+        },
+        "face_width": {
+          "value": 124.20611810752716,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame003024_portrait.json",
+      "image": "frame003024.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.09108212379365,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.786022659287646,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 78.40219606422885,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 17.549997078658482,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.31505103993006,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 58.69607305663902,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 39.933706412582524,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.26296113558637,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame007896_portrait.json",
+      "image": "frame007896.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 55.17829305754914,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.71915334237202,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 80.64159878059353,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 20.080062483684095,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.227386158477145,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.30608622302224,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 41.103508396645125,
+          "available": true
+        },
+        "face_width": {
+          "value": 130.23957894644317,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame007944_portrait.json",
+      "image": "frame007944.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 50.99208902750346,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.347150566910503,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 74.6382693986357,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.518449818417547,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.847330288561714,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 64.33942539633101,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 40.940731317359706,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.2905987431577,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame007968_portrait.json",
+      "image": "frame007968.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.69504487357752,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.331227688950325,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.05914021084821,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.439147261033405,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 37.96913577373631,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 61.33702673159492,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.99541795652949,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.89174136115557,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame007992_portrait.json",
+      "image": "frame007992.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.233296215511636,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.41476654006041,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.05520648838957,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 19.56459801589468,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.86577763103694,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.27914263529048,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.71208243959279,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.63873471870855,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame008712_portrait.json",
+      "image": "frame008712.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.03938329533169,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.627538647060792,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.46206382259454,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.030708835437714,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 37.7203193501462,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 58.6976093417312,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 35.84044687778669,
+          "available": true
+        },
+        "face_width": {
+          "value": 120.725545018855,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame008832_portrait.json",
+      "image": "frame008832.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 56.34632232823358,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.202676608508952,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 82.49291617237759,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.867217708305624,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.59964671309199,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 62.96423737043452,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 41.894730904255844,
+          "available": true
+        },
+        "face_width": {
+          "value": 128.4722018165091,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame008952_portrait.json",
+      "image": "frame008952.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 56.16958687949572,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.278955723583106,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 82.06680439063088,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 25.853312529438742,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.80477721609739,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 68.51484692671363,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 36.66600385512786,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.43295679219064,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame009000_portrait.json",
+      "image": "frame009000.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.76809892982647,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.92636819561602,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.61367448076913,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 26.961862436957986,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.353716406870696,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 68.30687130478262,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 35.07057169650202,
+          "available": true
+        },
+        "face_width": {
+          "value": 130.64669744544105,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame009024_portrait.json",
+      "image": "frame009024.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.58076514974306,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.983636175524637,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.17851812280237,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 26.457592857752886,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.04754371122777,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 67.44652802677638,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 38.58819028160102,
+          "available": true
+        },
+        "face_width": {
+          "value": 129.61626704144513,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame009096_portrait.json",
+      "image": "frame009096.jpg",
+      "status": "warning",
+      "issues": [
+        "сильный наклон головы"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.25296259165887,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.529087149948108,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.9786488952797,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 20.82358003122226,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.87223656288022,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 63.585428044700244,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 38.47023170271406,
+          "available": true
+        },
+        "face_width": {
+          "value": 124.95798233814128,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame009144_portrait.json",
+      "image": "frame009144.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.27255327385971,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.46831878781489,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 80.07681578960585,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.96792577273592,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.02253730520924,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 62.72301205909967,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 41.04116201558941,
+          "available": true
+        },
+        "face_width": {
+          "value": 128.19569427359488,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame009168_portrait.json",
+      "image": "frame009168.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.03686940098805,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.77948117416823,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.29640344427267,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.867055986436092,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 38.753926564152685,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.30981423000878,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.121674566983906,
+          "available": true
+        },
+        "face_width": {
+          "value": 118.11192204279084,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame009216_portrait.json",
+      "image": "frame009216.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 50.21362765309174,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 26.828351613317214,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 73.59977509095015,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.8764048123886,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 36.48577237551983,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 59.30404404955613,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 40.01283902215328,
+          "available": true
+        },
+        "face_width": {
+          "value": 116.55573868182046,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame009240_portrait.json",
+      "image": "frame009240.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.76403831397917,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.011569847099903,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.5167885546525,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 18.435391831171422,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 46.981954949369886,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 64.71211878395994,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 40.77917024094389,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.70770965641893,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame010080_portrait.json",
+      "image": "frame010080.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.855153904054106,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.35595289664877,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.35649450631618,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 24.293063777085266,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.56180725741425,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 66.52515475697341,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 36.96904017827813,
+          "available": true
+        },
+        "face_width": {
+          "value": 127.73292865085264,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame010200_portrait.json",
+      "image": "frame010200.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.04344963541224,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.389738694384423,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.7046505622759,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 24.407709632730473,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 39.90009886506743,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 64.08833713475612,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 34.09111756133905,
+          "available": true
+        },
+        "face_width": {
+          "value": 121.86733283586977,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame010224_portrait.json",
+      "image": "frame010224.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.14513520579293,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.113119617083434,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 78.17960884516647,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.672397122354553,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.65279296687883,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 64.32255160710058,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 39.81935619655493,
+          "available": true
+        },
+        "face_width": {
+          "value": 131.95082939540734,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame010296_portrait.json",
+      "image": "frame010296.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.83278609154427,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.702906920702425,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.96400047340673,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 27.4851760569367,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.22995960531467,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 67.5703654177017,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 35.414906423256795,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.00383762401553,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame010320_portrait.json",
+      "image": "frame010320.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.37898156985377,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.27537997224352,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.48490664632772,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.381979371324356,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 44.79248696806897,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 66.52717786325447,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 38.0554760103298,
+          "available": true
+        },
+        "face_width": {
+          "value": 127.44783768656036,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame010488_portrait.json",
+      "image": "frame010488.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.492473887383696,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.48169411853933,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.50822186847923,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 20.01981680882317,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 43.423100742816374,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 63.396824274729696,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 41.55712841599993,
+          "available": true
+        },
+        "face_width": {
+          "value": 127.64542482821477,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame010536_portrait.json",
+      "image": "frame010536.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.00591664792512,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.624747680927424,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.38712266967946,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.16601123782938,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.18020126567702,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 63.80144704152775,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.905236119572976,
+          "available": true
+        },
+        "face_width": {
+          "value": 124.31077600646218,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame020784_portrait.json",
+      "image": "frame020784.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.94257373275961,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 31.133285728200406,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 78.75708470373458,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 30.938165469858884,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 36.42347718103693,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 67.3576303675664,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 27.949474259204603,
+          "available": true
+        },
+        "face_width": {
+          "value": 129.90855413677465,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame020856_portrait.json",
+      "image": "frame020856.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 56.3673008728874,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.886733404859967,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 82.84915255812143,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 24.389997207187957,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.63906220464745,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 66.02045901432636,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 35.1693826391747,
+          "available": true
+        },
+        "face_width": {
+          "value": 128.49975271635915,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame020928_portrait.json",
+      "image": "frame020928.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 50.627998384040964,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 26.852234064974365,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 74.40469278122664,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.11510725870946,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.22328778261334,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.74313599568339,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 36.334819145255636,
+          "available": true
+        },
+        "face_width": {
+          "value": 117.06484280438634,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame020952_portrait.json",
+      "image": "frame020952.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.746707436923,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.97899069740617,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.51732689026737,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.86939042275972,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.47352881005339,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 63.332248993102354,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 38.75902135423045,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.52017488510718,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame020976_portrait.json",
+      "image": "frame020976.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.17355487027565,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.08724558861396,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.26269778153556,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.388152699408653,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.093014676485346,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 65.11237579559813,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.85461098643794,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.98736437705024,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame021024_portrait.json",
+      "image": "frame021024.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 49.04272016540641,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 25.797150107945342,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 72.28829635740469,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.06368722403733,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 39.51927895352367,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.121164376999296,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 39.973351246920124,
+          "available": true
+        },
+        "face_width": {
+          "value": 114.74505283603024,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame021048_portrait.json",
+      "image": "frame021048.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.93304977559507,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.680584741153524,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.185765465072,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.179904998733292,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.41237828845433,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.94955111701783,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 39.36913580215474,
+          "available": true
+        },
+        "face_width": {
+          "value": 124.8093365058021,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame021144_portrait.json",
+      "image": "frame021144.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 51.84935468545956,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.39733925047782,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.30181694951469,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.828938801828645,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.24165308691678,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 62.86911495483765,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 39.47739065317446,
+          "available": true
+        },
+        "face_width": {
+          "value": 119.1842197694186,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame021168_portrait.json",
+      "image": "frame021168.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.32648744313826,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.993403944842424,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.66351519038145,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 19.72059938652246,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.24380621234544,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 61.963550823852685,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 39.24727228096085,
+          "available": true
+        },
+        "face_width": {
+          "value": 128.10345624104855,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame021240_portrait.json",
+      "image": "frame021240.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.96557194698823,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.379766722885755,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.55635307661841,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 19.163583366270995,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.0294857917921,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 58.87342639207111,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.726839570187764,
+          "available": true
+        },
+        "face_width": {
+          "value": 120.5911484393943,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame021264_portrait.json",
+      "image": "frame021264.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 51.47743044026049,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.67460717361404,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.28091290958093,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 20.129837013838852,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.48396009446938,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 59.6092524791696,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 40.375622180156284,
+          "available": true
+        },
+        "face_width": {
+          "value": 120.9139379102683,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame021288_portrait.json",
+      "image": "frame021288.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.94484231935558,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.607674907846157,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.28374500813136,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 19.612224512805824,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.48227767317248,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.93683495619054,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 42.34833731337398,
+          "available": true
+        },
+        "face_width": {
+          "value": 128.72302026569582,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame021456_portrait.json",
+      "image": "frame021456.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 50.23826484357264,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.105473069477654,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 72.37151693487557,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 24.76869470903267,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 37.98566332945931,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 62.563052365611384,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 34.60240243706423,
+          "available": true
+        },
+        "face_width": {
+          "value": 119.98358484842502,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame023520_portrait.json",
+      "image": "frame023520.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 58.61478015860083,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 33.065077187031434,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 84.1684220320438,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 34.48829698939243,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.47684709719467,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 75.9644256673262,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 27.510813188512717,
+          "available": true
+        },
+        "face_width": {
+          "value": 140.9921089345881,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame023592_portrait.json",
+      "image": "frame023592.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 48.22770363371886,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 26.358350492527762,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 70.09711657361179,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 27.22380511860882,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 36.747669514097225,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 61.11943002972952,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 43.00797171317804,
+          "available": true
+        },
+        "face_width": {
+          "value": 114.60190941264021,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame023616_portrait.json",
+      "image": "frame023616.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.173908946812624,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.119610015018846,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.23467732097913,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.931969629303072,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.08396972850273,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 61.90657711630142,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 35.30363030762809,
+          "available": true
+        },
+        "face_width": {
+          "value": 119.68445409251345,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame023856_portrait.json",
+      "image": "frame023856.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 51.60393759753634,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.495055775920157,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.71538412034097,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.527035087655335,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.63855557075746,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 65.56755382090137,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 36.666610768064636,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.22923552346528,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame023880_portrait.json",
+      "image": "frame023880.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто",
+        "фотография размыта"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 50.638596993340684,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.174436454020242,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 73.10297641846174,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 27.356708729445334,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.82071271753213,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 64.51720251630492,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 42.1165143728096,
+          "available": true
+        },
+        "face_width": {
+          "value": 117.92297464854641,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame024024_portrait.json",
+      "image": "frame024024.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 50.77767277612553,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.611949533056542,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 73.94830525439225,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 20.06217822982356,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 36.34643852561375,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 55.51190617547461,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 42.43265923437731,
+          "available": true
+        },
+        "face_width": {
+          "value": 118.74105620541981,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame025800_portrait.json",
+      "image": "frame025800.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 55.70525335686935,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.721833932489595,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 82.69028238310173,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.666210695403365,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 46.46458867700467,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 68.11378042742444,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.345279187139774,
+          "available": true
+        },
+        "face_width": {
+          "value": 130.5685628665364,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame025944_portrait.json",
+      "image": "frame025944.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.27161275896705,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.055771109121743,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.49007448920064,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 30.643823573550975,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.31829071130389,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 70.94625771881192,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 30.12171597498073,
+          "available": true
+        },
+        "face_width": {
+          "value": 129.74024641038764,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame026016_portrait.json",
+      "image": "frame026016.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.82091865127209,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.214991991110395,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.43194030682601,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 28.632408043631266,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 39.57194624495535,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 68.07543492761211,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 31.660143575876457,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.90838923116408,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame026064_portrait.json",
+      "image": "frame026064.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.0007591728557,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.199601951750974,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.80793065131923,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.14363845616966,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 38.31823824369548,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.34798929610497,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 36.563439913066425,
+          "available": true
+        },
+        "face_width": {
+          "value": 120.84031140353613,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame027312_portrait.json",
+      "image": "frame027312.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.428828865669566,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.118333328280563,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.74153964734157,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 24.598692116561015,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.35639198643544,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 65.93104132344934,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 35.26796616450982,
+          "available": true
+        },
+        "face_width": {
+          "value": 125.25540434694996,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame027504_portrait.json",
+      "image": "frame027504.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 55.04510280508565,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.8930029495187,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 80.19824251877199,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.213744933993336,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 45.80603173904177,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 68.30947805552552,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 42.44347390092622,
+          "available": true
+        },
+        "face_width": {
+          "value": 133.11468561162445,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame027528_portrait.json",
+      "image": "frame027528.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 55.52584961279106,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.257178077396077,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 80.79457470768612,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 24.39473225050845,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 43.91183018399468,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 65.34193635989126,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 44.80390100831023,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.58584759732135,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame027576_portrait.json",
+      "image": "frame027576.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 47.78286869311499,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 25.025300806203962,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 70.5424418721115,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.774377777379087,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 38.81929840050428,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.11392759345433,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 40.29014241723778,
+          "available": true
+        },
+        "face_width": {
+          "value": 111.73117834109833,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame028584_portrait.json",
+      "image": "frame028584.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 55.015014908991304,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.932708893508654,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.10264865038775,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 20.99484650704887,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 38.05176847562815,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 59.045577597137196,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 42.76463537388931,
+          "available": true
+        },
+        "face_width": {
+          "value": 127.32818092682925,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame030000_portrait.json",
+      "image": "frame030000.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 51.05090016526344,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.744961761891403,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 74.3569486622311,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.021524517768192,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.37200608384939,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 61.492180255555176,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 40.27826473645686,
+          "available": true
+        },
+        "face_width": {
+          "value": 117.241225709377,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame030048_portrait.json",
+      "image": "frame030048.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.65848320924011,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.372326382355926,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.94773624662115,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 24.92481722391855,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 44.14668516092388,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 68.34171680860025,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 37.606279115698776,
+          "available": true
+        },
+        "face_width": {
+          "value": 124.5310097842702,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame030168_portrait.json",
+      "image": "frame030168.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 59.862181325584245,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 32.242038447074364,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 87.48679036597139,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 17.888716066294116,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 45.19125578009857,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 63.07997097688886,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 44.183005966092544,
+          "available": true
+        },
+        "face_width": {
+          "value": 139.46041933994252,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame033288_portrait.json",
+      "image": "frame033288.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.140276331247925,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.337406036023538,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 78.94701852343195,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.473386877231626,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 43.68282100999845,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 65.07562704584075,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 40.37128207102009,
+          "available": true
+        },
+        "face_width": {
+          "value": 133.04893114021363,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame033360_portrait.json",
+      "image": "frame033360.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.25030114391214,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.92019209543669,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 78.58090609763893,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 20.105456217114924,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 43.324550470586026,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 63.10123568744401,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 42.341979597598105,
+          "available": true
+        },
+        "face_width": {
+          "value": 130.15344833301285,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame033456_portrait.json",
+      "image": "frame033456.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.5149824216802,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.001410478934268,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.02981252774536,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.116157030087667,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.810648073555306,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 63.924137900927285,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 39.548726849567466,
+          "available": true
+        },
+        "face_width": {
+          "value": 130.31964217729896,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame033480_portrait.json",
+      "image": "frame033480.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 51.287362906268214,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.793966069150624,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 74.78114936941114,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 20.60444943819202,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.209652235264834,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.686322547586926,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 42.72043513911524,
+          "available": true
+        },
+        "face_width": {
+          "value": 120.94137195097417,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame033600_portrait.json",
+      "image": "frame033600.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.06908077568084,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.106046453052706,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.03663014912365,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 17.548770444220086,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 45.484019926768696,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 62.256089067570656,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 44.44112661911256,
+          "available": true
+        },
+        "face_width": {
+          "value": 129.033385837576,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame033672_portrait.json",
+      "image": "frame033672.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.58962604271349,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.27170983278009,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.90765807944209,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.11668294716025,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.461259082548736,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 63.19394069113268,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 41.64544186154451,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.1637475949764,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame039024_portrait.json",
+      "image": "frame039024.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 58.50851173334695,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 32.20159276113017,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 84.81836722321995,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 33.76196285179248,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 38.70198277245074,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 72.4633782736668,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 26.288098518328898,
+          "available": true
+        },
+        "face_width": {
+          "value": 137.73968267963735,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame039072_portrait.json",
+      "image": "frame039072.jpg",
+      "status": "warning",
+      "issues": [
+        "сильный наклон головы"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 51.16039885863446,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.249595935217517,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 74.07647908370267,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 25.913818136678987,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.872720691334415,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 68.48145842582319,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 35.56556765099485,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.98233594770647,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame039264_portrait.json",
+      "image": "frame039264.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.81424239716267,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.74818826217154,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.8850656460063,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 19.56143154654614,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.99172803586762,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 62.51076283100489,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 38.33644349539818,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.79379346841175,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame040248_portrait.json",
+      "image": "frame040248.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 51.15348793437418,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.62289268218928,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 73.68636960335033,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.919233400588475,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 39.2832928703995,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 61.193647825417806,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 38.09854303665498,
+          "available": true
+        },
+        "face_width": {
+          "value": 121.00912775011366,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame040776_portrait.json",
+      "image": "frame040776.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 55.3162985682534,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.44651908204634,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 80.19237679957992,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 20.493524851929543,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.13485534081742,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 62.62818757591361,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 42.26322423456773,
+          "available": true
+        },
+        "face_width": {
+          "value": 135.54767734961064,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame040848_portrait.json",
+      "image": "frame040848.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 56.72480880585819,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 31.083861711930737,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 82.36583707428478,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 18.586180642645886,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 51.453921080852076,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 67.03031555244985,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 43.29750987096798,
+          "available": true
+        },
+        "face_width": {
+          "value": 132.1204326305122,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame040896_portrait.json",
+      "image": "frame040896.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 60.177304565387836,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 31.587547420034085,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 88.76861501268154,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 15.81537228211689,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 48.05857187278687,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 63.33578534133489,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 45.10077816477557,
+          "available": true
+        },
+        "face_width": {
+          "value": 139.73081986052793,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame040920_portrait.json",
+      "image": "frame040920.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.463474474060945,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.623973540161003,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.3030157199177,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.09353544918593,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.31679952120949,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 62.06040693884876,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 41.66237054132986,
+          "available": true
+        },
+        "face_width": {
+          "value": 120.71145770453805,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame042840_portrait.json",
+      "image": "frame042840.jpg",
+      "status": "warning",
+      "issues": [
+        "рот заметно открыт",
+        "требуется нейтральное выражение"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 54.76260971949491,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 30.017434862026455,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 79.51513362651966,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 28.013621869898,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.8794953680674,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 70.89297995592989,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 34.0513590973509,
+          "available": true
+        },
+        "face_width": {
+          "value": 131.28680807687795,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame043032_portrait.json",
+      "image": "frame043032.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "широкая",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 48.80099779428675,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 25.914976831878867,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 71.68725592044504,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 24.020461180759565,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 40.215159491313386,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 62.55906966570251,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 39.58666275197475,
+          "available": true
+        },
+        "face_width": {
+          "value": 114.69018893609642,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame043128_portrait.json",
+      "image": "frame043128.jpg",
+      "status": "warning",
+      "issues": [
+        "сильный наклон головы"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.01504201851183,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.595168683084633,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.43929093344066,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.656773529687566,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.16660231492444,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 64.36556242229942,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 39.26858178215234,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.45308286340818,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame043152_portrait.json",
+      "image": "frame043152.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "среднее",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 61.51057198606841,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 32.36812268545605,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 90.67389221908762,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.63037215436524,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 47.16747846077394,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 66.99413880528716,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 47.61042562686522,
+          "available": true
+        },
+        "face_width": {
+          "value": 136.54181712335716,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame043224_portrait.json",
+      "image": "frame043224.jpg",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.22703647585584,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 28.738373730161086,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.71600892719691,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 21.961068003218962,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 39.88365555018999,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 60.76909384255619,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 38.446986094543526,
+          "available": true
+        },
+        "face_width": {
+          "value": 119.98442039762406,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame043272_portrait.json",
+      "image": "frame043272.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "средняя",
+        "mouth_width": "узкий",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 58.98653191123512,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 32.21453778600363,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 85.76173403393065,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 22.0295714908267,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 42.18478545155406,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 64.18573962080985,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 42.82262538012225,
+          "available": true
+        },
+        "face_width": {
+          "value": 137.9678748402095,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame050232_portrait.json",
+      "image": "frame050232.jpg",
+      "status": "passed",
+      "issues": [],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "высокая симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 53.584389747673605,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.523335688439083,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 77.65100438561075,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 24.992563396225037,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 41.89162439838019,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 66.8295724363294,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 35.24166201213035,
+          "available": true
+        },
+        "face_width": {
+          "value": 126.8950559239339,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame050328_portrait.json",
+      "image": "frame050328.jpg",
+      "status": "warning",
+      "issues": [
+        "сильный наклон головы"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "умеренная симметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.38788288212988,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 29.715460838828534,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 75.06206462631872,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 25.30703136135391,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 39.93841845581033,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 65.09772343003499,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 34.57716914772819,
+          "available": true
+        },
+        "face_width": {
+          "value": 123.16566862215518,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    },
+    {
+      "report": "frame050544_portrait.json",
+      "image": "frame050544.jpg",
+      "status": "warning",
+      "issues": [
+        "сильный наклон головы"
+      ],
+      "morphology": {
+        "face_proportion": "широкое",
+        "jaw_width": "широкая",
+        "mouth_width": "средний",
+        "symmetry": "выраженная асимметрия"
+      },
+      "lic_recommended_base": "ipd",
+      "lic_base_candidates": {
+        "ipd": {
+          "value": 52.02149923991865,
+          "available": true
+        },
+        "inner_eye_distance": {
+          "value": 27.210580095132674,
+          "available": true
+        },
+        "outer_eye_distance": {
+          "value": 76.83660591732313,
+          "available": true
+        },
+        "nose_to_mouth": {
+          "value": 23.749882803289076,
+          "available": true
+        },
+        "mouth_to_chin": {
+          "value": 45.07186077230205,
+          "available": true
+        },
+        "nose_to_chin": {
+          "value": 68.13592151774287,
+          "available": true
+        },
+        "eye_midpoint_to_nose": {
+          "value": 34.54175659237645,
+          "available": true
+        },
+        "face_width": {
+          "value": 121.89111220368055,
+          "available": true
+        },
+        "cheekbone_width": {
+          "value": null,
+          "available": false
+        }
+      },
+      "lic_limitations": [
+        "ipd рассчитан по центрам глаз, потому что точки зрачков отсутствуют",
+        "cheekbone_width: недостаточно точек (cheekbone_left, cheekbone_right)"
+      ]
+    }
+  ]
+}

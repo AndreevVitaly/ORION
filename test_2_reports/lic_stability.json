@@ -1,0 +1,79 @@
+{
+  "experiment": "lic_core_stability",
+  "reports_count": 32,
+  "ranking": [
+    {
+      "name": "outer_eye_distance",
+      "count": 32,
+      "mean": 71.24135018382194,
+      "std": 1.404732799967753,
+      "coefficient_of_variation": 0.019717941846177294,
+      "min": 67.593489087627,
+      "max": 73.76644837548585
+    },
+    {
+      "name": "ipd",
+      "count": 32,
+      "mean": 49.57615824805995,
+      "std": 1.0027706946371076,
+      "coefficient_of_variation": 0.0202268737649987,
+      "min": 47.21678240064545,
+      "max": 51.7100212350353
+    },
+    {
+      "name": "face_width",
+      "count": 32,
+      "mean": 112.13464890452917,
+      "std": 2.4849248389030554,
+      "coefficient_of_variation": 0.02216018744588666,
+      "min": 107.27733299404717,
+      "max": 118.42746963951393
+    },
+    {
+      "name": "inner_eye_distance",
+      "count": 32,
+      "mean": 27.913069180988508,
+      "std": 0.9469111182794482,
+      "coefficient_of_variation": 0.0339235758038527,
+      "min": 25.690976030450784,
+      "max": 30.115813673159604
+    },
+    {
+      "name": "mouth_to_chin",
+      "count": 32,
+      "mean": 38.74398936796925,
+      "std": 1.6092251593578566,
+      "coefficient_of_variation": 0.0415348338054276,
+      "min": 34.333892416827545,
+      "max": 42.70551700848078
+    },
+    {
+      "name": "nose_to_chin",
+      "count": 32,
+      "mean": 65.05868413507086,
+      "std": 4.317925181892887,
+      "coefficient_of_variation": 0.06636969744005697,
+      "min": 56.62116380437149,
+      "max": 81.02347696054306
+    },
+    {
+      "name": "eye_midpoint_to_nose",
+      "count": 32,
+      "mean": 34.361436674465295,
+      "std": 2.8667661653626624,
+      "coefficient_of_variation": 0.08342975273478645,
+      "min": 25.869868736854993,
+      "max": 39.43412724184366
+    },
+    {
+      "name": "nose_to_mouth",
+      "count": 32,
+      "mean": 26.540420636035684,
+      "std": 3.2528190590442616,
+      "coefficient_of_variation": 0.12256094594927762,
+      "min": 20.83355923438687,
+      "max": 38.532307319473695
+    }
+  ],
+  "best_candidate": "outer_eye_distance"
+}

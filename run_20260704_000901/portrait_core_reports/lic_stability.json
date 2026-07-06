@@ -1,0 +1,79 @@
+{
+  "experiment": "lic_core_stability",
+  "reports_count": 94,
+  "ranking": [
+    {
+      "name": "ipd",
+      "count": 94,
+      "mean": 53.43109790161421,
+      "std": 2.3708190239407103,
+      "coefficient_of_variation": 0.04437151990225313,
+      "min": 47.78286869311499,
+      "max": 61.51057198606841
+    },
+    {
+      "name": "outer_eye_distance",
+      "count": 94,
+      "mean": 77.76560633296272,
+      "std": 3.5303947904354955,
+      "coefficient_of_variation": 0.0453978944794655,
+      "min": 70.09711657361179,
+      "max": 90.67389221908762
+    },
+    {
+      "name": "face_width",
+      "count": 94,
+      "mean": 125.72425413719841,
+      "std": 5.821581995336814,
+      "coefficient_of_variation": 0.04630436692814998,
+      "min": 111.73117834109833,
+      "max": 140.9921089345881
+    },
+    {
+      "name": "inner_eye_distance",
+      "count": 94,
+      "mean": 29.099528434193697,
+      "std": 1.4523124966247007,
+      "coefficient_of_variation": 0.04990845469915403,
+      "min": 25.025300806203962,
+      "max": 33.065077187031434
+    },
+    {
+      "name": "nose_to_chin",
+      "count": 94,
+      "mean": 64.4104444422506,
+      "std": 3.731549499353058,
+      "coefficient_of_variation": 0.0579339194390858,
+      "min": 55.51190617547461,
+      "max": 75.9644256673262
+    },
+    {
+      "name": "mouth_to_chin",
+      "count": 94,
+      "mean": 41.5000735667939,
+      "std": 2.699060410617274,
+      "coefficient_of_variation": 0.06503748496428968,
+      "min": 36.21152045901493,
+      "max": 51.453921080852076
+    },
+    {
+      "name": "eye_midpoint_to_nose",
+      "count": 94,
+      "mean": 38.221457771228636,
+      "std": 3.867095396931791,
+      "coefficient_of_variation": 0.10117603101582283,
+      "min": 26.288098518328898,
+      "max": 47.61042562686522
+    },
+    {
+      "name": "nose_to_mouth",
+      "count": 94,
+      "mean": 23.498526956378864,
+      "std": 3.5571317008871697,
+      "coefficient_of_variation": 0.15137679512806898,
+      "min": 15.81537228211689,
+      "max": 34.48829698939243
+    }
+  ],
+  "best_candidate": "ipd"
+}

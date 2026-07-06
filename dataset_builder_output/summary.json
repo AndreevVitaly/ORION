@@ -1,0 +1,326 @@
+{
+  "schema": "profile-dataset-builder/1",
+  "input": "test - 2",
+  "output_dir": "dataset_builder_output",
+  "total_images": 41,
+  "created_reports": 32,
+  "statuses": {
+    "passed": 12,
+    "warning": 20,
+    "rejected": 9
+  },
+  "rows": [
+    {
+      "image": "dataset_builder_output\\warning\\frame001950.jpg",
+      "report": "dataset_builder_output\\warning\\frame001950_portrait.json",
+      "status": "warning",
+      "issues": [
+        "рот заметно открыт; требуется нейтральное выражение"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame002100.jpg",
+      "report": "dataset_builder_output\\warning\\frame002100_portrait.json",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame002550.jpg",
+      "report": "dataset_builder_output\\warning\\frame002550_portrait.json",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame003150.jpg",
+      "report": "dataset_builder_output\\passed\\frame003150_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame003450.jpg",
+      "report": "dataset_builder_output\\warning\\frame003450_portrait.json",
+      "status": "warning",
+      "issues": [
+        "рот заметно открыт; требуется нейтральное выражение"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame003600.jpg",
+      "report": "dataset_builder_output\\warning\\frame003600_portrait.json",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто",
+        "фотография размыта"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame003750.jpg",
+      "report": "dataset_builder_output\\passed\\frame003750_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame004800.jpg",
+      "report": "dataset_builder_output\\warning\\frame004800_portrait.json",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame004950.jpg",
+      "report": "dataset_builder_output\\passed\\frame004950_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame005100.jpg",
+      "report": "dataset_builder_output\\passed\\frame005100_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame005250.jpg",
+      "report": "dataset_builder_output\\passed\\frame005250_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame005400.jpg",
+      "report": "dataset_builder_output\\warning\\frame005400_portrait.json",
+      "status": "warning",
+      "issues": [
+        "сильный наклон головы"
+      ]
+    },
+    {
+      "image": "test - 2\\frame006300.jpg",
+      "report": null,
+      "status": "rejected",
+      "issues": [
+        "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении."
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame007350.jpg",
+      "report": "dataset_builder_output\\warning\\frame007350_portrait.json",
+      "status": "warning",
+      "issues": [
+        "рот заметно открыт; требуется нейтральное выражение"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame007500.jpg",
+      "report": "dataset_builder_output\\warning\\frame007500_portrait.json",
+      "status": "warning",
+      "issues": [
+        "сильный наклон головы"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame007800.jpg",
+      "report": "dataset_builder_output\\warning\\frame007800_portrait.json",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame008250.jpg",
+      "report": "dataset_builder_output\\warning\\frame008250_portrait.json",
+      "status": "warning",
+      "issues": [
+        "фотография размыта"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame008400.jpg",
+      "report": "dataset_builder_output\\warning\\frame008400_portrait.json",
+      "status": "warning",
+      "issues": [
+        "фотография размыта",
+        "рот заметно открыт; требуется нейтральное выражение"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame008700.jpg",
+      "report": "dataset_builder_output\\warning\\frame008700_portrait.json",
+      "status": "warning",
+      "issues": [
+        "фотография размыта"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame008850.jpg",
+      "report": "dataset_builder_output\\passed\\frame008850_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame009000.jpg",
+      "report": "dataset_builder_output\\passed\\frame009000_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame009150.jpg",
+      "report": "dataset_builder_output\\warning\\frame009150_portrait.json",
+      "status": "warning",
+      "issues": [
+        "лицо заметно повернуто",
+        "рот заметно открыт; требуется нейтральное выражение"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame009300.jpg",
+      "report": "dataset_builder_output\\warning\\frame009300_portrait.json",
+      "status": "warning",
+      "issues": [
+        "фотография размыта"
+      ]
+    },
+    {
+      "image": "test - 2\\frame010350.jpg",
+      "report": null,
+      "status": "rejected",
+      "issues": [
+        "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении."
+      ]
+    },
+    {
+      "image": "test - 2\\frame010650.jpg",
+      "report": null,
+      "status": "rejected",
+      "issues": [
+        "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении."
+      ]
+    },
+    {
+      "image": "test - 2\\frame010950.jpg",
+      "report": null,
+      "status": "rejected",
+      "issues": [
+        "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении."
+      ]
+    },
+    {
+      "image": "test - 2\\frame011850.jpg",
+      "report": null,
+      "status": "rejected",
+      "issues": [
+        "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении."
+      ]
+    },
+    {
+      "image": "test - 2\\frame012000.jpg",
+      "report": null,
+      "status": "rejected",
+      "issues": [
+        "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении."
+      ]
+    },
+    {
+      "image": "test - 2\\frame012150.jpg",
+      "report": null,
+      "status": "rejected",
+      "issues": [
+        "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении."
+      ]
+    },
+    {
+      "image": "test - 2\\frame012300.jpg",
+      "report": null,
+      "status": "rejected",
+      "issues": [
+        "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении."
+      ]
+    },
+    {
+      "image": "test - 2\\frame012450.jpg",
+      "report": null,
+      "status": "rejected",
+      "issues": [
+        "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении."
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame013200.jpg",
+      "report": "dataset_builder_output\\warning\\frame013200_portrait.json",
+      "status": "warning",
+      "issues": [
+        "фотография размыта"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame013650.jpg",
+      "report": "dataset_builder_output\\warning\\frame013650_portrait.json",
+      "status": "warning",
+      "issues": [
+        "сильный наклон головы"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame014400.jpg",
+      "report": "dataset_builder_output\\passed\\frame014400_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame014550.jpg",
+      "report": "dataset_builder_output\\warning\\frame014550_portrait.json",
+      "status": "warning",
+      "issues": [
+        "рот заметно открыт; требуется нейтральное выражение"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame014700.jpg",
+      "report": "dataset_builder_output\\warning\\frame014700_portrait.json",
+      "status": "warning",
+      "issues": [
+        "фотография размыта"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame014850.jpg",
+      "report": "dataset_builder_output\\passed\\frame014850_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame015450.jpg",
+      "report": "dataset_builder_output\\passed\\frame015450_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame015750.jpg",
+      "report": "dataset_builder_output\\passed\\frame015750_portrait.json",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "image": "dataset_builder_output\\warning\\frame015900.jpg",
+      "report": "dataset_builder_output\\warning\\frame015900_portrait.json",
+      "status": "warning",
+      "issues": [
+        "фотография размыта"
+      ]
+    },
+    {
+      "image": "dataset_builder_output\\passed\\frame016050.jpg",
+      "report": "dataset_builder_output\\passed\\frame016050_portrait.json",
+      "status": "passed",
+      "issues": []
+    }
+  ],
+  "architecture": {
+    "application": "apps.dataset_builder",
+    "scientific_engine": "portrait_core",
+    "rule": "Dataset Builder does not compute face geometry; it calls portrait_core.create_portrait_report."
+  }
+}

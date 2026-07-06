@@ -1,0 +1,97 @@
+﻿image,status,issues,duplicate_of,face_proportion,symmetry,report
+frame000000.jpg,passed,,,широкое,высокая симметрия,frame000000_portrait.json
+frame000024.jpg,passed,,,широкое,выраженная асимметрия,frame000024_portrait.json
+frame000072.jpg,passed,,,широкое,умеренная симметрия,frame000072_portrait.json
+frame000096.jpg,passed,,,широкое,умеренная симметрия,frame000096_portrait.json
+frame000192.jpg,passed,,,широкое,выраженная асимметрия,frame000192_portrait.json
+frame000216.jpg,passed,,,широкое,умеренная симметрия,frame000216_portrait.json
+frame000384.jpg,passed,,,широкое,выраженная асимметрия,frame000384_portrait.json
+frame000432.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame000432_portrait.json
+frame000480.jpg,passed,,,широкое,высокая симметрия,frame000480_portrait.json
+frame000600.jpg,passed,,,широкое,умеренная симметрия,frame000600_portrait.json
+frame000768.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame000768_portrait.json
+frame001176.jpg,passed,,,широкое,выраженная асимметрия,frame001176_portrait.json
+frame001200.jpg,warning,лицо заметно повернуто; фотография размыта,,широкое,выраженная асимметрия,frame001200_portrait.json
+frame001224.jpg,passed,,,широкое,высокая симметрия,frame001224_portrait.json
+frame002784.jpg,warning,лицо заметно повернуто,,среднее,выраженная асимметрия,frame002784_portrait.json
+frame002928.jpg,warning,сильный наклон головы; лицо заметно повернуто; рот заметно открыт; требуется нейтральное выражение,,среднее,выраженная асимметрия,frame002928_portrait.json
+frame002952.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame002952_portrait.json
+frame003000.jpg,passed,,,широкое,умеренная симметрия,frame003000_portrait.json
+frame003024.jpg,passed,,,широкое,выраженная асимметрия,frame003024_portrait.json
+frame007896.jpg,passed,,,широкое,умеренная симметрия,frame007896_portrait.json
+frame007944.jpg,warning,лицо заметно повернуто,,среднее,выраженная асимметрия,frame007944_portrait.json
+frame007968.jpg,passed,,,широкое,выраженная асимметрия,frame007968_portrait.json
+frame007992.jpg,passed,,,широкое,выраженная асимметрия,frame007992_portrait.json
+frame008712.jpg,passed,,,широкое,умеренная симметрия,frame008712_portrait.json
+frame008832.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame008832_portrait.json
+frame008952.jpg,passed,,,широкое,выраженная асимметрия,frame008952_portrait.json
+frame009000.jpg,passed,,,широкое,умеренная симметрия,frame009000_portrait.json
+frame009024.jpg,passed,,,широкое,выраженная асимметрия,frame009024_portrait.json
+frame009096.jpg,warning,сильный наклон головы,,широкое,высокая симметрия,frame009096_portrait.json
+frame009144.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame009144_portrait.json
+frame009168.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame009168_portrait.json
+frame009216.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame009216_portrait.json
+frame009240.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame009240_portrait.json
+frame010080.jpg,passed,,,широкое,выраженная асимметрия,frame010080_portrait.json
+frame010200.jpg,passed,,,широкое,выраженная асимметрия,frame010200_portrait.json
+frame010224.jpg,passed,,,широкое,высокая симметрия,frame010224_portrait.json
+frame010296.jpg,passed,,,широкое,выраженная асимметрия,frame010296_portrait.json
+frame010320.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame010320_portrait.json
+frame010488.jpg,passed,,,широкое,высокая симметрия,frame010488_portrait.json
+frame010536.jpg,passed,,,широкое,выраженная асимметрия,frame010536_portrait.json
+frame020784.jpg,passed,,,широкое,высокая симметрия,frame020784_portrait.json
+frame020856.jpg,passed,,,широкое,высокая симметрия,frame020856_portrait.json
+frame020928.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame020928_portrait.json
+frame020952.jpg,passed,,,широкое,высокая симметрия,frame020952_portrait.json
+frame020976.jpg,passed,,,широкое,выраженная асимметрия,frame020976_portrait.json
+frame021024.jpg,warning,лицо заметно повернуто,,среднее,выраженная асимметрия,frame021024_portrait.json
+frame021048.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame021048_portrait.json
+frame021144.jpg,warning,лицо заметно повернуто,,среднее,выраженная асимметрия,frame021144_portrait.json
+frame021168.jpg,passed,,,широкое,умеренная симметрия,frame021168_portrait.json
+frame021240.jpg,passed,,,широкое,выраженная асимметрия,frame021240_portrait.json
+frame021264.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame021264_portrait.json
+frame021288.jpg,passed,,,широкое,умеренная симметрия,frame021288_portrait.json
+frame021456.jpg,passed,,,широкое,выраженная асимметрия,frame021456_portrait.json
+frame023520.jpg,passed,,,широкое,высокая симметрия,frame023520_portrait.json
+frame023592.jpg,warning,лицо заметно повернуто,,среднее,выраженная асимметрия,frame023592_portrait.json
+frame023616.jpg,passed,,,широкое,выраженная асимметрия,frame023616_portrait.json
+frame023856.jpg,passed,,,широкое,выраженная асимметрия,frame023856_portrait.json
+frame023880.jpg,warning,лицо заметно повернуто; фотография размыта,,среднее,выраженная асимметрия,frame023880_portrait.json
+frame024024.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame024024_portrait.json
+frame025800.jpg,passed,,,широкое,умеренная симметрия,frame025800_portrait.json
+frame025944.jpg,passed,,,широкое,высокая симметрия,frame025944_portrait.json
+frame026016.jpg,passed,,,широкое,умеренная симметрия,frame026016_portrait.json
+frame026064.jpg,passed,,,широкое,выраженная асимметрия,frame026064_portrait.json
+frame027312.jpg,passed,,,широкое,умеренная симметрия,frame027312_portrait.json
+frame027504.jpg,passed,,,широкое,выраженная асимметрия,frame027504_portrait.json
+frame027528.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame027528_portrait.json
+frame027576.jpg,warning,лицо заметно повернуто,,среднее,выраженная асимметрия,frame027576_portrait.json
+frame028584.jpg,passed,,,широкое,высокая симметрия,frame028584_portrait.json
+frame030000.jpg,warning,лицо заметно повернуто,,среднее,выраженная асимметрия,frame030000_portrait.json
+frame030048.jpg,passed,,,широкое,выраженная асимметрия,frame030048_portrait.json
+frame030168.jpg,passed,,,широкое,умеренная симметрия,frame030168_portrait.json
+frame032592.jpg,error,"На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",,,,
+frame033288.jpg,passed,,,широкое,высокая симметрия,frame033288_portrait.json
+frame033360.jpg,passed,,,широкое,умеренная симметрия,frame033360_portrait.json
+frame033456.jpg,passed,,,широкое,умеренная симметрия,frame033456_portrait.json
+frame033480.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame033480_portrait.json
+frame033600.jpg,passed,,,широкое,выраженная асимметрия,frame033600_portrait.json
+frame033672.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame033672_portrait.json
+frame039024.jpg,passed,,,широкое,высокая симметрия,frame039024_portrait.json
+frame039072.jpg,warning,сильный наклон головы,,широкое,выраженная асимметрия,frame039072_portrait.json
+frame039264.jpg,passed,,,широкое,высокая симметрия,frame039264_portrait.json
+frame040248.jpg,passed,,,широкое,высокая симметрия,frame040248_portrait.json
+frame040776.jpg,passed,,,широкое,высокая симметрия,frame040776_portrait.json
+frame040848.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame040848_portrait.json
+frame040896.jpg,passed,,,широкое,выраженная асимметрия,frame040896_portrait.json
+frame040920.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame040920_portrait.json
+frame042840.jpg,warning,рот заметно открыт; требуется нейтральное выражение,,широкое,умеренная симметрия,frame042840_portrait.json
+frame043032.jpg,warning,лицо заметно повернуто,,среднее,выраженная асимметрия,frame043032_portrait.json
+frame043128.jpg,warning,сильный наклон головы,,широкое,выраженная асимметрия,frame043128_portrait.json
+frame043152.jpg,warning,лицо заметно повернуто,,среднее,выраженная асимметрия,frame043152_portrait.json
+frame043224.jpg,warning,лицо заметно повернуто,,широкое,выраженная асимметрия,frame043224_portrait.json
+frame043272.jpg,passed,,,широкое,умеренная симметрия,frame043272_portrait.json
+frame044880.jpg,error,"На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",,,,
+frame050232.jpg,passed,,,широкое,высокая симметрия,frame050232_portrait.json
+frame050328.jpg,warning,сильный наклон головы,,широкое,умеренная симметрия,frame050328_portrait.json
+frame050544.jpg,warning,сильный наклон головы,,широкое,выраженная асимметрия,frame050544_portrait.json

@@ -1,0 +1,344 @@
+[
+  {
+    "image": "frame001950.jpg",
+    "status": "warning",
+    "issues": "рот заметно открыт; требуется нейтральное выражение",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "frame001950_portrait.json"
+  },
+  {
+    "image": "frame002100.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame002100_portrait.json"
+  },
+  {
+    "image": "frame002550.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame002550_portrait.json"
+  },
+  {
+    "image": "frame003150.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "frame003150_portrait.json"
+  },
+  {
+    "image": "frame003450.jpg",
+    "status": "warning",
+    "issues": "рот заметно открыт; требуется нейтральное выражение",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "frame003450_portrait.json"
+  },
+  {
+    "image": "frame003600.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто; фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame003600_portrait.json"
+  },
+  {
+    "image": "frame003750.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame003750_portrait.json"
+  },
+  {
+    "image": "frame004800.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame004800_portrait.json"
+  },
+  {
+    "image": "frame004950.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame004950_portrait.json"
+  },
+  {
+    "image": "frame005100.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "высокая симметрия",
+    "report": "frame005100_portrait.json"
+  },
+  {
+    "image": "frame005250.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "frame005250_portrait.json"
+  },
+  {
+    "image": "frame005400.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "frame005400_portrait.json"
+  },
+  {
+    "image": "frame006300.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame007350.jpg",
+    "status": "warning",
+    "issues": "рот заметно открыт; требуется нейтральное выражение",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame007350_portrait.json"
+  },
+  {
+    "image": "frame007500.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame007500_portrait.json"
+  },
+  {
+    "image": "frame007800.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame007800_portrait.json"
+  },
+  {
+    "image": "frame008250.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "высокая симметрия",
+    "report": "frame008250_portrait.json"
+  },
+  {
+    "image": "frame008400.jpg",
+    "status": "warning",
+    "issues": "фотография размыта; рот заметно открыт; требуется нейтральное выражение",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame008400_portrait.json"
+  },
+  {
+    "image": "frame008700.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame008700_portrait.json"
+  },
+  {
+    "image": "frame008850.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "frame008850_portrait.json"
+  },
+  {
+    "image": "frame009000.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame009000_portrait.json"
+  },
+  {
+    "image": "frame009150.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто; рот заметно открыт; требуется нейтральное выражение",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame009150_portrait.json"
+  },
+  {
+    "image": "frame009300.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame009300_portrait.json"
+  },
+  {
+    "image": "frame010350.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame010650.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame010950.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame011850.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame012000.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame012150.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame012300.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame012450.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame013200.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame013200_portrait.json"
+  },
+  {
+    "image": "frame013650.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "frame013650_portrait.json"
+  },
+  {
+    "image": "frame014400.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "frame014400_portrait.json"
+  },
+  {
+    "image": "frame014550.jpg",
+    "status": "warning",
+    "issues": "рот заметно открыт; требуется нейтральное выражение",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame014550_portrait.json"
+  },
+  {
+    "image": "frame014700.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame014700_portrait.json"
+  },
+  {
+    "image": "frame014850.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "frame014850_portrait.json"
+  },
+  {
+    "image": "frame015450.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame015450_portrait.json"
+  },
+  {
+    "image": "frame015750.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame015750_portrait.json"
+  },
+  {
+    "image": "frame015900.jpg",
+    "status": "warning",
+    "issues": "фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame015900_portrait.json"
+  },
+  {
+    "image": "frame016050.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "умеренная симметрия",
+    "report": "frame016050_portrait.json"
+  }
+]

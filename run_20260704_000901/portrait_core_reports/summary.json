@@ -1,0 +1,860 @@
+[
+  {
+    "image": "frame000000.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame000000_portrait.json"
+  },
+  {
+    "image": "frame000024.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame000024_portrait.json"
+  },
+  {
+    "image": "frame000072.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame000072_portrait.json"
+  },
+  {
+    "image": "frame000096.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame000096_portrait.json"
+  },
+  {
+    "image": "frame000192.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame000192_portrait.json"
+  },
+  {
+    "image": "frame000216.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame000216_portrait.json"
+  },
+  {
+    "image": "frame000384.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame000384_portrait.json"
+  },
+  {
+    "image": "frame000432.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame000432_portrait.json"
+  },
+  {
+    "image": "frame000480.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame000480_portrait.json"
+  },
+  {
+    "image": "frame000600.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame000600_portrait.json"
+  },
+  {
+    "image": "frame000768.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame000768_portrait.json"
+  },
+  {
+    "image": "frame001176.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame001176_portrait.json"
+  },
+  {
+    "image": "frame001200.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто; фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame001200_portrait.json"
+  },
+  {
+    "image": "frame001224.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame001224_portrait.json"
+  },
+  {
+    "image": "frame002784.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame002784_portrait.json"
+  },
+  {
+    "image": "frame002928.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы; лицо заметно повернуто; рот заметно открыт; требуется нейтральное выражение",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame002928_portrait.json"
+  },
+  {
+    "image": "frame002952.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame002952_portrait.json"
+  },
+  {
+    "image": "frame003000.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame003000_portrait.json"
+  },
+  {
+    "image": "frame003024.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame003024_portrait.json"
+  },
+  {
+    "image": "frame007896.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame007896_portrait.json"
+  },
+  {
+    "image": "frame007944.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame007944_portrait.json"
+  },
+  {
+    "image": "frame007968.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame007968_portrait.json"
+  },
+  {
+    "image": "frame007992.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame007992_portrait.json"
+  },
+  {
+    "image": "frame008712.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame008712_portrait.json"
+  },
+  {
+    "image": "frame008832.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame008832_portrait.json"
+  },
+  {
+    "image": "frame008952.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame008952_portrait.json"
+  },
+  {
+    "image": "frame009000.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame009000_portrait.json"
+  },
+  {
+    "image": "frame009024.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame009024_portrait.json"
+  },
+  {
+    "image": "frame009096.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame009096_portrait.json"
+  },
+  {
+    "image": "frame009144.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame009144_portrait.json"
+  },
+  {
+    "image": "frame009168.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame009168_portrait.json"
+  },
+  {
+    "image": "frame009216.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame009216_portrait.json"
+  },
+  {
+    "image": "frame009240.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame009240_portrait.json"
+  },
+  {
+    "image": "frame010080.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame010080_portrait.json"
+  },
+  {
+    "image": "frame010200.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame010200_portrait.json"
+  },
+  {
+    "image": "frame010224.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame010224_portrait.json"
+  },
+  {
+    "image": "frame010296.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame010296_portrait.json"
+  },
+  {
+    "image": "frame010320.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame010320_portrait.json"
+  },
+  {
+    "image": "frame010488.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame010488_portrait.json"
+  },
+  {
+    "image": "frame010536.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame010536_portrait.json"
+  },
+  {
+    "image": "frame020784.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame020784_portrait.json"
+  },
+  {
+    "image": "frame020856.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame020856_portrait.json"
+  },
+  {
+    "image": "frame020928.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame020928_portrait.json"
+  },
+  {
+    "image": "frame020952.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame020952_portrait.json"
+  },
+  {
+    "image": "frame020976.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame020976_portrait.json"
+  },
+  {
+    "image": "frame021024.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame021024_portrait.json"
+  },
+  {
+    "image": "frame021048.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame021048_portrait.json"
+  },
+  {
+    "image": "frame021144.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame021144_portrait.json"
+  },
+  {
+    "image": "frame021168.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame021168_portrait.json"
+  },
+  {
+    "image": "frame021240.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame021240_portrait.json"
+  },
+  {
+    "image": "frame021264.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame021264_portrait.json"
+  },
+  {
+    "image": "frame021288.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame021288_portrait.json"
+  },
+  {
+    "image": "frame021456.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame021456_portrait.json"
+  },
+  {
+    "image": "frame023520.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame023520_portrait.json"
+  },
+  {
+    "image": "frame023592.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame023592_portrait.json"
+  },
+  {
+    "image": "frame023616.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame023616_portrait.json"
+  },
+  {
+    "image": "frame023856.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame023856_portrait.json"
+  },
+  {
+    "image": "frame023880.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто; фотография размыта",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame023880_portrait.json"
+  },
+  {
+    "image": "frame024024.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame024024_portrait.json"
+  },
+  {
+    "image": "frame025800.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame025800_portrait.json"
+  },
+  {
+    "image": "frame025944.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame025944_portrait.json"
+  },
+  {
+    "image": "frame026016.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame026016_portrait.json"
+  },
+  {
+    "image": "frame026064.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame026064_portrait.json"
+  },
+  {
+    "image": "frame027312.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame027312_portrait.json"
+  },
+  {
+    "image": "frame027504.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame027504_portrait.json"
+  },
+  {
+    "image": "frame027528.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame027528_portrait.json"
+  },
+  {
+    "image": "frame027576.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame027576_portrait.json"
+  },
+  {
+    "image": "frame028584.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame028584_portrait.json"
+  },
+  {
+    "image": "frame030000.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame030000_portrait.json"
+  },
+  {
+    "image": "frame030048.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame030048_portrait.json"
+  },
+  {
+    "image": "frame030168.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame030168_portrait.json"
+  },
+  {
+    "image": "frame032592.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame033288.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame033288_portrait.json"
+  },
+  {
+    "image": "frame033360.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame033360_portrait.json"
+  },
+  {
+    "image": "frame033456.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame033456_portrait.json"
+  },
+  {
+    "image": "frame033480.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame033480_portrait.json"
+  },
+  {
+    "image": "frame033600.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame033600_portrait.json"
+  },
+  {
+    "image": "frame033672.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame033672_portrait.json"
+  },
+  {
+    "image": "frame039024.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame039024_portrait.json"
+  },
+  {
+    "image": "frame039072.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame039072_portrait.json"
+  },
+  {
+    "image": "frame039264.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame039264_portrait.json"
+  },
+  {
+    "image": "frame040248.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame040248_portrait.json"
+  },
+  {
+    "image": "frame040776.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame040776_portrait.json"
+  },
+  {
+    "image": "frame040848.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame040848_portrait.json"
+  },
+  {
+    "image": "frame040896.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame040896_portrait.json"
+  },
+  {
+    "image": "frame040920.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame040920_portrait.json"
+  },
+  {
+    "image": "frame042840.jpg",
+    "status": "warning",
+    "issues": "рот заметно открыт; требуется нейтральное выражение",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame042840_portrait.json"
+  },
+  {
+    "image": "frame043032.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame043032_portrait.json"
+  },
+  {
+    "image": "frame043128.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame043128_portrait.json"
+  },
+  {
+    "image": "frame043152.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "среднее",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame043152_portrait.json"
+  },
+  {
+    "image": "frame043224.jpg",
+    "status": "warning",
+    "issues": "лицо заметно повернуто",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame043224_portrait.json"
+  },
+  {
+    "image": "frame043272.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame043272_portrait.json"
+  },
+  {
+    "image": "frame044880.jpg",
+    "status": "error",
+    "issues": "На фотографии не найдено лицо. Попробуйте кадр крупнее, анфас и при более равномерном освещении.",
+    "duplicate_of": ""
+  },
+  {
+    "image": "frame050232.jpg",
+    "status": "passed",
+    "issues": "",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "высокая симметрия",
+    "report": "frame050232_portrait.json"
+  },
+  {
+    "image": "frame050328.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "умеренная симметрия",
+    "report": "frame050328_portrait.json"
+  },
+  {
+    "image": "frame050544.jpg",
+    "status": "warning",
+    "issues": "сильный наклон головы",
+    "duplicate_of": "",
+    "face_proportion": "широкое",
+    "symmetry": "выраженная асимметрия",
+    "report": "frame050544_portrait.json"
+  }
+]
