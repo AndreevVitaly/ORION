@@ -1,4 +1,4 @@
-"""Тесты отчета и визуализации."""
+﻿"""Тесты отчета и визуализации."""
 
 import json
 import tempfile
@@ -29,8 +29,17 @@ class ReportingTestCase(unittest.TestCase):
         restored = json.loads(report_to_json(report))
 
         self.assertEqual(restored["schema_version"], 3)
+        self.assertEqual(restored["schema"]["name"], "profile-face-record")
+        self.assertEqual(restored["schema"]["version"], "1.0")
+        self.assertEqual(restored["generator"]["name"], "portrait_core")
+        self.assertIn("input", restored)
+        self.assertIn("geometry", restored)
+        self.assertIn("lic", restored)
+        self.assertIn("metadata", restored)
         self.assertIn("measurements", restored)
         self.assertIn("points", restored)
+        self.assertEqual(restored["geometry"]["points"], restored["points"])
+        self.assertEqual(restored["lic"], restored["lic_core"])
         self.assertEqual(restored["mesh"]["schema"], "portrait-mesh")
 
     def test_report_can_be_saved(self):
@@ -74,3 +83,4 @@ class ReportingTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

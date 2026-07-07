@@ -1,11 +1,16 @@
 ﻿"""Подготовка и сохранение результатов анализа."""
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 from portrait_core.lic import calculate_lic_core
 
 
+PFR_SCHEMA_NAME = "profile-face-record"
+PFR_SCHEMA_VERSION = "1.0"
+PFR_GENERATOR_NAME = "portrait_core"
+PFR_GENERATOR_VERSION = "0.1.0"
 POSE_LIMITATION_TEXT = (
     "Интерпретация ограничена: показатель может быть связан с поворотом "
     "головы, наклоном, мимикой или перспективным искажением кадра, а не "
@@ -17,6 +22,60 @@ SERIES_LIMITATION_TEXT = (
 )
 
 
+def _utc_now_iso() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+
+
+def _backend_from_mesh(mesh: dict | None) -> str | None:
+    if not mesh:
+        return None
+    source = mesh.get("source") or {}
+    return source.get("adapter") or source.get("backend")
+
+
+def _image_size_from_mesh(mesh: dict | None) -> dict | None:
+    if not mesh:
+        return None
+    return mesh.get("image_size")
+
+
+def _coordinate_system_from_mesh(mesh: dict | None) -> str | None:
+    if not mesh:
+        return None
+    return mesh.get("coordinate_system")
+
+
+def _build_input(image_path: str, input_metadata: dict | None) -> dict:
+    image = str(Path(image_path).resolve())
+    result = {
+        "image": image,
+        "source_type": "image",
+        "frame": None,
+        "timestamp": None,
+    }
+    if input_metadata:
+        result.update({key: value for key, value in input_metadata.items() if value is not None})
+        result.setdefault("image", image)
+        result.setdefault("source_type", "image")
+        result.setdefault("frame", None)
+        result.setdefault("timestamp", None)
+    return result
+
+
+def _build_metadata(
+    *,
+    backend: str | None,
+    backend_version: str | None,
+    warnings: list[str],
+) -> dict:
+    return {
+        "created_at": _utc_now_iso(),
+        "backend": backend,
+        "backend_version": backend_version,
+        "warnings": warnings,
+    }
+
+
 def build_report(
     image_path: str,
     points: dict,
@@ -26,19 +85,59 @@ def build_report(
     canonical_mesh: dict | None = None,
     zones: dict | None = None,
     features: dict | None = None,
+    input_metadata: dict | None = None,
 ) -> dict:
-    """Собрать переносимый JSON-отчет."""
+    """Собрать переносимый JSON-отчет стандарта PFR.
+
+    Старые верхнеуровневые поля сохраняются для обратной совместимости.
+    Новые разделы `schema`, `generator`, `input`, `geometry`, `lic` и
+    `metadata` образуют официальную структуру Profile Face Record.
+    """
+    lic_core = calculate_lic_core(points).to_dict()
+    quality = analysis.get("quality") or {}
+    warnings = list(quality.get("issues") or [])
+    backend = _backend_from_mesh(mesh)
+    image_size = _image_size_from_mesh(mesh)
+    coordinate_system = _coordinate_system_from_mesh(mesh)
+    metadata = _build_metadata(
+        backend=backend,
+        backend_version=None,
+        warnings=warnings,
+    )
+    geometry = {
+        "points": points,
+        "mesh": mesh,
+        "image_size": image_size,
+        "coordinate_system": coordinate_system,
+    }
     report = {
         "schema_version": 3,
+        "schema": {
+            "name": PFR_SCHEMA_NAME,
+            "version": PFR_SCHEMA_VERSION,
+        },
+        "generator": {
+            "name": PFR_GENERATOR_NAME,
+            "version": PFR_GENERATOR_VERSION,
+            "backend": backend,
+        },
+        "input": _build_input(image_path, input_metadata),
         "image": str(Path(image_path).resolve()),
+        "quality": quality,
+        "geometry": geometry,
         "points": points,
         "mesh": mesh,
         "canonical_mesh": canonical_mesh,
         "zones": zones,
         "features": features,
-        "lic_core": calculate_lic_core(points).to_dict(),
+        "lic": lic_core,
+        "lic_core": lic_core,
+        "metadata": metadata,
         **analysis,
     }
+    # analysis может содержать quality, поэтому синхронизируем PFR-разделы после merge.
+    report["quality"] = analysis.get("quality") or quality
+    report["metadata"]["warnings"] = list(report["quality"].get("issues") or [])
     report["interpretation"] = build_interpretation(report)
     return report
 
@@ -198,3 +297,4 @@ def format_summary_report(report: dict) -> str:
 def save_report(report: dict, output_path: str) -> None:
     """Сохранить отчет в UTF-8."""
     Path(output_path).write_text(report_to_json(report), encoding="utf-8")
+

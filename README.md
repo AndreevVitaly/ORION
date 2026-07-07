@@ -35,6 +35,14 @@ report = portrait_core.create_portrait_report("photo.jpg")
 ```
 
 Подробнее: `docs/architecture.md`.
+
+## Data Standard
+
+Все результаты анализа одного лица сохраняются в формате PFR (Profile Face Record). Файл может называться `portrait.json`, но логически он является документом стандарта PFR.
+
+PFR создается только `portrait_core`. CLI, GUI, Dataset Builder, API и будущие приложения должны получать результат анализа через официальный API Scientific Engine и не формировать собственную структуру `portrait.json`.
+
+Спецификация: `docs/PFR_Specification.md`.
 ## Архитектура сетки
 
 Внутренний контракт проекта не привязан к индексам MediaPipe. Любой детектор
@@ -263,5 +271,7 @@ python -m portrait_core.series reports `
 `portrait_core/config.py`. Индикатор визуального напряжения является только
 геометрическим описанием положения губ и бровей, а не оценкой эмоций или
 психологического состояния.
+
+
 
 
