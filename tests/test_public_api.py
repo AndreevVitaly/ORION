@@ -28,7 +28,7 @@ class PublicApiTestCase(unittest.TestCase):
 
         self.assertEqual(report, {"schema_version": 3})
         adapter_mock.assert_called_once_with("onnx", "model.onnx", "model.json")
-        pipeline_mock.assert_called_once_with("photo.jpg", adapter)
+        pipeline_mock.assert_called_once_with("photo.jpg", adapter, input_metadata=None)
 
 
 if __name__ == "__main__":

@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from portrait_core.archive.common import make_record_id, new_uuid
 from portrait_core.lic import calculate_lic_core
 
 
@@ -93,6 +94,7 @@ def build_report(
     Новые разделы `schema`, `generator`, `input`, `geometry`, `lic` и
     `metadata` образуют официальную структуру Profile Face Record.
     """
+    input_metadata = input_metadata or {}
     lic_core = calculate_lic_core(points).to_dict()
     quality = analysis.get("quality") or {}
     warnings = list(quality.get("issues") or [])
@@ -104,6 +106,9 @@ def build_report(
         backend_version=None,
         warnings=warnings,
     )
+    pfr_id = input_metadata.get("pfr_id") or make_record_id("PFR")
+    pfr_uuid = input_metadata.get("pfr_uuid") or new_uuid()
+    dataset_id = input_metadata.get("dataset_id")
     geometry = {
         "points": points,
         "mesh": mesh,
@@ -112,6 +117,9 @@ def build_report(
     }
     report = {
         "schema_version": 3,
+        "id": pfr_id,
+        "uuid": pfr_uuid,
+        "dataset_id": dataset_id,
         "schema": {
             "name": PFR_SCHEMA_NAME,
             "version": PFR_SCHEMA_VERSION,
@@ -137,6 +145,13 @@ def build_report(
     }
     # analysis может содержать quality, поэтому синхронизируем PFR-разделы после merge.
     report["quality"] = analysis.get("quality") or quality
+    report["metadata"].update(
+        {
+            "pfr_id": report.get("id"),
+            "pfr_uuid": report.get("uuid"),
+            "dataset_id": report.get("dataset_id"),
+        }
+    )
     report["metadata"]["warnings"] = list(report["quality"].get("issues") or [])
     report["interpretation"] = build_interpretation(report)
     return report
@@ -297,4 +312,3 @@ def format_summary_report(report: dict) -> str:
 def save_report(report: dict, output_path: str) -> None:
     """Сохранить отчет в UTF-8."""
     Path(output_path).write_text(report_to_json(report), encoding="utf-8")
-

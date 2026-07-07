@@ -1,4 +1,4 @@
-"""Полный конвейер анализа одной фотографии."""
+﻿"""Полный конвейер анализа одной фотографии."""
 
 from portrait_core.analyzer import analyze_points
 from portrait_core.canonical import canonicalize_mesh
@@ -10,7 +10,7 @@ from portrait_core.reporting import build_report
 from portrait_core.zones import build_zone_definitions, assign_vertices_to_zones
 
 
-def analyze_photo_with_adapter(image_path: str, adapter) -> tuple[dict, dict]:
+def analyze_photo_with_adapter(image_path: str, adapter, input_metadata: dict | None = None) -> tuple[dict, dict]:
     """Проанализировать фотографию через любой совместимый адаптер сетки."""
     mesh = adapter.extract_mesh(image_path)
     points = project_semantic_points(mesh)
@@ -57,6 +57,7 @@ def analyze_photo_with_adapter(image_path: str, adapter) -> tuple[dict, dict]:
             "assignments": zone_assignments,
         },
         features=features,
+        input_metadata=input_metadata,
     )
 
 

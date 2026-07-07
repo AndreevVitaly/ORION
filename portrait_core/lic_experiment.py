@@ -1,4 +1,4 @@
-"""Эксперимент стабильности LIC Core по серии JSON-отчетов."""
+﻿"""Эксперимент стабильности LIC Core по серии JSON-отчетов."""
 
 import argparse
 import json
@@ -17,10 +17,18 @@ def _std(values: list[float], mean_value: float) -> float:
 
 def _report_paths(directory: str) -> list[Path]:
     source = Path(directory)
-    portrait_reports = sorted(source.glob("*_portrait.json"))
-    if portrait_reports:
-        return portrait_reports
-    return sorted(source.glob("*.json"))
+    search_roots = [source]
+    if (source / "pfr").is_dir():
+        search_roots.insert(0, source / "pfr")
+    for root in search_roots:
+        portrait_reports = sorted(root.glob("*_portrait.json"))
+        if portrait_reports:
+            return portrait_reports
+    return sorted(
+        path
+        for path in source.glob("*.json")
+        if path.name not in {"dataset.json", "summary.json", "experiment.json"}
+    )
 
 
 def _candidate_values(reports: list[dict]) -> dict[str, list[float]]:

@@ -43,6 +43,31 @@ report = portrait_core.create_portrait_report("photo.jpg")
 PFR создается только `portrait_core`. CLI, GUI, Dataset Builder, API и будущие приложения должны получать результат анализа через официальный API Scientific Engine и не формировать собственную структуру `portrait.json`.
 
 Спецификация: `docs/PFR_Specification.md`.
+
+## Research Archive Model
+
+Profile хранит воспроизводимую цепочку исследования:
+
+```text
+PFR -> Dataset -> Experiment -> Report Pack -> Research
+```
+
+- PFR - один анализ одного лица.
+- Dataset (`DS-*`) - коллекция PFR, полученных по единому сценарию.
+- Experiment (`EXP-*`) - обработка одного или нескольких Dataset по методике.
+- Report Pack (`RP-*`) - агрегированный результат эксперимента.
+- Research - гипотезы, решения, ограничения и выводы.
+
+Dataset Builder теперь создает Dataset Archive с `dataset.json`, `images/`, `pfr/` и `summary.json`.
+
+```powershell
+python -m apps.dataset_builder input_images datasets
+python -m portrait_core.archive.create_dataset datasets --source input_images
+python -m portrait_core.archive.create_experiment datasets\DS-YYYYMMDD-HHMMSS --method lic_stability
+python -m portrait_core.archive.validate_dataset datasets\DS-YYYYMMDD-HHMMSS
+```
+
+Подробнее: `docs/Archive_Model.md` и `docs/Dataset_Specification.md`.
 ## Архитектура сетки
 
 Внутренний контракт проекта не привязан к индексам MediaPipe. Любой детектор
@@ -271,7 +296,3 @@ python -m portrait_core.series reports `
 `portrait_core/config.py`. Индикатор визуального напряжения является только
 геометрическим описанием положения губ и бровей, а не оценкой эмоций или
 психологического состояния.
-
-
-
-

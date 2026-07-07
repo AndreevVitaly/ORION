@@ -5,13 +5,18 @@ quality самостоятельно. Единственный источник 
 portrait_core.create_portrait_report().
 """
 
+from __future__ import annotations
+
 import argparse
 import json
+import re
 import shutil
 from pathlib import Path
 from typing import Callable, Iterable
 
 from portrait_core import create_portrait_report
+from portrait_core.archive.common import as_posix, make_record_id, new_uuid, write_json
+from portrait_core.archive.dataset import create_dataset_archive, write_dataset_files
 
 
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
@@ -25,7 +30,6 @@ class StopRequested(RuntimeError):
     """Остановка сборки датасета по запросу пользователя."""
 
 
-
 def _iter_images(path: Path) -> Iterable[Path]:
     if path.is_file() and path.suffix.lower() in IMAGE_SUFFIXES:
         yield path
@@ -36,7 +40,6 @@ def _iter_images(path: Path) -> Iterable[Path]:
                 yield file_path
 
 
-
 def _extract_video_frames(
     video_path: Path,
     frames_dir: Path,
@@ -45,11 +48,7 @@ def _extract_video_frames(
     log: LogCallback | None = None,
     should_stop: StopCallback | None = None,
 ) -> list[Path]:
-    """Извлечь кадры из видео без анализа лица.
-
-    Это техническая подготовка входных изображений. Геометрия лица остается в
-    portrait_core.
-    """
+    """Извлечь кадры из видео без анализа лица."""
     try:
         import cv2
     except ImportError as error:
@@ -83,7 +82,6 @@ def _extract_video_frames(
     return frame_paths
 
 
-
 def collect_input_images(
     input_path: str,
     output_dir: str,
@@ -112,7 +110,6 @@ def collect_input_images(
     return images
 
 
-
 def _quality_status(report: dict) -> tuple[str, list[str]]:
     quality = report.get("quality") or {}
     status = quality.get("status") or "warning"
@@ -124,10 +121,32 @@ def _quality_status(report: dict) -> tuple[str, list[str]]:
     return status, [str(issue) for issue in issues]
 
 
+def _frame_index(path: Path) -> int | None:
+    match = re.search(r"frame(\d+)", path.stem, re.IGNORECASE)
+    return int(match.group(1)) if match else None
 
-def _write_json(path: Path, payload: dict | list) -> None:
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
+def _timestamp_seconds(frame_index: int | None, frame_step: int) -> float | None:
+    if frame_index is None:
+        return None
+    # Без fps мы не знаем точное время, поэтому фиксируем техническую оценку по шагу.
+    return float(frame_index) if frame_step <= 0 else None
+
+
+def _unique_name(index: int, image_path: Path) -> str:
+    safe_stem = re.sub(r"[^A-Za-z0-9_.-]+", "_", image_path.stem).strip("_") or "image"
+    return f"{index:04d}_{safe_stem}{image_path.suffix.lower()}"
+
+
+def _ensure_pfr_identity(report: dict, dataset_id: str) -> tuple[str, str]:
+    pfr_id = report.get("id") or make_record_id("PFR")
+    pfr_uuid = report.get("uuid") or new_uuid()
+    report["id"] = pfr_id
+    report["uuid"] = pfr_uuid
+    report["dataset_id"] = report.get("dataset_id") or dataset_id
+    metadata = report.setdefault("metadata", {})
+    metadata.update({"pfr_id": pfr_id, "pfr_uuid": pfr_uuid, "dataset_id": report["dataset_id"]})
+    return pfr_id, pfr_uuid
 
 
 def build_dataset(
@@ -143,15 +162,26 @@ def build_dataset(
     progress: ProgressCallback | None = None,
     should_stop: StopCallback | None = None,
 ) -> dict:
-    """Создать датасет отчетов через официальный API portrait_core."""
-    output = Path(output_dir)
-    output.mkdir(parents=True, exist_ok=True)
+    """Создать Dataset Archive через официальный API portrait_core."""
+    settings = {
+        "backend": backend,
+        "model_path": model_path,
+        "topology_path": topology_path,
+        "frame_step": frame_step,
+        "copy_images": copy_images,
+    }
+    dataset_dir, dataset = create_dataset_archive(
+        output_dir,
+        source=str(input_path),
+        settings={key: value for key, value in settings.items() if value is not None},
+    )
     if log:
         log(f"Источник: {input_path}")
-        log(f"Папка результата: {output}")
+        log(f"Dataset Archive: {dataset_dir}")
+
     images = collect_input_images(
         input_path,
-        output_dir,
+        str(dataset_dir / "_frames"),
         frame_step=frame_step,
         log=log,
         should_stop=should_stop,
@@ -166,25 +196,48 @@ def build_dataset(
             raise StopRequested("Остановлено пользователем")
         if log:
             log(f"[{index}/{total}] portrait_core: {image_path.name}")
+
+        frame_index = _frame_index(image_path)
+        copied_image = dataset_dir / "images" / _unique_name(index, image_path)
+        if copy_images:
+            copied_image.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(image_path, copied_image)
+        image_for_item = copied_image if copy_images else image_path
+        item = {
+            "pfr_id": None,
+            "pfr_uuid": None,
+            "image_path": as_posix(image_for_item, dataset_dir),
+            "pfr_path": None,
+            "status": "rejected",
+            "issues": [],
+            "source_frame": image_path.name,
+            "frame_index": frame_index,
+            "timestamp_seconds": _timestamp_seconds(frame_index, frame_step),
+        }
+
         try:
             report = create_portrait_report(
                 str(image_path),
                 backend=backend,
                 model_path=model_path,
                 topology_path=topology_path,
+                input_metadata={
+                    "dataset_id": dataset["id"],
+                    "source_type": "video_frame" if frame_index is not None else "image",
+                    "source_frame": image_path.name,
+                    "frame": frame_index,
+                    "timestamp": item["timestamp_seconds"],
+                },
             )
             status, issues = _quality_status(report)
-            status_dir = output / status
-            status_dir.mkdir(parents=True, exist_ok=True)
-            report_path = status_dir / f"{image_path.stem}_portrait.json"
-            _write_json(report_path, report)
-            copied_image = status_dir / image_path.name
-            if copy_images:
-                shutil.copy2(image_path, copied_image)
-            rows.append(
+            pfr_id, pfr_uuid = _ensure_pfr_identity(report, dataset["id"])
+            pfr_path = dataset_dir / "pfr" / f"{Path(item['image_path']).stem}_portrait.json"
+            write_json(pfr_path, report)
+            item.update(
                 {
-                    "image": str(copied_image if copy_images else image_path),
-                    "report": str(report_path),
+                    "pfr_id": pfr_id,
+                    "pfr_uuid": pfr_uuid,
+                    "pfr_path": as_posix(pfr_path, dataset_dir),
                     "status": status,
                     "issues": issues,
                 }
@@ -192,25 +245,32 @@ def build_dataset(
             if log:
                 log(f"{status}: {image_path.name}")
         except Exception as error:  # noqa: BLE001 - Dataset Builder должен продолжать серию.
-            error_dir = output / "rejected"
-            error_dir.mkdir(parents=True, exist_ok=True)
-            rows.append(
-                {
-                    "image": str(image_path),
-                    "report": None,
-                    "status": "rejected",
-                    "issues": [str(error)],
-                }
-            )
+            item["issues"] = [str(error)]
             if log:
                 log(f"rejected: {image_path.name}: {error}")
+
+        dataset["items"].append(item)
+        rows.append(
+            {
+                "image": item["image_path"],
+                "report": item["pfr_path"],
+                "status": item["status"],
+                "issues": "; ".join(item["issues"]),
+                "pfr_id": item["pfr_id"],
+                "pfr_uuid": item["pfr_uuid"],
+            }
+        )
         if progress:
             progress(index, total)
 
+    write_dataset_files(dataset_dir, dataset)
     summary = {
-        "schema": "profile-dataset-builder/1",
+        "schema": "profile-dataset-builder/2",
+        "dataset_id": dataset["id"],
+        "dataset_uuid": dataset["uuid"],
+        "dataset_dir": str(dataset_dir),
         "input": str(input_path),
-        "output_dir": str(output),
+        "output_dir": str(dataset_dir),
         "total_images": total,
         "created_reports": sum(1 for row in rows if row["report"]),
         "statuses": {
@@ -218,32 +278,29 @@ def build_dataset(
             for status in ["passed", "warning", "rejected"]
         },
         "rows": rows,
+        "items": dataset["items"],
         "architecture": {
             "application": "apps.dataset_builder",
             "scientific_engine": "portrait_core",
             "rule": "Dataset Builder does not compute face geometry; it calls portrait_core.create_portrait_report.",
         },
     }
-    _write_json(output / "summary.json", summary)
+    write_json(dataset_dir / "summary.json", summary)
     if log:
-        log("summary.json сохранен")
+        log("dataset.json и summary.json сохранены")
     return summary
 
 
-
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description="Dataset Builder приложения Profile"
-    )
+    parser = argparse.ArgumentParser(description="Dataset Builder приложения Profile")
     parser.add_argument("input_path", help="Папка изображений, файл изображения или видео")
-    parser.add_argument("output_dir", help="Папка результата")
+    parser.add_argument("output_dir", help="Папка результата или DS-* архив")
     parser.add_argument("--backend", choices=("mediapipe", "onnx"), default="mediapipe")
     parser.add_argument("--model", dest="model_path")
     parser.add_argument("--topology", dest="topology_path")
     parser.add_argument("--frame-step", type=int, default=24)
     parser.add_argument("--no-copy", action="store_true", help="Не копировать исходные изображения")
     return parser
-
 
 
 def main() -> None:

@@ -18,6 +18,7 @@ def create_portrait_report(
     model_path: str | None = None,
     topology_path: str | None = None,
     output_path: str | None = None,
+    input_metadata: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Создать полный portrait.json для одного изображения.
 
@@ -30,7 +31,7 @@ def create_portrait_report(
         model_path or str(DEFAULT_MODEL_PATH),
         topology_path,
     )
-    _, report = analyze_photo_with_adapter(image_path, adapter)
+    _, report = analyze_photo_with_adapter(image_path, adapter, input_metadata=input_metadata)
     if output_path:
         save_report(report, output_path)
     return report

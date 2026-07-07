@@ -29,6 +29,16 @@ import portrait_core
 record = portrait_core.create_portrait_report("photo.jpg")
 ```
 
+## Идентичность PFR
+
+Каждый новый PFR содержит верхнеуровневые поля:
+
+- `id` - идентификатор записи вида `PFR-*`;
+- `uuid` - глобальный UUID записи;
+- `dataset_id` - идентификатор Dataset, если PFR создан внутри Dataset Archive.
+
+Эти поля добавляются мягко: старые PFR без `id` и `uuid` остаются читаемыми, но новые записи должны их иметь.
+
 ## Обязательные разделы
 
 ### schema
@@ -67,7 +77,7 @@ record = portrait_core.create_portrait_report("photo.jpg")
 }
 ```
 
-Для видео или Dataset Builder будущие версии могут заполнять `frame` и `timestamp`.
+Для видео или Dataset Builder могут заполняться `frame`, `timestamp`, `source_frame` и `dataset_id`.
 
 ### quality
 
@@ -125,6 +135,7 @@ record = portrait_core.create_portrait_report("photo.jpg")
 - `features`;
 - `profile`;
 - `interpretation`;
+- `id`, `uuid`, `dataset_id` — идентичность PFR и связь с Dataset;
 - `schema_version` — legacy-версия старого отчета;
 - `lic_core` — legacy-алиас раздела `lic`;
 - `points` и `mesh` — legacy-алиасы `geometry.points` и `geometry.mesh`.
@@ -150,6 +161,9 @@ record = portrait_core.create_portrait_report("photo.jpg")
 ```json
 {
   "schema_version": 3,
+  "id": "PFR-abc123",
+  "uuid": "12345678-1234-5678-1234-567812345678",
+  "dataset_id": "DS-20260704-000901",
   "schema": {
     "name": "profile-face-record",
     "version": "1.0"
