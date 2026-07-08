@@ -1,4 +1,4 @@
-﻿# Dataset Specification
+# Dataset Specification
 
 Dataset Archive - официальный формат хранения коллекции PFR в Profile.
 
@@ -13,6 +13,7 @@ DS-YYYYMMDD-HHMMSS/
 ├── dataset.json
 ├── images/
 ├── pfr/
+├── invariants/
 ├── experiments/
 └── summary.json
 ```
@@ -40,6 +41,7 @@ DS-YYYYMMDD-HHMMSS/
   "pfr_uuid": "...",
   "image_path": "images/0001_frame.jpg",
   "pfr_path": "pfr/0001_frame_portrait.json",
+  "invariants_path": "invariants/0001_frame_portrait_invariants.json",
   "status": "passed",
   "issues": [],
   "source_frame": "frame.jpg",
@@ -49,6 +51,8 @@ DS-YYYYMMDD-HHMMSS/
 ```
 
 Если анализ не выполнен, `pfr_id`, `pfr_uuid` и `pfr_path` могут быть `null`, а `status` должен объяснять причину через `issues`.
+
+`invariants_path` заполняется только если для PFR был построен файл Phase 2 `invariants.json`. Этот слой не выполняет биометрическую идентификацию и хранит только отношения морфометрических измерений.
 
 ## Правила
 

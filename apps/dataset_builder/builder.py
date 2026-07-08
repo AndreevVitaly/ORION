@@ -1,4 +1,4 @@
-﻿"""Dataset Builder: подготовка кадров и запуск portrait_core.
+"""Dataset Builder: подготовка кадров и запуск portrait_core.
 
 Модуль намеренно не вычисляет landmarks, morphology, measurements, LIC или
 quality самостоятельно. Единственный источник геометрической истины —
@@ -158,6 +158,7 @@ def build_dataset(
     topology_path: str | None = None,
     frame_step: int = 24,
     copy_images: bool = True,
+    build_invariants: bool = False,
     log: LogCallback | None = None,
     progress: ProgressCallback | None = None,
     should_stop: StopCallback | None = None,
@@ -169,6 +170,7 @@ def build_dataset(
         "topology_path": topology_path,
         "frame_step": frame_step,
         "copy_images": copy_images,
+        "build_invariants": build_invariants,
     }
     dataset_dir, dataset = create_dataset_archive(
         output_dir,
@@ -208,6 +210,7 @@ def build_dataset(
             "pfr_uuid": None,
             "image_path": as_posix(image_for_item, dataset_dir),
             "pfr_path": None,
+            "invariants_path": None,
             "status": "rejected",
             "issues": [],
             "source_frame": image_path.name,
@@ -233,11 +236,24 @@ def build_dataset(
             pfr_id, pfr_uuid = _ensure_pfr_identity(report, dataset["id"])
             pfr_path = dataset_dir / "pfr" / f"{Path(item['image_path']).stem}_portrait.json"
             write_json(pfr_path, report)
+            invariants_path = None
+            if build_invariants:
+                from portrait_core.invariants import build_invariants_for_portrait
+
+                invariants_path = (
+                    dataset_dir / "invariants" / f"{pfr_path.stem}_invariants.json"
+                )
+                build_invariants_for_portrait(pfr_path, invariants_path)
             item.update(
                 {
                     "pfr_id": pfr_id,
                     "pfr_uuid": pfr_uuid,
                     "pfr_path": as_posix(pfr_path, dataset_dir),
+                    "invariants_path": (
+                        as_posix(invariants_path, dataset_dir)
+                        if invariants_path is not None
+                        else None
+                    ),
                     "status": status,
                     "issues": issues,
                 }
@@ -300,6 +316,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--topology", dest="topology_path")
     parser.add_argument("--frame-step", type=int, default=24)
     parser.add_argument("--no-copy", action="store_true", help="Не копировать исходные изображения")
+    parser.add_argument(
+        "--build-invariants",
+        action="store_true",
+        help="Дополнительно построить invariants.json для каждого PFR",
+    )
     return parser
 
 
@@ -313,6 +334,7 @@ def main() -> None:
         topology_path=args.topology_path,
         frame_step=args.frame_step,
         copy_images=not args.no_copy,
+        build_invariants=args.build_invariants,
     )
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 

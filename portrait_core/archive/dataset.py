@@ -1,4 +1,4 @@
-﻿"""Dataset archive creation helpers."""
+"""Dataset archive creation helpers."""
 
 from __future__ import annotations
 
@@ -23,6 +23,7 @@ def create_dataset_archive(
     dataset_dir = root if root.name == resolved_id else root / resolved_id
     (dataset_dir / "images").mkdir(parents=True, exist_ok=True)
     (dataset_dir / "pfr").mkdir(parents=True, exist_ok=True)
+    (dataset_dir / "invariants").mkdir(parents=True, exist_ok=True)
     (dataset_dir / "experiments").mkdir(parents=True, exist_ok=True)
 
     dataset = {
