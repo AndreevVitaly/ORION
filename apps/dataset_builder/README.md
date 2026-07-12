@@ -36,6 +36,12 @@ python -m apps.dataset_builder input_images output_dataset
 python -m apps.dataset_builder video.mp4 output_dataset --frame-step 24
 ```
 
+Для видео с посторонними лицами можно выбрать повторяющийся геометрический face-track без идентификации:
+
+```powershell
+python -m apps.dataset_builder video.mp4 output_dataset --frame-step 24 --dominant-face-track
+```
+
 Результат раскладывается по папкам `passed`, `warning`, `rejected`, а общая сводка сохраняется в `summary.json`.
 
 ## Архитектурное правило

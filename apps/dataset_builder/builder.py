@@ -87,6 +87,8 @@ def collect_input_images(
     output_dir: str,
     frame_step: int = 24,
     *,
+    dominant_face_track: bool = False,
+    min_track_length: int = 3,
     log: LogCallback | None = None,
     should_stop: StopCallback | None = None,
 ) -> list[Path]:
@@ -97,6 +99,22 @@ def collect_input_images(
     if source.is_file() and source.suffix.lower() in VIDEO_SUFFIXES:
         if log:
             log(f"Извлечение кадров из видео: {source}")
+        if dominant_face_track:
+            from portrait_core.tracking import select_dominant_face_track
+
+            selected = select_dominant_face_track(
+                source,
+                Path(output_dir) / "dominant_face_track",
+                frame_step=max(1, frame_step),
+                min_track_length=min_track_length,
+                log=log,
+                should_stop=should_stop,
+            )
+            if not selected:
+                raise ValueError(
+                    "Dominant geometry-only face-track was not found in video"
+                )
+            return selected
         return _extract_video_frames(
             source,
             Path(output_dir) / "frames",
@@ -159,6 +177,8 @@ def build_dataset(
     frame_step: int = 24,
     copy_images: bool = True,
     build_invariants: bool = False,
+    dominant_face_track: bool = False,
+    min_track_length: int = 3,
     log: LogCallback | None = None,
     progress: ProgressCallback | None = None,
     should_stop: StopCallback | None = None,
@@ -171,6 +191,8 @@ def build_dataset(
         "frame_step": frame_step,
         "copy_images": copy_images,
         "build_invariants": build_invariants,
+        "dominant_face_track": dominant_face_track,
+        "min_track_length": min_track_length,
     }
     dataset_dir, dataset = create_dataset_archive(
         output_dir,
@@ -185,6 +207,8 @@ def build_dataset(
         input_path,
         str(dataset_dir / "_frames"),
         frame_step=frame_step,
+        dominant_face_track=dominant_face_track,
+        min_track_length=min_track_length,
         log=log,
         should_stop=should_stop,
     )
@@ -315,6 +339,17 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--model", dest="model_path")
     parser.add_argument("--topology", dest="topology_path")
     parser.add_argument("--frame-step", type=int, default=24)
+    parser.add_argument(
+        "--dominant-face-track",
+        action="store_true",
+        help="For video: select a repeated geometry-only face-track before analysis",
+    )
+    parser.add_argument(
+        "--min-track-length",
+        type=int,
+        default=3,
+        help="Minimum observations required for dominant face-track",
+    )
     parser.add_argument("--no-copy", action="store_true", help="Не копировать исходные изображения")
     parser.add_argument(
         "--build-invariants",
@@ -335,6 +370,8 @@ def main() -> None:
         frame_step=args.frame_step,
         copy_images=not args.no_copy,
         build_invariants=args.build_invariants,
+        dominant_face_track=args.dominant_face_track,
+        min_track_length=args.min_track_length,
     )
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 

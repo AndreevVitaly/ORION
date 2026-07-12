@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from apps.dataset_builder.builder import build_dataset
+from apps.dataset_builder.builder import build_dataset, collect_input_images
 
 
 class DatasetBuilderAppTestCase(unittest.TestCase):
@@ -72,6 +72,27 @@ class DatasetBuilderAppTestCase(unittest.TestCase):
         self.assertEqual(progress[-1], (2, 2))
         self.assertTrue(any("portrait_core" in message for message in logs))
 
+
+    @patch("portrait_core.tracking.select_dominant_face_track")
+    def test_video_collection_can_use_dominant_face_track(self, selector_mock):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            video = root / "video.mp4"
+            video.write_bytes(b"fake video")
+            selected = root / "selected.jpg"
+            selected.write_bytes(b"face crop")
+            selector_mock.return_value = [selected]
+
+            images = collect_input_images(
+                str(video),
+                str(root / "frames"),
+                dominant_face_track=True,
+                min_track_length=4,
+            )
+
+        self.assertEqual(images, [selected])
+        selector_mock.assert_called_once()
+        self.assertEqual(selector_mock.call_args.kwargs["min_track_length"], 4)
 
 if __name__ == "__main__":
     unittest.main()
