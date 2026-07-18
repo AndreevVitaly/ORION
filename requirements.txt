@@ -2,3 +2,4 @@ mediapipe==0.10.35
 Pillow==10.4.0
 PyQt6==6.11.0
 opencv-contrib-python==4.13.0.92
+yt-dlp>=2024.8.6

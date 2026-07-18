@@ -8,11 +8,15 @@ portrait_core.create_portrait_report().
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 from typing import Callable, Iterable
+from urllib.parse import urlparse
 
 from portrait_core import create_portrait_report
 from portrait_core.archive.common import as_posix, make_record_id, new_uuid, write_json
@@ -21,6 +25,7 @@ from portrait_core.archive.dataset import create_dataset_archive, write_dataset_
 
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
 VIDEO_SUFFIXES = {".mp4", ".mov", ".avi", ".mkv", ".webm"}
+URL_SCHEMES = {"http", "https"}
 LogCallback = Callable[[str], None]
 ProgressCallback = Callable[[int, int], None]
 StopCallback = Callable[[], bool]
@@ -39,6 +44,126 @@ def _iter_images(path: Path) -> Iterable[Path]:
             if file_path.is_file() and file_path.suffix.lower() in IMAGE_SUFFIXES:
                 yield file_path
 
+
+
+def is_url(value: str) -> bool:
+    parsed = urlparse(value.strip())
+    return parsed.scheme.lower() in URL_SCHEMES and bool(parsed.netloc)
+
+
+def download_video_source(
+    url: str,
+    downloads_dir: Path,
+    *,
+    log: LogCallback | None = None,
+    should_stop: StopCallback | None = None,
+) -> Path:
+    if should_stop and should_stop():
+        raise StopRequested("Остановлено пользователем")
+
+    downloads_dir.mkdir(parents=True, exist_ok=True)
+    token = hashlib.sha256(url.encode("utf-8")).hexdigest()[:12]
+    output_template = downloads_dir / f"source-{token}.%(ext)s"
+    command = [
+        sys.executable,
+        "-m",
+        "yt_dlp",
+        "--no-playlist",
+        "--newline",
+        "--progress",
+        "--socket-timeout",
+        "30",
+        "--retries",
+        "3",
+        "-f",
+        "bestvideo[height<=720][ext=mp4]/best[height<=720][ext=mp4]/bestvideo[height<=720]/best[height<=720]/bestvideo[ext=mp4]/bestvideo/best",
+        "-o",
+        str(output_template),
+        url,
+    ]
+    if log:
+        log(f"Скачивание видео по URL: {url}")
+
+    process = subprocess.Popen(
+        command,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    output_lines: list[str] = []
+    try:
+        assert process.stdout is not None
+        for line in process.stdout:
+            line = line.strip()
+            if line:
+                output_lines.append(line)
+                if log:
+                    log(line)
+            if should_stop and should_stop():
+                process.terminate()
+                raise StopRequested("Остановлено пользователем")
+        return_code = process.wait()
+    finally:
+        if process.poll() is None:
+            process.terminate()
+
+    if return_code != 0:
+        output = "\n".join(output_lines[-20:]).strip()
+        if "No module named yt_dlp" in output:
+            raise RuntimeError(
+                "Для скачивания URL требуется yt-dlp. Установите зависимости: "
+                "python -m pip install -r requirements.txt"
+            )
+        raise RuntimeError(f"Не удалось скачать видео по URL: {output or url}")
+
+    candidates = sorted(
+        (
+            path
+            for path in downloads_dir.glob(f"source-{token}.*")
+            if path.is_file() and path.suffix.lower() in VIDEO_SUFFIXES
+        ),
+        key=lambda path: (path.suffix.lower() != ".mp4", -path.stat().st_mtime),
+    )
+    for candidate in candidates:
+        if not _is_readable_video(candidate):
+            if log:
+                log(f"Пропуск не-видео потока: {candidate.name}")
+            continue
+        write_json(
+            downloads_dir / f"source-{token}.json",
+            {
+                "source_url": url,
+                "downloaded_path": str(candidate),
+                "tool": "yt-dlp",
+                "format": "video-only mp4 up to 720p preferred",
+            },
+        )
+        if log:
+            log(f"Видео скачано: {candidate.name}")
+        return candidate
+
+    raise RuntimeError("Видео скачано, но итоговый видеофайл не найден.")
+
+
+def _is_readable_video(path: Path) -> bool:
+    try:
+        import cv2
+    except ImportError:
+        return path.suffix.lower() in VIDEO_SUFFIXES
+
+    capture = cv2.VideoCapture(str(path))
+    try:
+        if not capture.isOpened():
+            return False
+        frame_count = int(capture.get(cv2.CAP_PROP_FRAME_COUNT) or 0)
+        if frame_count > 0:
+            return True
+        ok, _frame = capture.read()
+        return bool(ok)
+    finally:
+        capture.release()
 
 def _extract_video_frames(
     video_path: Path,
@@ -93,7 +218,15 @@ def collect_input_images(
     should_stop: StopCallback | None = None,
 ) -> list[Path]:
     """Получить список изображений из файла, папки или видео."""
-    source = Path(input_path)
+    if is_url(input_path):
+        source = download_video_source(
+            input_path,
+            Path(output_dir) / "downloads",
+            log=log,
+            should_stop=should_stop,
+        )
+    else:
+        source = Path(input_path)
     if not source.exists():
         raise FileNotFoundError(f"Источник не найден: {source}")
     if source.is_file() and source.suffix.lower() in VIDEO_SUFFIXES:

@@ -6,6 +6,10 @@ import os
 import sys
 from pathlib import Path
 
+# Поддерживаем запуск как модуль и напрямую через Run/абсолютный путь.
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
 from PyQt6.QtCore import QObject, QThread, pyqtSignal, pyqtSlot
 from PyQt6.QtWidgets import (
     QApplication,
@@ -28,7 +32,7 @@ from PyQt6.QtWidgets import (
     QWidget,
 )
 
-from apps.dataset_builder.builder import StopRequested, build_dataset
+from apps.dataset_builder.builder import StopRequested, build_dataset, is_url
 
 
 class BuildWorker(QObject):
@@ -47,6 +51,8 @@ class BuildWorker(QObject):
         topology_path: str | None,
         frame_step: int,
         copy_images: bool,
+        dominant_face_track: bool,
+        min_track_length: int,
     ) -> None:
         super().__init__()
         self.input_path = input_path
@@ -56,6 +62,8 @@ class BuildWorker(QObject):
         self.topology_path = topology_path
         self.frame_step = frame_step
         self.copy_images = copy_images
+        self.dominant_face_track = dominant_face_track
+        self.min_track_length = min_track_length
         self._stop = False
 
     @pyqtSlot()
@@ -69,6 +77,8 @@ class BuildWorker(QObject):
                 topology_path=self.topology_path,
                 frame_step=self.frame_step,
                 copy_images=self.copy_images,
+                dominant_face_track=self.dominant_face_track,
+                min_track_length=self.min_track_length,
                 log=self.log.emit,
                 progress=self._emit_progress,
                 should_stop=lambda: self._stop,
@@ -101,11 +111,11 @@ class MainWindow(QMainWindow):
 
         source_box = QGroupBox("Источник")
         source_layout = QGridLayout(source_box)
-        self.file_radio = QRadioButton("Файл / видео")
+        self.file_radio = QRadioButton("Файл / видео / URL")
         self.folder_radio = QRadioButton("Папка изображений")
         self.folder_radio.setChecked(True)
         self.input_path = QLineEdit()
-        self.input_path.setPlaceholderText("Папка изображений, файл изображения или видео")
+        self.input_path.setPlaceholderText("Папка изображений, файл изображения, видео или URL")
         browse_file = QPushButton("Файл...")
         browse_folder = QPushButton("Папка...")
         browse_file.clicked.connect(self._choose_file)
@@ -134,6 +144,10 @@ class MainWindow(QMainWindow):
         self.frame_step.setValue(24)
         self.copy_images = QCheckBox("копировать изображения в passed / warning")
         self.copy_images.setChecked(True)
+        self.dominant_face_track = QCheckBox("для видео анализировать часто повторяющееся лицо")
+        self.min_track_length = QSpinBox()
+        self.min_track_length.setRange(1, 100000)
+        self.min_track_length.setValue(3)
         self.backend_mediapipe = QRadioButton("MediaPipe")
         self.backend_onnx = QRadioButton("ONNX")
         self.backend_mediapipe.setChecked(True)
@@ -158,6 +172,8 @@ class MainWindow(QMainWindow):
         settings_layout.addRow("Backend", backend_row)
         settings_layout.addRow("Шаг кадров для видео", self.frame_step)
         settings_layout.addRow("", self.copy_images)
+        settings_layout.addRow("", self.dominant_face_track)
+        settings_layout.addRow("Мин. повторов лица", self.min_track_length)
         settings_layout.addRow("Модель", model_row)
         settings_layout.addRow("Topology", topology_row)
         layout.addWidget(settings_box)
@@ -246,11 +262,11 @@ class MainWindow(QMainWindow):
         if not output_dir:
             QMessageBox.warning(self, "Dataset Builder", "Папка результата не указана.")
             return
-        if not Path(input_path).exists():
+        if not is_url(input_path) and not Path(input_path).exists():
             QMessageBox.warning(self, "Dataset Builder", "Источник не найден.")
             return
 
-        self.progress.setValue(0)
+        self.progress.setRange(0, 0)
         self.log.clear()
         self._update_counters(None)
         self.thread = QThread(self)
@@ -262,11 +278,13 @@ class MainWindow(QMainWindow):
             topology_path=self.topology_path.text().strip() or None,
             frame_step=self.frame_step.value(),
             copy_images=self.copy_images.isChecked(),
+            dominant_face_track=self.dominant_face_track.isChecked(),
+            min_track_length=self.min_track_length.value(),
         )
         self.worker.moveToThread(self.thread)
         self.thread.started.connect(self.worker.run)
         self.worker.log.connect(self._append_log)
-        self.worker.progress.connect(self.progress.setValue)
+        self.worker.progress.connect(self._set_progress)
         self.worker.finished.connect(self._finished)
         self.worker.failed.connect(self._failed)
         self.worker.finished.connect(self.thread.quit)
@@ -282,6 +300,7 @@ class MainWindow(QMainWindow):
             self._append_log("Остановка запрошена...")
 
     def _finished(self, summary: dict) -> None:
+        self.progress.setRange(0, 100)
         self.progress.setValue(100)
         self.start_button.setEnabled(True)
         self.stop_button.setEnabled(False)
@@ -289,10 +308,15 @@ class MainWindow(QMainWindow):
         self._append_log(f"Готово: {summary.get('output_dir')}")
 
     def _failed(self, message: str) -> None:
+        self.progress.setRange(0, 100)
         self.start_button.setEnabled(True)
         self.stop_button.setEnabled(False)
         self._append_log(message)
         QMessageBox.warning(self, "Dataset Builder", message)
+
+    def _set_progress(self, value: int) -> None:
+        self.progress.setRange(0, 100)
+        self.progress.setValue(value)
 
     def _append_log(self, message: str) -> None:
         self.log.append(message)
